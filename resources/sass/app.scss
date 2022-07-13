@@ -1,8 +1,28 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('../assets/fonts/fonts.css');
 
-// Variables
-@import 'variables';
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+html,
+body {
+    overflow-x: hidden;
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

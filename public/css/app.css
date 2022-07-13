@@ -1,0 +1,226 @@
+/* Fonts Faces Montserrat */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Montserrat-Light'),
+    url(/fonts/Montserrat-Light.ttf?f0963fd9968fbd54cc35e8f0107db8d5) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Montserrat-LightItalic'),
+    url(/fonts/Montserrat-LightItalic.ttf?89c1158058a0ccae861adeef766bcd25) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'),
+    url(/fonts/Montserrat-Regular.ttf?ac98a5f5ca71180fe293683b5ea727a8) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Montserrat-Italic'),
+    url(/fonts/Montserrat-Italic.ttf?ffb8374a74a57a2056b597035f71a7ef) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat-Medium'),
+    url(/fonts/Montserrat-Medium.ttf?3a0917345468c959207a35a358557a85) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Montserrat-MediumItalic'),
+    url(/fonts/Montserrat-MediumItalic.ttf?69fda777fc886ba5ac31f3a898cb1f24) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Montserrat-SemiBold'),
+    url(/fonts/Montserrat-SemiBold.ttf?04af9a9e62bb4c47bd55634f7fedfda3) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Montserrat-SemiBoldItalic'),
+    url(/fonts/Montserrat-SemiBoldItalic.ttf?e2530ce50f6cc45f2830a270a8c2d9e9) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat-Bold'),
+    url(/fonts/Montserrat-Bold.ttf?63fae500fdcf19ce83d4e55c5dbb744b) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Montserrat-BoldItalic'),
+    url(/fonts/Montserrat-BoldItalic.ttf?6bfb0703bffc1e9c85aeb71eb56a542c) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Montserrat-ExtraBold'),
+    url(/fonts/Montserrat-ExtraBold.ttf?5daafc620ecc802516f9681ce62d749e) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Montserrat-ExtraBoldItalic'),
+    url(/fonts/Montserrat-ExtraBoldItalic.ttf?4feac0ff571c88a04550c5832c233940) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Montserrat-Black'),
+    url(/fonts/Montserrat-Black.ttf?1b9fba4a75b89b0dd96aae5a4cf9c598) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Montserrat-BlackItalic'),
+    url(/fonts/Montserrat-BlackItalic.ttf?d79a80bf41eef9028034ad5e451e465f) format('truetype');
+}
+/* End Fonts Faces Montserrat */
+/* Fonts Faces Poppins */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins-Light'),
+    url(/fonts/Poppins-Light.ttf?f41b63c0bb0963ace821a2b99458c1cd) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Poppins-LightItalic'),
+    url(/fonts/Poppins-LightItalic.ttf?5ccd942a8800a68d44b6d3f5431909ec) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins-Regula'),
+    url(/fonts/Poppins-Regular.ttf?8081832fc5cfbf634aa664a9eff0350e) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Poppins-Italic'),
+    url(/fonts/Poppins-Italic.ttf?ce3fff31c0f262aca227664f6f0d2fa2) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins-Medium'),
+    url(/fonts/Poppins-Medium.ttf?9e1bb626874ed49aa343d66b8d66ceaf) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Poppins-MediumItalic'),
+    url(/fonts/Poppins-MediumItalic.ttf?4e8cea18952c83074ec35f7bf1b176c4) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins-SemiBold'),
+    url(/fonts/Poppins-SemiBold.ttf?cce5625b56ec678e42021270b84ef400) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Poppins-SemiBoldItalic'),
+    url(/fonts/Poppins-SemiBoldItalic.ttf?cc7ee35ca49c83d4cfca932a03139f99) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins-Bold'),
+    url(/fonts/Poppins-Bold.ttf?404e299be26d78e6679447ea7cb2d41f) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Poppins-BoldItalic'),
+    url(/fonts/Poppins-BoldItalic.ttf?b10e7a6e913ca664cbdcb17894f9b419) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Poppins-ExtraBold'),
+    url(/fonts/Poppins-ExtraBold.ttf?4ed78cd5d64af4efc3c714622b9372d4) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Poppins-ExtraBoldItalic'),
+    url(/fonts/Poppins-ExtraBoldItalic.ttf?09f84f6035cfbf7c3984b6177d36b516) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Poppins-Black'),
+    url(/fonts/Poppins-Black.ttf?eacee5bb9c7fee5939aebf2335e5106a) format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Poppins-BlackItalic'),
+    url(/fonts/Poppins-BlackItalic.ttf?9445d60ed014306b6aec1c69bf9d0174) format('truetype');
+}
+/* End Fonts Faces Poppins */
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
