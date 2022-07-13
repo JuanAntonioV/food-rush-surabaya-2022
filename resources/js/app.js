@@ -2,9 +2,11 @@ require("./bootstrap");
 
 window.Vue = require("vue").default;
 
-window.VueRouter = require("vue-router").default;
+import VueRouter from "vue-router";
+import axios from "axios";
+import store from "./store";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter, axios);
 
 const App = Vue.component("App", require("./components/App.vue").default);
 const BRILogin = Vue.component(
@@ -42,4 +44,5 @@ const router = new VueRouter({
 const app = new Vue({
     el: "#app",
     router,
+    store,
 });

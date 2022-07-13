@@ -3,7 +3,7 @@
         <div class="login_container">
             <h1>Login</h1>
 
-            <form>
+            <form @submit.prevent="handleSubmit">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input
@@ -12,6 +12,8 @@
                         id="username"
                         name="username"
                         placeholder="Your Username"
+                        v-model="username"
+                        required
                     />
                 </div>
                 <div class="form-group">
@@ -22,8 +24,11 @@
                         id="password"
                         name="password"
                         placeholder="Password"
+                        v-model="password"
+                        required
                     />
                 </div>
+                <p>{{ msg }}</p>
                 <button type="submit">Masuk</button>
             </form>
         </div>
@@ -31,7 +36,32 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            username: "",
+            password: "",
+            msg: "",
+        };
+    },
+    methods: {
+        handleSubmit() {
+            axios
+                .post("/api/login", {
+                    username: this.username,
+                    password: this.password,
+                })
+                .then((res) => {
+                    if (res.data.code === 200) {
+                        this.$router.push("/bridashboard");
+                    }
+                })
+                .catch(() => {
+                    this.msg = "Username atau password kamu salah !!!";
+                });
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -97,6 +127,19 @@ export default {};
                     }
                 }
             }
+
+            p {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-style: italic;
+
+                text-align: center;
+
+                color: red;
+                font-size: 12px;
+                margin-top: 10px;
+            }
+
             button {
                 border: none;
                 background-color: #73c000;
@@ -104,7 +147,7 @@ export default {};
 
                 border-radius: 20px;
                 padding: 16px 30px;
-                margin: 30px 0 20px;
+                margin: 10px 0 20px 0;
 
                 width: 85%;
 
