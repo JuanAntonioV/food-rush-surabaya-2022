@@ -9,7 +9,7 @@
                     <input
                         type="text"
                         class="form-control"
-                        id="username"
+                        ref="username"
                         name="username"
                         placeholder="Your Username"
                         v-model="username"
@@ -21,14 +21,14 @@
                     <input
                         type="password"
                         class="form-control"
-                        id="password"
                         name="password"
                         placeholder="Password"
                         v-model="password"
                         required
                     />
                 </div>
-                <p>{{ msg }}</p>
+                <!-- <p v-if="errors.name">{{ errors[0] }}</p> -->
+                <p v-if="msg">{{ msg }}</p>
                 <button type="submit">Masuk</button>
             </form>
         </div>
@@ -43,20 +43,25 @@ export default {
             password: "",
             msg: "",
         };
+        // errors: [];
     },
     methods: {
-        handleSubmit() {
-            axios
+        async handleSubmit() {
+            await axios
                 .post("/api/login", {
                     username: this.username,
                     password: this.password,
                 })
                 .then((res) => {
                     if (res.data.code === 200) {
-                        this.$router.push("/bridashboard");
+                        this.$router.push({ name: "BRIDashboard" });
                     }
                 })
                 .catch(() => {
+                    // this.msg = "Username atau password kamu salah !!!";
+                    this.username = "";
+                    this.password = "";
+                    this.$refs.username.focus();
                     this.msg = "Username atau password kamu salah !!!";
                 });
         },
@@ -72,10 +77,13 @@ export default {
 
     font-family: "Poppins", sans-serif;
 
-    height: 90vh;
+    height: 100vh;
+
+    background-color: #60a500;
+    user-select: none;
 
     .login_container {
-        width: 300px;
+        width: 400px;
         padding: 50px;
 
         background-color: white;
@@ -86,7 +94,9 @@ export default {
 
         h1 {
             font-size: 28px;
+            font-weight: 700;
             text-align: center;
+            margin-bottom: 10px;
         }
 
         form {
@@ -100,6 +110,7 @@ export default {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                width: 100%;
 
                 margin: 10px 0;
 
@@ -137,7 +148,7 @@ export default {
 
                 color: red;
                 font-size: 12px;
-                margin-top: 10px;
+                margin: 10px 0 0 0;
             }
 
             button {
@@ -147,9 +158,9 @@ export default {
 
                 border-radius: 20px;
                 padding: 16px 30px;
-                margin: 10px 0 20px 0;
+                margin: 20px 0 10px 0;
 
-                width: 85%;
+                width: 100%;
 
                 &:hover {
                     background-color: #60a500;

@@ -8,6 +8,7 @@ use App\Helpers\ApiFormatter;
 use Illuminate\Support\Facades\Hash;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 
 class LoginBRIController extends Controller
@@ -103,14 +104,13 @@ class LoginBRIController extends Controller
             'password'  =>  'required'
         ]);
 
-
         $userbri = UserBRI::where('username', $request->username)->firstOrFail();
 
         /* Return hasil API dan mengecek apakah password sesuai atau tidak */
         if (Hash::check($request->password, $userbri->password)) {
             return ApiFormatter::createApi(200, 'Success', $userbri);
         } else {
-            return ApiFormatter::createApi(400, 'Failed');
+            return ApiFormatter::createApi(400, 'Username atau Password salah');
         }
     }
 }

@@ -9,7 +9,7 @@
 export default {
     methods: {
         directBRI() {
-            this.$router.push("/brilogin");
+            this.$router.push({ name: "BRILogin" });
         },
     },
 };
@@ -21,11 +21,14 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 
     height: 90vh;
 
     h1 {
         font-family: "Poppins", sans-serif;
+        font-size: 26pt;
+        font-weight: 700;
         text-align: center;
     }
 
