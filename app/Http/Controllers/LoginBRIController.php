@@ -9,6 +9,10 @@ use App\Helpers\ApiUserBRIFormatter;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use GrahamCampbell\ResultType\Success;
+<<<<<<< HEAD
+=======
+use Illuminate\Http\Request;
+>>>>>>> login
 use Illuminate\Validation\ValidationException;
 
 
@@ -105,8 +109,18 @@ class LoginBRIController extends Controller
         //     'password'  =>  'required'
         // ]);
 
+<<<<<<< HEAD
         if (!$request->username || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
+=======
+        $userbri = UserBRI::where('username', $request->username)->firstOrFail();
+
+        /* Return hasil API dan mengecek apakah password sesuai atau tidak */
+        if (Hash::check($request->password, $userbri->password)) {
+            return ApiFormatter::createApi(200, 'Success', $userbri);
+        } else {
+            return ApiFormatter::createApi(400, 'Username atau Password salah');
+>>>>>>> login
         }
 
         if (Auth::attempt($request->only('username', 'password'))) {
