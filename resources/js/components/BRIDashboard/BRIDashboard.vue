@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="containers">
         <h1 class="text-center">BRI DASHBOARD</h1>
     </div>
 </template>
@@ -15,20 +15,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .container {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     width: 100%;
+.containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 
-//     height: 90vh;
+    height: 90vh;
 
-//     h1 {
-//         font-family: "Poppins", sans-serif;
-//         font-size: 24pt;
-//         font-weight: 700;
-//         text-align: center;
-//     }
-// }
+    h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 24pt;
+        font-weight: 700;
+        text-align: center;
+    }
+}
 </style>

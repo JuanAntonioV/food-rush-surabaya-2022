@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="containers">
         <div class="login_container">
             <h1>Login</h1>
 
@@ -12,7 +12,7 @@
                         ref="username"
                         name="username"
                         placeholder="Your Username"
-                        v-model="username"
+                        v-model="form.username"
                         required
                     />
                 </div>
@@ -23,12 +23,11 @@
                         class="form-control"
                         name="password"
                         placeholder="Password"
-                        v-model="password"
+                        v-model="form.password"
                         required
                     />
                 </div>
-                <!-- <p v-if="errors.name">{{ errors[0] }}</p> -->
-                <p v-if="msg">{{ msg }}</p>
+                <p v-if="!errors.message">{{ errors[0] }}</p>
                 <button type="submit">Masuk</button>
             </form>
         </div>
@@ -39,30 +38,25 @@
 export default {
     data() {
         return {
-            username: "",
-            password: "",
-            msg: "",
+            form: {
+                username: "",
+                password: "",
+            },
+            errors: [],
         };
-        // errors: [];
     },
     methods: {
         async handleSubmit() {
             await axios
-                .post("/api/login", {
-                    username: this.username,
-                    password: this.password,
+                .post("/api/login", this.form)
+                .then(() => {
+                    this.$router.push({ name: "BRIDashboard" });
                 })
-                .then((res) => {
-                    if (res.data.code === 200) {
-                        this.$router.push({ name: "BRIDashboard" });
-                    }
-                })
-                .catch(() => {
-                    // this.msg = "Username atau password kamu salah !!!";
-                    this.username = "";
-                    this.password = "";
+                .catch((err) => {
+                    this.form.username = "";
+                    this.form.password = "";
                     this.$refs.username.focus();
-                    this.msg = "Username atau password kamu salah !!!";
+                    this.errors = [err.response.data.message];
                 });
         },
     },
@@ -70,7 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.containers {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +87,7 @@ export default {
         border-radius: 30px;
 
         h1 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
             text-align: center;
             margin-bottom: 10px;

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="containers">
         <h1>FOOD RUST SURABAYA 2022</h1>
         <button @click="directBRI">Login As BRI Admin</button>
     </div>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.containers {
     display: flex;
     justify-content: center;
     align-items: center;
