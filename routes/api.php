@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardBRIController;
 use App\Http\Controllers\LoginBRIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/userBRI', LoginBRIController::class);
+Route::resource('userBRI', LoginBRIController::class);
+
+Route::resource('dashboardBRIs', DashboardBRIController::class);
+
+
 
 Route::post('/login', [LoginBRIController::class, 'login']);

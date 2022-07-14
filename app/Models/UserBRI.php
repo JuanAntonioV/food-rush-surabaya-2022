@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class UserBRI extends Model
+class UserBRI extends Authenticatable
 {
     use HasFactory;
 
@@ -14,5 +15,6 @@ class UserBRI extends Model
     protected $fillable = [
         'username',
         'password',
+        'UserBRI'
     ];
 }

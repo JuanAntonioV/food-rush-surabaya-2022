@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\UserBRI;
+use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
+use App\Helpers\ApiUserBRIFormatter;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use GrahamCampbell\ResultType\Success;
-use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 
 class LoginBRIController extends Controller
@@ -98,19 +100,25 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'username'  =>  'required',
-            'password'  =>  'required'
-        ]);
+        // $request->validate([
+        //     'username'  =>  'required',
+        //     'password'  =>  'required'
+        // ]);
 
-
-        $userbri = UserBRI::where('username', $request->username)->firstOrFail();
-
-        /* Return hasil API dan mengecek apakah password sesuai atau tidak */
-        if (Hash::check($request->password, $userbri->password)) {
-            return ApiFormatter::createApi(200, 'Success', $userbri);
-        } else {
-            return ApiFormatter::createApi(400, 'Failed');
+        if (!$request->username || !$request->password) {
+            return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }
+
+        if (Auth::attempt($request->only('username', 'password'))) {
+            return ApiUserBRIFormatter::createApi(200, 'Success');
+        } else {
+            return ApiUserBRIFormatter::createApi(400, 'Username atau Password salah');
+        }
+
+
+        throw ValidationException::withMessages([
+            'username'  =>  ['The provided credentials are incorrect.'],
+            'password'  =>  ['Salah password']
+        ]);
     }
 }
