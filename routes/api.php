@@ -18,8 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('userBRI', LoginBRIController::class);
 
-Route::resource('dashboardBRIs', DashboardBRIController::class);
 
 
+Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::resource('dashboardBRIs', DashboardBRIController::class);
+    Route::post('logout', [LoginBRIController::class, 'logout']);
+});
 
-Route::post('/login', [LoginBRIController::class, 'login']);
+Route::post('login', [LoginBRIController::class, 'login'])->name('login');
