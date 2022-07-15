@@ -20,9 +20,10 @@ Route::resource('userBRI', LoginBRIController::class);
 
 
 
-Route::group(['middleware' => 'auth:sanctum'], function () {
+
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::resource('dashboardBRIs', DashboardBRIController::class);
-    Route::post('logout', [LoginBRIController::class, 'logout']);
 });
 
 Route::post('login', [LoginBRIController::class, 'login'])->name('login');
+Route::post('logout', [LoginBRIController::class, 'logout']);
