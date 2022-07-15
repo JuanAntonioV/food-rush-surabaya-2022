@@ -25,7 +25,6 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-
             return ApiDashboardBRIFormatter::createApi(200, 'Success', $data);
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
@@ -52,10 +51,9 @@ class DashboardBRIController extends Controller
     {
 
         /** Melakukan validasi */
-        $request->validate([
-            'no_akun'   =>  'required|min:10|max:15',
-            'nama_akun' =>  'required',
-        ]);
+        if (!$request->no_akun || !$request->nama_akun) {
+            return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
+        }
 
         /** Mendaftar no akun rekening & nama rekening di BRI */
         $dashboardbri = DashboardBRI::create([
@@ -152,5 +150,4 @@ class DashboardBRIController extends Controller
         Mail::to('fake@email.com')->send(new StatusDashboardBRI());
         return view('welcome');
     }
-
 }

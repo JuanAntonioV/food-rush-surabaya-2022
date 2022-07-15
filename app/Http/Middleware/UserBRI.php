@@ -3,7 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UserBRI
 {
@@ -16,10 +19,12 @@ class UserBRI
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user()->user_bri == 1) {
-            return $next($request);
+        if (Auth::check()) {
+
+
+            User::where('id', Auth::user()->id)->update(['last_seen' => Carbon::now()]);
         }
 
-        return back()->with('error', "You don't have admin access.");
+        return $next($request);
     }
 }
