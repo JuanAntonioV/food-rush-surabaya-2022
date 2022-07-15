@@ -101,10 +101,6 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
-<<<<<<< HEAD
-        /** Mengecek username dan password tidak boleh kosong */
-=======
->>>>>>> 9d2f81e619d199462251e65e21a9fff0a2bedcd5
         if (!$request->username || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }

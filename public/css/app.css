@@ -737,12 +737,6 @@ video {
 .fixed {
   position: fixed;
 }
-.absolute {
-  position: absolute;
-}
-.relative {
-  position: relative;
-}
 .m-3 {
   margin: 0.75rem;
 }
