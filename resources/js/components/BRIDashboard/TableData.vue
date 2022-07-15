@@ -6,17 +6,25 @@
                     <th>Nama Lengkap</th>
                     <th>Nomor Rekening</th>
                     <th>Tanggal Registrasi</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="user in pageItems" :key="user.id">
-                    <td data-label="Nama Lengkap">{{ user.nama }}</td>
+                    <td data-label="Nama Lengkap">{{ user.nama_akun }}</td>
                     <td data-label="Nomor Rekening">
-                        {{ user.noRekening }}
+                        {{ user.no_akun }}
                     </td>
                     <td data-label="Tanggal Registrasi">
-                        {{ user.tanggalRegistrasi }}
+                        {{
+                            new Date(user.created_at).toLocaleDateString(
+                                "id-ID"
+                            )
+                        }}
+                    </td>
+                    <td data-label="Status">
+                        {{ user.status }}
                     </td>
                     <td data-label="Actions">
                         <button class="btn" @click="konfirTerima">
@@ -44,9 +52,19 @@ export default {
     name: "TableData",
     data() {
         return {
-            users: this.$store.state.users.state.user,
+            users: [],
             pageItems: [],
         };
+    },
+    mounted() {
+        axios
+            .get("/api/dashboardBRIs")
+            .then((res) => {
+                this.users = res.data.data;
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     },
     methods: {
         onChangePage(pageItems) {
@@ -74,10 +92,10 @@ export default {
         thead {
             tr {
                 th {
-                    width: 340px;
+                    width: 300px;
                     background-color: #252525;
                     color: white;
-                    padding: 20px 50px;
+                    padding: 20px 0;
                     text-align: center;
                     font-size: 12pt;
                     font-weight: 500;
@@ -96,6 +114,10 @@ export default {
                     }
 
                     &:nth-child(4) {
+                        border-right: 1px solid #dee2e685;
+                    }
+
+                    &:nth-child(5) {
                         border-radius: 0 20px 0 0;
                     }
                 }
@@ -106,7 +128,7 @@ export default {
                 td {
                     text-align: center;
                     font-size: 12pt;
-                    font-weight: 500;
+                    font-weight: 400;
                     padding: 16px 0;
                     letter-spacing: 0.35px;
                     border: 1px solid #dee2e685;

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
 use App\Mail\StatusDashboardBRI;
 use Illuminate\Support\Facades\Mail;
+use App\Helpers\ApiUserBRIFormatter;
 use App\Helpers\ApiDashboardBRIFormatter;
 
 class DashboardBRIController extends Controller
@@ -25,7 +26,7 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Success', $data);
+            return ApiFormatter::createApi(200, 'Success', $data);
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }

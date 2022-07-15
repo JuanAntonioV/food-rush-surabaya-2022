@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use DB;
 
 class UserBRI extends Authenticatable
 {
@@ -24,4 +25,8 @@ class UserBRI extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public static function DeleteToken($id){
+        DB::table('personal_access_tokens')->where('id', $id)->delete();
+    }
 }

@@ -25,13 +25,18 @@ export default {
         // DialogBox,
         TableData,
     },
+
     methods: {
-        async logout() {
-            await axios.post("/api/logout").then((res) => {
-                localStorage.removeItem("token");
-                this.$router.push({ name: "BRILogin" });
-                console.log(res.data);
-            });
+        logout() {
+            let token = "Bearer " + localStorage.getItem("token");
+
+            axios
+                .post("/api/logout", {}, { headers: { Authorization: token } })
+                .then((res) => {
+                    localStorage.removeItem("token");
+                    this.$router.push({ name: "BRILogin" });
+                    console.log(res.data);
+                });
         },
     },
 };
