@@ -101,6 +101,11 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
+<<<<<<< HEAD
+=======
+        /** Mengecek username dan password tidak boleh kosong */
+
+>>>>>>> dc871a61626e33977612b82157553a70dd5a523c
         if (!$request->username || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }
@@ -118,8 +123,6 @@ class LoginBRIController extends Controller
     {
         /** Menglogout username & mendelete token yang sedang diakses */
 
-        $token = $request->bearerToken();
-        return $token;
         $request->user()->currentAccessToken()->delete();
         return response()->json('Succesful Logout', 200);
     }

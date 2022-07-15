@@ -18,12 +18,12 @@
 
 <script>
 import TableData from "./TableData.vue";
-import DialogBox from "../dialogBox/DialogBox.vue";
+// import DialogBox from "./DialogBox.vue";
 
 export default {
     components: {
+        // DialogBox,
         TableData,
-        DialogBox,
     },
     methods: {
         async logout() {
