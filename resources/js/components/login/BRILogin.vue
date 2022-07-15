@@ -49,8 +49,11 @@ export default {
         async handleSubmit() {
             await axios
                 .post("/api/login", this.form)
-                .then(() => {
-                    this.$router.push({ name: "BRIDashboard" });
+                .then((res) => {
+                    if (res.data.token) {
+                        localStorage.setItem("token", res.data.token);
+                        this.$router.push({ name: "BRIDashboard" });
+                    }
                 })
                 .catch((err) => {
                     this.form.username = "";

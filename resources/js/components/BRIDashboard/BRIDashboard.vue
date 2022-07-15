@@ -18,14 +18,20 @@
 
 <script>
 import TableData from "./TableData.vue";
+import DialogBox from "../dialogBox/DialogBox.vue";
 
 export default {
     components: {
         TableData,
+        DialogBox,
     },
     methods: {
-        logout() {
-            this.$router.push({ name: "App" });
+        async logout() {
+            await axios.post("/api/logout").then((res) => {
+                localStorage.removeItem("token");
+                this.$router.push({ name: "BRILogin" });
+                console.log(res.data);
+            });
         },
     },
 };

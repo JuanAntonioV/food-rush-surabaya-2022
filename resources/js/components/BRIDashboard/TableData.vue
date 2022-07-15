@@ -19,8 +19,10 @@
                         {{ user.tanggalRegistrasi }}
                     </td>
                     <td data-label="Actions">
-                        <button class="btn">Terima</button>
-                        <button class="btn">Tolak</button>
+                        <button class="btn" @click="konfirTerima">
+                            Terima
+                        </button>
+                        <button class="btn" @click="konfirTolak">Tolak</button>
                     </td>
                 </tr>
             </tbody>
@@ -49,6 +51,12 @@ export default {
     methods: {
         onChangePage(pageItems) {
             this.pageItems = pageItems;
+        },
+        konfirTerima() {
+            alert("terima");
+        },
+        konfirTolak() {
+            alert("tolak");
         },
     },
 };
@@ -151,11 +159,6 @@ export default {
         margin-top: 30px;
 
         .pagination {
-            // border: 1px solid #dee2e685;
-            // background-color: #252525;
-            // color: white;
-            // border-radius: 10px;
-
             justify-content: center;
             flex-wrap: wrap;
         }
