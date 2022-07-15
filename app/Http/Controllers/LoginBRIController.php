@@ -21,6 +21,7 @@ class LoginBRIController extends Controller
      */
     public function index()
     {
+        /** Menampilkan semua data */
         $data = UserBRI::all();
 
         /* Return hasil API */
@@ -100,25 +101,25 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
-        // $request->validate([
-        //     'username'  =>  'required',
-        //     'password'  =>  'required'
-        // ]);
-
+        /** Mengecek username dan password tidak boleh kosong */
         if (!$request->username || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }
-
+        /** Mengecek username dan password sesuai, jika sesuai membuat token baru &s menampilkan api message tersebut */
         if (Auth::attempt($request->only('username', 'password'))) {
-            return ApiUserBRIFormatter::createApi(200, 'Success');
+            $user = Auth::user();
+            $token = $user->createToken('token-name')->plainTextToken;
+            return ApiUserBRIFormatter::createApi(200, 'Success', $token);
         } else {
             return ApiUserBRIFormatter::createApi(400, 'Username atau Password salah');
         }
+    }
 
-
-        throw ValidationException::withMessages([
-            'username'  =>  ['The provided credentials are incorrect.'],
-            'password'  =>  ['Salah password']
-        ]);
+    public function logout(Request $request)
+    {
+        /** Menglogout username & mendelete token yang sedang diakses */
+        $token = auth()->user()->currentAccessToken();
+        $token->delete();
+        return response()->json('Succesful Logout', 200);
     }
 }
