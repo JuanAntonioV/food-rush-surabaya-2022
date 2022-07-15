@@ -100,11 +100,6 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
-        // $request->validate([
-        //     'username'  =>  'required',
-        //     'password'  =>  'required'
-        // ]);
-
         if (!$request->username || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }

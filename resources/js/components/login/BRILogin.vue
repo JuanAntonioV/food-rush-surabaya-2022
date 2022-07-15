@@ -120,7 +120,7 @@ export default {
                     width: 100%;
                     border-radius: 10px;
                     border: 1px solid rgb(172, 172, 172);
-                    padding: 14px 20px;
+                    padding: 24px 20px;
 
                     margin-top: 10px;
 
@@ -155,6 +155,8 @@ export default {
                 margin: 20px 0 10px 0;
 
                 width: 100%;
+
+                transition: all 0.2s ease-out;
 
                 &:hover {
                     background-color: #60a500;
