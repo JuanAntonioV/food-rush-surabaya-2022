@@ -6,6 +6,10 @@ import VueRouter from "vue-router";
 import routes from "./routes";
 import axios from "axios";
 import store from "./store";
+import JwPagination from "jw-vue-pagination";
+import Vue from "vue";
+
+Vue.component("pagination", JwPagination);
 
 Vue.use(VueRouter, axios);
 

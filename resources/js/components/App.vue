@@ -41,6 +41,17 @@ export default {
         padding: 16px 50px;
         margin: 10px 0;
 
+        transition: 0.3s ease;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            box-shadow: none;
+            background-color: #009eb3;
+        }
+
         box-shadow: 0 10px 30px -2px rgba(0, 0, 0, 0.3);
     }
 }

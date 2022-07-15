@@ -1,34 +1,103 @@
 <template>
     <div class="containers">
-        <h1 class="text-center">BRI DASHBOARD</h1>
+        <div class="menu-side">
+            <h1>BRI Dashboard</h1>
+
+            <ul>
+                <li>
+                    <button class="btnActive">Dashboard</button>
+                </li>
+            </ul>
+            <button class="btn btnLogout" @click="logout">Logout</button>
+        </div>
+        <div class="content-side">
+            <TableData />
+        </div>
     </div>
 </template>
 
 <script>
+import TableData from "./TableData.vue";
+
 export default {
-    // computed: {
-    //     user() {
-    //         return this.$store.state.users.state.user.data.name;
-    //     },
-    // },
+    components: {
+        TableData,
+    },
+    methods: {
+        logout() {
+            this.$router.push({ name: "App" });
+        },
+    },
 };
 </script>
 
 <style lang="scss" scoped>
 .containers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 1fr;
 
-    height: 90vh;
+    height: 100vh;
 
-    h1 {
+    .btnActive {
+        background-color: #383838;
+    }
+
+    .menu-side {
+        background-color: #252525;
         font-family: "Poppins", sans-serif;
-        font-size: 24pt;
-        font-weight: 700;
-        text-align: center;
+        color: white;
+
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+
+        h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        ul {
+            margin-top: 100px;
+            width: 100%;
+
+            li {
+                button {
+                    padding: 20px 0;
+                    width: 100%;
+                    transition: 0.2s ease;
+
+                    &:hover {
+                        background-color: #383838;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .btnLogout {
+            margin-top: 60px;
+            padding: 14px 40px;
+            background: rgb(250, 121, 0);
+            border-radius: 5px;
+            color: white;
+
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: rgb(223, 108, 0);
+            }
+        }
+    }
+
+    .content-side {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
     }
 }
 </style>
