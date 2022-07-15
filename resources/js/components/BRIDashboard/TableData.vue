@@ -100,6 +100,10 @@ export default {
                     font-size: 12pt;
                     font-weight: 500;
 
+                    @media (max-width: 1558px) {
+                        width: 200px;
+                    }
+
                     &:nth-child(1) {
                         border-right: 1px solid #dee2e685;
                         border-radius: 20px 0 0 0;

@@ -24,6 +24,7 @@ const exampleItems = [...Array(150).keys()].map((i) => ({
 }));
 
 export default {
+    name: "UserTable",
     data() {
         return {
             exampleItems,

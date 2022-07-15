@@ -18,19 +18,19 @@
 
 <script>
 import TableData from "./TableData.vue";
-// import DialogBox from "./DialogBox.vue";
+import DialogBox from "./DialogBox.vue";
 
 export default {
     components: {
-        // DialogBox,
+        DialogBox,
         TableData,
     },
 
     methods: {
-        logout() {
+        async logout() {
             let token = "Bearer " + localStorage.getItem("token");
 
-            axios
+            await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
                 .then((res) => {
                     localStorage.removeItem("token");
@@ -69,6 +69,10 @@ export default {
             font-weight: 700;
             text-align: center;
             margin-top: 30px;
+
+            @media (max-width: 1558px) {
+                font-size: 18pt;
+            }
         }
 
         ul {
@@ -85,6 +89,10 @@ export default {
                         background-color: #383838;
                         color: white;
                     }
+
+                    @media (max-width: 1558px) {
+                        font-size: 12pt;
+                    }
                 }
             }
         }
@@ -95,11 +103,16 @@ export default {
             background: rgb(250, 121, 0);
             border-radius: 5px;
             color: white;
+            font-size: 11pt;
 
             transition: all 0.2s ease;
 
             &:hover {
                 background-color: rgb(223, 108, 0);
+            }
+
+            @media (max-width: 1558px) {
+                padding: 10px 28px;
             }
         }
     }
