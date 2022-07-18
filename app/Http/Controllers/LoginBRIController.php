@@ -121,6 +121,8 @@ class LoginBRIController extends Controller
         /** Menglogout username & mendelete token yang sedang diakses */
 
         $request->user()->currentAccessToken()->delete();
+
+
         return response()->json('Succesful Logout', 200);
     }
 }

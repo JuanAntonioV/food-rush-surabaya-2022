@@ -6,6 +6,7 @@ use App\Models\DashboardBRI;
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
 use App\Mail\StatusDashboardBRI;
+use App\Helpers\ApiUserBRIFormatter;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\ApiDashboardBRIFormatter;
 
@@ -52,7 +53,7 @@ class DashboardBRIController extends Controller
 
         /** Melakukan validasi */
         if (!$request->no_akun || !$request->nama_akun) {
-            return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
+            return ApiUserBRIFormatter::createApi(400, 'Nomor Akun dan Nama Akun tidak boleh kosong!');
         }
 
         /** Mendaftar no akun rekening & nama rekening di BRI */
