@@ -2389,12 +2389,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.put("/api/dashboardBRIs/" + userID, {
                   status: "1"
                 }).then(function () {
-                  _this2.$route.push({
-                    name: "Pending",
-                    params: {
-                      category: "Pending"
-                    }
-                  });
+                  location.reload();
                 })["catch"](function (err) {
                   console.log(err);
                 });
@@ -2422,12 +2417,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.put("/api/dashboardBRIs/" + userID, {
                   status: "3"
                 }).then(function () {
-                  _this3.$route.go({
-                    name: "Pending",
-                    params: {
-                      category: "Pending"
-                    }
-                  });
+                  location.reload();
                 })["catch"](function (err) {
                   console.log(err);
                 });

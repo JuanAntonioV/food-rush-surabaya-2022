@@ -130,10 +130,7 @@ export default {
                     status: "1",
                 })
                 .then(() => {
-                    this.$route.push({
-                        name: "Pending",
-                        params: { category: "Pending" },
-                    });
+                    location.reload();
                 })
                 .catch((err) => {
                     console.log(err);
@@ -146,10 +143,7 @@ export default {
                     status: "3",
                 })
                 .then(() => {
-                    this.$route.go({
-                        name: "Pending",
-                        params: { category: "Pending" },
-                    });
+                    location.reload();
                 })
                 .catch((err) => {
                     console.log(err);
