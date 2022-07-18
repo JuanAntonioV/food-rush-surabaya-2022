@@ -36,10 +36,20 @@
                         {{ user.status === "3" ? "Declined" : "" }}
                     </td>
                     <td data-label="Actions">
-                        <button class="btn" @click="showDialog = true">
+                        <button
+                            class="btn"
+                            @click.prevent="
+                                (showDialogTerima = true), (userID = user.id)
+                            "
+                        >
                             Terima
                         </button>
-                        <button class="btn" @click="showDialogUser = true">
+                        <button
+                            class="btn"
+                            @click.prevent="
+                                (showDialogTolak = true), (userID = user.id)
+                            "
+                        >
                             Tolak
                         </button>
                     </td>
@@ -48,16 +58,18 @@
         </table>
 
         <DialogBox
-            :show="showDialog"
+            :show="showDialogTerima"
             :cancel="cancel"
+            :userID="userID"
             :confirm="terimaUser"
             title="Konfirmasi Perubahan Status"
             description="Anda yakin ingin menerima user ini?"
         />
 
         <DialogBox
-            :show="showDialogUser"
+            :show="showDialogTolak"
             :cancel="cancel"
+            :userID="userID"
             :confirm="tolakUser"
             title="Konfirmasi Perubahan Status"
             description="Anda yakin ingin menolak user ini?"
@@ -83,8 +95,9 @@ export default {
         return {
             users: [],
             pageItems: [],
-            showDialog: false,
-            showDialogUser: false,
+            userID: null,
+            showDialogTerima: false,
+            showDialogTolak: false,
         };
     },
     mounted() {
@@ -108,16 +121,40 @@ export default {
         },
         cancel() {
             console.log("Cancel");
-            this.showDialog = false;
-            this.showDialogUser = false;
+            this.showDialogTolak = false;
+            this.showDialogTerima = false;
         },
-        terimaUser() {
-            console.log(this.pageItems);
-            this.showDialog = false;
+        async terimaUser(userID) {
+            await axios
+                .put("/api/dashboardBRIs/" + userID, {
+                    status: "1",
+                })
+                .then(() => {
+                    this.$route.push({
+                        name: "Pending",
+                        params: { category: "Pending" },
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+            this.showDialogTerima = false;
         },
-        tolakUser() {
-            console.log("Tolak");
-            this.showDialogUser = false;
+        async tolakUser(userID) {
+            await axios
+                .put("/api/dashboardBRIs/" + userID, {
+                    status: "3",
+                })
+                .then(() => {
+                    this.$route.go({
+                        name: "Pending",
+                        params: { category: "Pending" },
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+            this.showDialogTolak = false;
         },
     },
 };

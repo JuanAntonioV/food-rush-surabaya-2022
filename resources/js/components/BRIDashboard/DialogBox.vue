@@ -9,8 +9,15 @@
             <hr />
 
             <div class="dialog__footer">
-                <button @click="cancel" class="dialog__cancel">Cancel</button>
-                <button @click="confirm" class="dialog__confirm">Yes</button>
+                <button @click.prevent="cancel" class="dialog__cancel">
+                    Cancel
+                </button>
+                <button
+                    @click.prevent="confirm(userID)"
+                    class="dialog__confirm"
+                >
+                    Yes
+                </button>
             </div>
         </div>
     </div>
@@ -19,7 +26,7 @@
 <script>
 export default {
     name: "DialogBox",
-    props: ["show", "title", "description", "cancel", "confirm"],
+    props: ["show", "title", "description", "cancel", "confirm", "userID"],
 };
 </script>
 

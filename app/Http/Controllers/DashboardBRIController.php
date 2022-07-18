@@ -26,7 +26,7 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Success', $data);
+            return ApiFormatter::createApi(200, 'Success', $data);
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
