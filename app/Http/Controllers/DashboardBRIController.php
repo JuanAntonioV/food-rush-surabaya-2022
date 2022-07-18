@@ -26,9 +26,9 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Success', $data);
+            return ApiFormatter::createApi(200, 'Success', $data);
         } else {
-            return ApiDashboardBRIFormatter::createApi(400, 'Failed');
+            return ApiFormatter::createApi(400, 'Failed');
         }
     }
 
@@ -89,9 +89,9 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiUserBRIFormatter::createApi(200, 'Success');
+            return ApiDashboardBRIFormatter::createApi(200, 'Success');
         } else {
-            return ApiUserBRIFormatter::createApi(400, 'Failed');
+            return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
     }
 
@@ -134,10 +134,10 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($request->status == "1") {
-            Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+            // Mail::to('fake@email.com')->send(new StatusDashboardBRI());
             return ApiDashboardBRIFormatter::createApi(200, 'Status change to Approve');
         } elseif ($request->status  == "3") {
-            Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+            // Mail::to('fake@email.com')->send(new StatusDashboardBRI());
             return ApiDashboardBRIFormatter::createApi(200, 'Status change to Decline');
         } else {
             return ApiFormatter::createApi(400, 'Failed');
