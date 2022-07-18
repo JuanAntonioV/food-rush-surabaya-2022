@@ -52,7 +52,7 @@ export default {
                 .then((res) => {
                     if (res.data.token) {
                         localStorage.setItem("token", res.data.token);
-                        this.$router.push({ name: "BRIDashboard" });
+                        this.$router.push({ name: "Dashboard" });
                     }
                 })
                 .catch((err) => {

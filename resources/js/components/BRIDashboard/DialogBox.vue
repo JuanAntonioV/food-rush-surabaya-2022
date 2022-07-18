@@ -10,9 +10,7 @@
 
             <div class="dialog__footer">
                 <button @click="cancel" class="dialog__cancel">Cancel</button>
-                <button @click="confirm" class="dialog__confirm">
-                    Yes, delete it
-                </button>
+                <button @click="confirm" class="dialog__confirm">Yes</button>
             </div>
         </div>
     </div>
@@ -21,6 +19,7 @@
 <script>
 export default {
     name: "DialogBox",
+    props: ["show", "title", "description", "cancel", "confirm"],
 };
 </script>
 

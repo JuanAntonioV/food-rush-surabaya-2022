@@ -1,13 +1,12 @@
 <template>
-    <div class="table-container">
-        <table class="table">
+    <div class="containers">
+        <table>
             <thead>
                 <tr>
                     <th>Nama Lengkap</th>
                     <th>Nomor Rekening</th>
                     <th>Tanggal Registrasi</th>
                     <th>Status</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,14 +22,17 @@
                             )
                         }}
                     </td>
-                    <td data-label="Status">
-                        {{ user.status }}
-                    </td>
-                    <td data-label="Actions">
-                        <button class="btn" @click="konfirTerima">
-                            Terima
-                        </button>
-                        <button class="btn" @click="konfirTolak">Tolak</button>
+                    <td
+                        data-label="Status"
+                        :class="{
+                            approved: user.status === '1',
+                            warning: user.status === '2',
+                            declined: user.status === '3',
+                        }"
+                    >
+                        {{ user.status === "1" ? "Approved" : "" }}
+                        {{ user.status === "2" ? "Pending" : "" }}
+                        {{ user.status === "3" ? "Declined" : "" }}
                     </td>
                 </tr>
             </tbody>
@@ -39,7 +41,7 @@
         <div class="tabs">
             <pagination
                 class="pagination"
-                :pageSize="10"
+                :pageSize="12"
                 :items="users"
                 @changePage="onChangePage"
             ></pagination>
@@ -49,7 +51,7 @@
 
 <script>
 export default {
-    name: "TableData",
+    name: "PendingTable",
     data() {
         return {
             users: [],
@@ -60,7 +62,9 @@ export default {
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
-                this.users = res.data.data;
+                this.users = res.data.data.filter(
+                    (user) => user.status === "3"
+                );
             })
             .catch((err) => {
                 console.log(err);
@@ -81,63 +85,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.table-container {
+.containers {
     font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 2.3rem;
 
-    .table {
-        thead {
+    h1 {
+        font-size: 16pt;
+        font-weight: 600;
+    }
+
+    table {
+        background: white;
+        width: 100%;
+        border-radius: 2rem;
+        padding: 1.8rem;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        tbody {
+            height: 2.8rem;
+            color: #677483;
+
+            .approved {
+                color: #41f1b6;
+            }
+
+            .warning {
+                color: #ffbb55;
+            }
+
+            .declined {
+                color: #ff7782;
+            }
+
             tr {
-                th {
-                    width: 300px;
-                    background-color: #252525;
-                    color: white;
-                    padding: 20px 0;
-                    text-align: center;
-                    font-size: 12pt;
-                    font-weight: 500;
+                td {
+                    border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+                    padding: 0.8rem 0;
 
-                    @media (max-width: 1558px) {
-                        width: 200px;
-                    }
-
-                    &:nth-child(1) {
-                        border-right: 1px solid #dee2e685;
-                        border-radius: 20px 0 0 0;
-                    }
-
-                    &:nth-child(2) {
-                        border-right: 1px solid #dee2e685;
-                    }
-
-                    &:nth-child(3) {
-                        border-right: 1px solid #dee2e685;
+                    &:first-child {
+                        text-transform: capitalize;
                     }
 
                     &:nth-child(4) {
-                        border-right: 1px solid #dee2e685;
+                        font-weight: 600;
                     }
-
-                    &:nth-child(5) {
-                        border-radius: 0 20px 0 0;
-                    }
-                }
-            }
-        }
-        tbody {
-            tr {
-                td {
-                    text-align: center;
-                    font-size: 12pt;
-                    font-weight: 400;
-                    padding: 16px 0;
-                    letter-spacing: 0.35px;
-                    border: 1px solid #dee2e685;
-
-                    line-height: 40px;
 
                     button {
                         color: white;
@@ -169,8 +161,10 @@ export default {
                     }
                 }
 
-                &:nth-child(even) {
-                    background-color: #00bbd427;
+                &:last-child {
+                    td {
+                        border: none;
+                    }
                 }
             }
         }
