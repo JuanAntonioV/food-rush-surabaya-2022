@@ -17,7 +17,7 @@ class CreateDashboardBRISTable extends Migration
             $table->bigIncrements('id');
             $table->string('no_akun');
             $table->string('nama_akun');
-            $table->enum('status', ['Approve', 'Pending', 'Reject'])->default('Pending');
+            $table->enum('status', ['1', '2', '3'])->default('2');
             $table->timestamps();
         });
     }

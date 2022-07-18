@@ -6,8 +6,8 @@ use App\Models\DashboardBRI;
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
 use App\Mail\StatusDashboardBRI;
-use Illuminate\Support\Facades\Mail;
 use App\Helpers\ApiUserBRIFormatter;
+use Illuminate\Support\Facades\Mail;
 use App\Helpers\ApiDashboardBRIFormatter;
 
 class DashboardBRIController extends Controller
@@ -26,7 +26,7 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiFormatter::createApi(200, 'Success', $data);
+            return ApiDashboardBRIFormatter::createApi(200, 'Success');
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
@@ -53,7 +53,7 @@ class DashboardBRIController extends Controller
 
         /** Melakukan validasi */
         if (!$request->no_akun || !$request->nama_akun) {
-            return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
+            return ApiUserBRIFormatter::createApi(400, 'Nomor Akun dan Nama Akun tidak boleh kosong!');
         }
 
         /** Mendaftar no akun rekening & nama rekening di BRI */
@@ -62,12 +62,14 @@ class DashboardBRIController extends Controller
             'nama_akun' =>  $request->nama_akun
         ]);
 
+        /* Return hasil API */
+
         $data = DashboardBRI::where('id', '=', $dashboardbri->id)->get();
 
         if ($data) {
-            return ApiFormatter::createApi(200, 'Success', $data);
+            return ApiDashboardBRIFormatter::createApi(200, 'Success');
         } else {
-            return ApiFormatter::createApi(400, 'Failed');
+            return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
     }
 
@@ -87,9 +89,9 @@ class DashboardBRIController extends Controller
         /* Return hasil API */
 
         if ($data) {
-            return ApiFormatter::createApi(200, 'Success', $data);
+            return ApiUserBRIFormatter::createApi(200, 'Success');
         } else {
-            return ApiFormatter::createApi(400, 'Failed');
+            return ApiUserBRIFormatter::createApi(400, 'Failed');
         }
     }
 
@@ -113,23 +115,30 @@ class DashboardBRIController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'status'    =>  'required',
-        ]);
-
+        /** Mencari data dashboard BRI ID */
         $dashboardbri = DashboardBRI::findOrFail($id);
 
+        /** Melakukan Validate */
+        $request->validate(
+            [
+                'status'    =>  'required',
+            ],
+            ['status.required'  =>  'Status tidak boleh kosong']
+        );
+
+        /** Mengupdate status dashboard BRI */
         $dashboardbri->update([
             'status'    =>  $request->status
         ]);
 
-        $data = DashboardBRI::where('id', '=', $dashboardbri->id)->get();
-
         /* Return hasil API */
 
-        if ($data) {
+        if ($request->status == "1") {
             Mail::to('fake@email.com')->send(new StatusDashboardBRI());
-            return ApiFormatter::createApi(200, 'Success', $data);
+            return ApiDashboardBRIFormatter::createApi(200, 'Status change to Approve');
+        } elseif ($request->status  == "3") {
+            Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+            return ApiDashboardBRIFormatter::createApi(200, 'Status change to Decline');
         } else {
             return ApiFormatter::createApi(400, 'Failed');
         }
