@@ -21,7 +21,6 @@ class UserBRI
     {
         if (Auth::check()) {
 
-
             User::where('id', Auth::user()->id)->update(['last_used_at' => Carbon::now()]);
         }
 

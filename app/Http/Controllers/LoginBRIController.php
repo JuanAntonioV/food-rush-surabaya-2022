@@ -21,16 +21,7 @@ class LoginBRIController extends Controller
      */
     public function index()
     {
-        /** Menampilkan semua data */
-        $data = UserBRI::all();
-
-        /* Return hasil API */
-
-        if ($data) {
-            return ApiFormatter::createApi(200, 'Success', $data);
-        } else {
-            return ApiFormatter::createApi(400, 'Failed');
-        }
+        //
     }
 
     /**
