@@ -98,6 +98,7 @@ export default {
             userID: null,
             showDialogTerima: false,
             showDialogTolak: false,
+            loading: false,
         };
     },
     mounted() {

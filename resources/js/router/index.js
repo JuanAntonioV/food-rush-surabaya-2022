@@ -48,9 +48,9 @@ const routes = [
         path: "/bridashboard",
         name: "BRIDashboard",
         component: BRIDashboard,
-        // meta: {
-        //     requiresAuth: true,
-        // },
+        meta: {
+            requiresAuth: true,
+        },
         children: [
             {
                 path: "/Dashboard",
@@ -89,8 +89,7 @@ const router = new VueRouter({
 });
 
 function inLogin() {
-    return false;
-    // return localStorage.getItem("token");
+    return localStorage.getItem("token");
 }
 
 router.beforeEach((to, from, next) => {
@@ -106,7 +105,7 @@ router.beforeEach((to, from, next) => {
     } else if (to.matched.some((record) => record.meta.requiresGuest)) {
         if (inLogin()) {
             next({
-                path: "/bridashboard",
+                path: "/Dashboard",
                 query: { redirect: to.fullPath },
             });
         } else {

@@ -88,6 +88,9 @@
                     </tr>
                 </tbody>
             </table>
+
+            <Loading v-if="loading" />
+
             <router-link
                 :to="{ name: 'Pending', params: { category: 'Pending' } }"
             >
@@ -98,6 +101,8 @@
 </template>
 
 <script>
+import Loading from "../loading/Loading.vue";
+
 export default {
     name: "Dashboard",
     data() {
@@ -105,9 +110,11 @@ export default {
             users: [],
             usersPending: [],
             usersDeclined: [],
+            loading: false,
         };
     },
     mounted() {
+        this.loading = true;
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
@@ -118,10 +125,15 @@ export default {
                 this.usersDeclined = res.data.data.filter(
                     (user) => user.status === "3"
                 );
+                this.loading = false;
             })
             .catch((err) => {
                 console.log(err);
+                this.loading = false;
             });
+    },
+    components: {
+        Loading,
     },
 };
 </script>
@@ -205,6 +217,7 @@ main {
     }
 
     .recent-change {
+        position: relative;
         margin-top: 2rem;
 
         h2 {
