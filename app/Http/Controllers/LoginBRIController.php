@@ -119,11 +119,11 @@ class LoginBRIController extends Controller
     public function logout(Request $request)
     {
         /** Menglogout username & mendelete token yang sedang diakses */
-        try{
-            $userID = explode('|',$request->bearerToken())[0];
+        try {
+            $userID = explode('|', $request->bearerToken())[0];
             UserBRI::DeleteToken($userID);
             return response()->json('Succesful Logout', 200);
-        }catch(err){
+        } catch (err) {
             return response()->json(err, 400);
         }
     }

@@ -26,7 +26,8 @@ class UserBRI extends Authenticatable
         'remember_token',
     ];
 
-    public static function DeleteToken($id){
+    public static function DeleteToken($id)
+    {
         DB::table('personal_access_tokens')->where('id', $id)->delete();
     }
 }
