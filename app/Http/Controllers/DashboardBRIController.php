@@ -123,7 +123,9 @@ class DashboardBRIController extends Controller
             [
                 'status'    =>  'required',
             ],
-            ['status.required'  =>  'Status tidak boleh kosong']
+            [
+                'status.required'  =>  'Status tidak boleh kosong'
+            ]
         );
 
         /** Mengupdate status dashboard BRI */
