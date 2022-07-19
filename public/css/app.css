@@ -743,6 +743,12 @@ video {
 .relative {
   position: relative;
 }
+.top-\[55\%\] {
+  top: 55%;
+}
+.left-\[55\%\] {
+  left: 55%;
+}
 .block {
   display: block;
 }
@@ -755,6 +761,14 @@ video {
 .grid {
   display: grid;
 }
+.translate-x-\[-55\%\] {
+  --tw-translate-x: -55%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-\[-55\%\] {
+  --tw-translate-y: -55%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -763,6 +777,9 @@ video {
 }
 .border {
   border-width: 1px;
+}
+.text-\[10pt\] {
+  font-size: 10pt;
 }
 .uppercase {
   text-transform: uppercase;

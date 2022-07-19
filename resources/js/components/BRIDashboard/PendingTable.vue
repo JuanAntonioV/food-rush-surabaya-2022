@@ -57,6 +57,9 @@
             </tbody>
         </table>
 
+        <Loading v-if="loading" />
+        <NoData v-if="this.users.length == 0 && !loading" />
+
         <DialogBox
             :show="showDialogTerima"
             :cancel="cancel"
@@ -88,6 +91,8 @@
 
 <script>
 import DialogBox from "./DialogBox.vue";
+import Loading from "../Handler/Loading.vue";
+import NoData from "../Handler/NoData.vue";
 
 export default {
     name: "PendingTable",
@@ -102,21 +107,29 @@ export default {
         };
     },
     mounted() {
-        axios
-            .get("/api/dashboardBRIs")
-            .then((res) => {
-                this.users = res.data.data.filter(
-                    (user) => user.status === "2"
-                );
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        this.fetch();
     },
     components: {
         DialogBox,
+        Loading,
+        NoData,
     },
     methods: {
+        async fetch() {
+            this.loading = true;
+            await axios
+                .get("/api/dashboardBRIs")
+                .then((res) => {
+                    this.users = res.data.data.filter(
+                        (user) => user.status === "2"
+                    );
+                    this.loading = false;
+                })
+                .catch((err) => {
+                    this.loading = false;
+                    console.log(err);
+                });
+        },
         onChangePage(pageItems) {
             this.pageItems = pageItems;
         },
@@ -126,27 +139,33 @@ export default {
             this.showDialogTerima = false;
         },
         async terimaUser(userID) {
+            this.loading = true;
             await axios
                 .put("/api/dashboardBRIs/" + userID, {
                     status: "1",
                 })
                 .then(() => {
-                    location.reload();
+                    this.fetch();
+                    this.loading = false;
                 })
                 .catch((err) => {
+                    this.loading = false;
                     console.log(err);
                 });
             this.showDialogTerima = false;
         },
         async tolakUser(userID) {
+            this.loading = true;
             await axios
                 .put("/api/dashboardBRIs/" + userID, {
                     status: "3",
                 })
                 .then(() => {
-                    location.reload();
+                    this.fetch();
+                    this.loading = false;
                 })
                 .catch((err) => {
+                    this.loading = false;
                     console.log(err);
                 });
             this.showDialogTolak = false;
