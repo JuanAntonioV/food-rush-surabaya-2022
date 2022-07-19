@@ -118,7 +118,9 @@ export default {
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
-                this.users = res.data.data;
+                this.users = res.data.data.sort((a, b) => {
+                    return new Date(b.updated_at) - new Date(a.updated_at);
+                });
                 this.usersPending = res.data.data.filter(
                     (user) => user.status === "2"
                 );
