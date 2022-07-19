@@ -18,8 +18,9 @@ export default {
 <style lang="scss" scoped>
 .gooey {
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 55%;
+    left: 55%;
+    translate: translate(-55%, -55%);
     width: 142px;
     height: 40px;
     margin: -20px 0 0 -71px;

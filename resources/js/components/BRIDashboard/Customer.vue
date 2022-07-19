@@ -49,7 +49,7 @@ main {
 
     .category {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
 
         .subMenu {

@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                     <tr
-                        v-for="user in users.filter((item) => item.id <= 10)"
+                        v-for="user in usersLastUpdated.slice(0, 10)"
                         :key="user.id"
                     >
                         <td data-label="Nama Lengkap">{{ user.nama_akun }}</td>
@@ -89,9 +89,13 @@
                 </tbody>
             </table>
 
-            <Loading v-if="loading" />
+            <div v-if="this.usersLastUpdated.length == 0" class="handler">
+                <Loading v-if="loading" />
+                <NoData v-if="!loading" />
+            </div>
 
             <router-link
+                v-if="this.usersLastUpdated.length !== 0 && !loading"
                 :to="{ name: 'Pending', params: { category: 'Pending' } }"
             >
                 Show All
@@ -101,7 +105,8 @@
 </template>
 
 <script>
-import Loading from "../loading/Loading.vue";
+import Loading from "../Handler/Loading.vue";
+import NoData from "../Handler/NoData.vue";
 
 export default {
     name: "Dashboard",
@@ -110,6 +115,7 @@ export default {
             users: [],
             usersPending: [],
             usersDeclined: [],
+            usersLastUpdated: [],
             loading: false,
         };
     },
@@ -118,14 +124,15 @@ export default {
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
-                this.users = res.data.data.sort((a, b) => {
-                    return new Date(b.updated_at) - new Date(a.updated_at);
-                });
+                this.users = res.data.data;
                 this.usersPending = res.data.data.filter(
                     (user) => user.status === "2"
                 );
                 this.usersDeclined = res.data.data.filter(
                     (user) => user.status === "3"
+                );
+                this.usersLastUpdated = res.data.data.sort(
+                    (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
                 );
                 this.loading = false;
             })
@@ -136,6 +143,7 @@ export default {
     },
     components: {
         Loading,
+        NoData,
     },
 };
 </script>
@@ -149,16 +157,22 @@ main {
         font-size: 16pt;
         font-weight: 600;
     }
+    small {
+        color: #7d8da1;
+    }
+
+    .handler {
+        position: relative;
+        display: block;
+        height: 30vh;
+        left: -5%;
+    }
 
     .insights {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.6rem;
         user-select: none;
-
-        small {
-            color: #7d8da1;
-        }
 
         h3 {
             margin: 1rem 0 0.6rem;
@@ -171,7 +185,7 @@ main {
             width: 100px;
             height: 40px;
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
 
             h1 {

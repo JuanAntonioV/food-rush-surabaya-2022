@@ -38,6 +38,9 @@
             </tbody>
         </table>
 
+        <Loading v-if="loading" />
+        <NoData v-if="this.users.length == 0 && !loading" />
+
         <div class="tabs">
             <pagination
                 class="pagination"
@@ -50,35 +53,40 @@
 </template>
 
 <script>
+import Loading from "../Handler/Loading.vue";
+import NoData from "../Handler/NoData.vue";
+
 export default {
     name: "PendingTable",
     data() {
         return {
             users: [],
             pageItems: [],
+            loading: false,
         };
     },
     mounted() {
+        this.loading = true;
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
                 this.users = res.data.data.filter(
                     (user) => user.status === "1"
                 );
+                this.loading = false;
             })
             .catch((err) => {
+                this.loading = false;
                 console.log(err);
             });
+    },
+    components: {
+        Loading,
+        NoData,
     },
     methods: {
         onChangePage(pageItems) {
             this.pageItems = pageItems;
-        },
-        konfirTerima() {
-            alert("terima");
-        },
-        konfirTolak() {
-            alert("tolak");
         },
     },
 };
