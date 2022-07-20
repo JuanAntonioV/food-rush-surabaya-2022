@@ -2067,10 +2067,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
-    directBRI: function directBRI() {
-      this.$router.push({
-        name: "BRILogin"
-      });
+    handlerClick: function handlerClick() {
+      alert("You have voted");
     }
   }
 });
@@ -2622,14 +2620,27 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "containers"
-  }, [_c("h1", [_vm._v("FOOD RUST SURABAYA 2022")]), _vm._v(" "), _c("button", {
+  }, [_c("table", {
+    staticClass: "table table-striped table-bordered w-[50vh]"
+  }, [_vm._m(0), _vm._v(" "), _c("tbody", [_c("tr", [_c("td", [_vm._v("#1239")]), _vm._v(" "), _c("td", [_vm._v("Tim Kacau")]), _vm._v(" "), _c("td", [_c("button", {
+    staticClass: "btn bg-slate-700 text-white",
     on: {
-      click: _vm.directBRI
+      click: _vm.handlerClick
     }
-  }, [_vm._v("Login As BRI Admin")])]);
+  }, [_vm._v("\n                        Vote\n                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("#1319")]), _vm._v(" "), _c("td", [_vm._v("Tim Hancur")]), _vm._v(" "), _c("td", [_c("button", {
+    staticClass: "btn bg-slate-700 text-white",
+    on: {
+      click: _vm.handlerClick
+    }
+  }, [_vm._v("\n                        Vote\n                    ")])])])])])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID Tim")]), _vm._v(" "), _c("th", [_vm._v("Nama Tim")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
+}];
 render._withStripped = true;
 
 
@@ -2683,7 +2694,7 @@ var render = function render() {
   }, [_c("pagination", {
     staticClass: "pagination",
     attrs: {
-      pageSize: 12,
+      pageSize: 10,
       items: _vm.users
     },
     on: {
@@ -2956,7 +2967,7 @@ var render = function render() {
   }, [_c("pagination", {
     staticClass: "pagination",
     attrs: {
-      pageSize: 12,
+      pageSize: 10,
       items: _vm.users
     },
     on: {
@@ -3560,64 +3571,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _modules_userBRI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/userBRI */ "./resources/js/store/modules/userBRI.js");
 
 
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]); // import userBRI from "./modules/userBRI";
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({}));
-
-/***/ }),
-
-/***/ "./resources/js/store/modules/userBRI.js":
-/*!***********************************************!*\
-  !*** ./resources/js/store/modules/userBRI.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// import { axios } from "vue/types/umd";
-var state = {// userBRI: {
-  //     username: "",
-  //     password: "",
-  // },
-  // errors: [],
-};
-var getters = {// setErrors: (state) => state.errors,
-};
-var mutations = {// setErrors(state, setErrors) {
-  //     state.errors = setErrors;
-  // },
-};
-var actions = {// // create the actions for the post data
-  // async postUserBRI({ commit }, userBRI) {
-  //     try {
-  //         await axios
-  //             .post("/api/login", userBRI)
-  //             .then((res) => {
-  //                 if (res.data.token) {
-  //                     localStorage.setItem("token", res.data.token);
-  //                 }
-  //             })
-  //             .catch((err) => {
-  //                 commit("setErrors", err.response.data.message);
-  //             });
-  //     } catch (error) {
-  //         commit("setErrors", error.response.data.message);
-  //     }
-  // },
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  namespaced: true,
-  state: state,
-  getters: getters,
-  actions: actions,
-  mutations: mutations
-});
 
 /***/ }),
 
@@ -3648,7 +3606,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-332fccf4] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 90vh;\n}\n.containers h1[data-v-332fccf4] {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 26pt;\n  font-weight: 700;\n  text-align: center;\n}\n.containers button[data-v-332fccf4] {\n  font-family: \"Poppins\", sans-serif;\n  background-color: #00bcd4;\n  color: white;\n  border: none;\n  border-radius: 30px;\n  padding: 16px 50px;\n  margin: 10px 0;\n  transition: 0.3s ease;\n  box-shadow: 0 10px 30px -2px rgba(0, 0, 0, 0.3);\n}\n.containers button[data-v-332fccf4]:focus {\n  outline: none;\n}\n.containers button[data-v-332fccf4]:hover {\n  box-shadow: none;\n  background-color: #009eb3;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-332fccf4] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 90vh;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3672,7 +3630,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-33c48c64] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-33c48c64] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-33c48c64] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-33c48c64] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-33c48c64] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-33c48c64] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-33c48c64] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-33c48c64] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-33c48c64]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-33c48c64]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-33c48c64] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-33c48c64] {\n  border: none;\n}\n.containers .tabs[data-v-33c48c64] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-33c48c64] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-33c48c64] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-33c48c64] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-33c48c64] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-33c48c64] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-33c48c64] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-33c48c64] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-33c48c64] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-33c48c64] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-33c48c64] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-33c48c64]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-33c48c64]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-33c48c64] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-33c48c64] {\n  border: none;\n}\n.containers .tabs[data-v-33c48c64] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-33c48c64] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3768,7 +3726,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-76e05a37] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-76e05a37] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-76e05a37] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-76e05a37] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-76e05a37] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-76e05a37] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-76e05a37] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-76e05a37] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-76e05a37]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-76e05a37]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-76e05a37] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-76e05a37] {\n  border: none;\n}\n.containers .tabs[data-v-76e05a37] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-76e05a37] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-76e05a37] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-76e05a37] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-76e05a37] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-76e05a37] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-76e05a37] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-76e05a37] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-76e05a37] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-76e05a37] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-76e05a37] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-76e05a37]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-76e05a37]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-76e05a37] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-76e05a37] {\n  border: none;\n}\n.containers .tabs[data-v-76e05a37] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-76e05a37] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3840,7 +3798,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-41215450] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-41215450] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-41215450] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-41215450] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-41215450] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-41215450] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-41215450] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-41215450] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-41215450]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-41215450]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-41215450] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-41215450]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-41215450] {\n  border: none;\n}\n.containers .tabs[data-v-41215450] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-41215450] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-41215450] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-41215450] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-41215450] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-41215450] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-41215450] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-41215450] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-41215450] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-41215450] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-41215450] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-41215450]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-41215450]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-41215450] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-41215450]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-41215450] {\n  border: none;\n}\n.containers .tabs[data-v-41215450] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-41215450] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
