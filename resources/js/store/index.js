@@ -5,4 +5,8 @@ Vue.use(Vuex);
 
 // import userBRI from "./modules/userBRI";
 
-export default new Vuex.Store({});
+export default new Vuex.Store({
+    modules: {
+        // userBRI
+    },
+});
