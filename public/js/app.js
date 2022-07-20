@@ -3404,6 +3404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /* harmony import */ var jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jw-vue-pagination */ "./node_modules/jw-vue-pagination/lib/JwPagination.js");
 /* harmony import */ var jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
@@ -3413,8 +3414,10 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].component("pagination", (jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4___default()));
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_1__["default"], (axios__WEBPACK_IMPORTED_MODULE_0___default()));
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_1__["default"], (axios__WEBPACK_IMPORTED_MODULE_0___default()), vuex__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_5__["default"]({
   el: "#app",
   router: _router__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -3557,23 +3560,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _modules_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/user */ "./resources/js/store/modules/user.js");
+/* harmony import */ var _modules_userBRI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/userBRI */ "./resources/js/store/modules/userBRI.js");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
-  state: {
-    users: _modules_user__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }
-}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({}));
 
 /***/ }),
 
-/***/ "./resources/js/store/modules/user.js":
-/*!********************************************!*\
-  !*** ./resources/js/store/modules/user.js ***!
-  \********************************************/
+/***/ "./resources/js/store/modules/userBRI.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/userBRI.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3581,78 +3580,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-var state = {
-  user: [{
-    id: 1,
-    nama: "John Doe",
-    noRekening: "123456789",
-    tanggalRegistrasi: "01-07-2022",
-    openVote: true
-  }, {
-    id: 2,
-    nama: "Juan Antonio",
-    noRekening: "987654321",
-    tanggalRegistrasi: "04-07-2022",
-    openVote: true
-  }, {
-    id: 3,
-    nama: "Samsudin Jaya",
-    noRekening: "128392837",
-    tanggalRegistrasi: "10-07-2022",
-    openVote: true
-  }, {
-    id: 4,
-    nama: "Reynaldo",
-    noRekening: "039271538",
-    tanggalRegistrasi: "28-06-2022",
-    openVote: true
-  }, {
-    id: 5,
-    nama: "Hendri Pahlawan",
-    noRekening: "2836194920",
-    tanggalRegistrasi: "30-06-2022",
-    openVote: true
-  }, {
-    id: 6,
-    nama: "Jeslyn Sari",
-    noRekening: "1233419920",
-    tanggalRegistrasi: "21-07-2022",
-    openVote: true
-  }, {
-    id: 7,
-    nama: "Devi Lestari",
-    noRekening: "2391194920",
-    tanggalRegistrasi: "12-07-2022",
-    openVote: true
-  }, {
-    id: 8,
-    nama: "Denis Ardi",
-    noRekening: "128372629",
-    tanggalRegistrasi: "11-07-2022",
-    openVote: true
-  }, {
-    id: 9,
-    nama: "Rizki Santoso",
-    noRekening: "2937162938",
-    tanggalRegistrasi: "30-06-2022",
-    openVote: true
-  }, {
-    id: 10,
-    nama: "Liliyana",
-    noRekening: "283917282",
-    tanggalRegistrasi: "23-07-2022",
-    openVote: true
-  }, {
-    id: 11,
-    nama: "Jessica",
-    noRekening: "1293719202",
-    tanggalRegistrasi: "24-07-2022",
-    openVote: true
-  }]
+// import { axios } from "vue/types/umd";
+var state = {// userBRI: {
+  //     username: "",
+  //     password: "",
+  // },
+  // errors: [],
 };
-var getters = {};
-var actions = {};
-var mutations = {};
+var getters = {// setErrors: (state) => state.errors,
+};
+var mutations = {// setErrors(state, setErrors) {
+  //     state.errors = setErrors;
+  // },
+};
+var actions = {// // create the actions for the post data
+  // async postUserBRI({ commit }, userBRI) {
+  //     try {
+  //         await axios
+  //             .post("/api/login", userBRI)
+  //             .then((res) => {
+  //                 if (res.data.token) {
+  //                     localStorage.setItem("token", res.data.token);
+  //                 }
+  //             })
+  //             .catch((err) => {
+  //                 commit("setErrors", err.response.data.message);
+  //             });
+  //     } catch (error) {
+  //         commit("setErrors", error.response.data.message);
+  //     }
+  // },
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   namespaced: true,
   state: state,

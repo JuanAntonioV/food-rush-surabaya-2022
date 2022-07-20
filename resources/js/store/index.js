@@ -3,10 +3,6 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-import users from "./modules/user";
+// import userBRI from "./modules/userBRI";
 
-export default new Vuex.Store({
-    state: {
-        users,
-    },
-});
+export default new Vuex.Store({});
