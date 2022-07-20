@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\DashboardBRIController;
 use App\Http\Controllers\LoginBRIController;
+use App\Http\Controllers\LogVoteMemberController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\VoteMemberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +30,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 });
 
 Route::post('login', [LoginBRIController::class, 'login'])->name('login');
+
+Route::resource('member', MemberController::class);
+
+Route::resource('vote', VoteMemberController::class);
+
+Route::post('log-vote', [LogVoteMemberController::class, 'create']);
