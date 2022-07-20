@@ -31,8 +31,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::post('login', [LoginBRIController::class, 'login'])->name('login');
 
+// Table DB Member (GET, PUT)
 Route::resource('member', MemberController::class);
 
+// Table DB Vote (POST, PUT)
 Route::resource('vote', VoteMemberController::class);
 
+// Table DB Vote_Log (POST)
 Route::post('log-vote', [LogVoteMemberController::class, 'create']);

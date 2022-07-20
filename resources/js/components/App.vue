@@ -1,45 +1,16 @@
 <template>
     <div class="containers">
-        <table class="table table-striped table-bordered w-[50vh]">
-            <thead>
-                <tr>
-                    <th>ID Tim</th>
-                    <th>Nama Tim</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>#1239</td>
-                    <td>Tim Kacau</td>
-                    <td>
-                        <button
-                            @click="handlerClick"
-                            class="btn bg-slate-700 text-white"
-                        >
-                            Vote
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>#1319</td>
-                    <td>Tim Hancur</td>
-                    <td>
-                        <button
-                            @click="handlerClick"
-                            class="btn bg-slate-700 text-white"
-                        >
-                            Vote
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <TableTeam />
     </div>
 </template>
 
 <script>
+import TableTeam from "./TableTeam.vue";
+
 export default {
+    components: {
+        TableTeam,
+    },
     methods: {
         handlerClick() {
             alert("You have voted");
