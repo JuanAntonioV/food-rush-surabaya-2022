@@ -1,10 +1,6 @@
-import { axios } from "vue/types/umd";
+import { axios } from "axios";
 
 const state = {
-    userBRI: {
-        username: "",
-        password: "",
-    },
     errors: [],
 };
 const getters = {
@@ -24,13 +20,14 @@ const actions = {
                 .then((res) => {
                     if (res.data.token) {
                         localStorage.setItem("token", res.data.token);
+                        this.$route.push({ name: "Dashboard" });
                     }
                 })
                 .catch((err) => {
-                    commit("setErrors", err.response.data.message);
+                    commit("setErrors", err.message);
                 });
         } catch (error) {
-            commit("setErrors", error.response.data.message);
+            commit("setErrors", error.message);
         }
     },
 };
