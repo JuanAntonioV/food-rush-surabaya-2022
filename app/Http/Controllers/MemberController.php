@@ -7,6 +7,7 @@ use App\Models\MemberVote;
 use App\Models\VoteMember;
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
+use App\Models\LogVoteMember;
 use Illuminate\Support\Carbon;
 
 class MemberController extends Controller
@@ -92,21 +93,24 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /** Mencari data dashboard BRI ID */
         $member = Member::findOrFail($id);
 
-        /** Mengupdate status dashboard BRI */
-        $member->update([
-            'voting_access'    =>  1,
-        ]);
-
-        $data = Member::where('id', '=', $id)->get();
-
-        /* Return hasil API */
-
-        if ($data) {
-            return ApiFormatter::createApi(200, 'Telah berhasil voting', $data);
-        } else {
+        
+        $voting_access = Member::where('id', $id)->select('voting_access')->get();
+        // return $voting_access;
+        if($voting_access = '1')
+        {
+            return ApiFormatter::createApi(200, 'Member sudah di vote');
+        }elseif($voting_access = '0')
+        {
+            // $member->update([
+            //     'voting_access'    =>  1,
+            // ]);
+            // $this->create_log();
+            return ApiFormatter::createApi(200, 'Log telah ditambahkan');
+        }
+        else
+        {
             return ApiFormatter::createApi(400, 'Failed');
         }
     }
@@ -120,5 +124,15 @@ class MemberController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function create_log(Request $request)
+    {
+
+        $logvotemember = LogVoteMember::create([
+            'food_rush_vote_id' =>  $request->vote_id,
+            'voters_member_id'  =>  $request->member_id,
+            'created_at'    => Carbon::now()
+        ]);
     }
 }
