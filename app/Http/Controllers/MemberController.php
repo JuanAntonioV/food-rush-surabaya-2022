@@ -8,6 +8,7 @@ use App\Models\VoteMember;
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
 use App\Models\LogVoteMember;
+use App\Models\MemberDetail;
 use Illuminate\Support\Carbon;
 
 class MemberController extends Controller
@@ -20,7 +21,7 @@ class MemberController extends Controller
     public function index()
     {
         /** Menampilkan semua data yang ada di database  */
-        $data = Member::query()->take(10)->get();
+        $data = Member::all()->select('voting_access', 'id');
 
         /* Return hasil API */
 
@@ -98,25 +99,41 @@ class MemberController extends Controller
 
         /** Mengambil column voting access */
         $voting_access = Member::where('id', $id)->select('voting_access')->first();
+        /** Mengambil column phone & email verified */
+        $veri_member   = MemberDetail::where('member_id', $id)->select('phone_verified', 'email_verified')->first();
 
-        if ($voting_access->voting_access == 1) {
-            return ApiFormatter::createApi(200, 'Kamu sudah vote tidak bisa ngevote lagi!!');
-        } elseif ($voting_access->voting_access == 0) {
-            /** Mengupdate voting access menjadi 1 */
-            $member->update([
-                'voting_access'    =>  1,
-            ]);
+        /** Mengecek apakah sudah verified email dan telepon */
+        if ($veri_member->phone_verified == 1 && $veri_member->email_verified == 1) {
 
-            /** Menambah data log vote jika sudah mengvote */
-            $logvotemember = LogVoteMember::create([
-                'food_rush_vote_id' =>  $request->vote_id,
-                'voters_member_id'  =>  $id,
-                'created_at'    => Carbon::now()
-            ]);
-            /**Menambah vote number sesuai pilihan tersebut */
-            VoteMember::where('id', '=', $request->vote_id)->increment('vote_number', 1);
+            /** Mengecek apakah voting access sudah dipakai */
+            if ($voting_access->voting_access == 1) {
+                return ApiFormatter::createApi(200, 'Kamu sudah vote tidak bisa ngevote lagi!!');
+            } elseif ($voting_access->voting_access == 0) {
+                /** Mengupdate voting access menjadi 1 */
+                $member->update([
+                    'voting_access'    =>  1,
+                ]);
 
-            return ApiFormatter::createApi(200, 'Terima kasih sudah mengvote!!');
+                /** Menambah data log vote jika sudah mengvote */
+                LogVoteMember::create([
+                    'food_rush_vote_id' =>  $request->vote_id,
+                    'voters_member_id'  =>  $id,
+                    'created_at'    => Carbon::now()
+                ]);
+                /**Menambah vote number sesuai pilihan tersebut */
+                VoteMember::where('id', '=', $request->vote_id)->increment('vote_number', 1);
+
+                return ApiFormatter::createApi(200, 'Terima kasih sudah mengvote!!', $veri_member);
+            } else {
+                return ApiFormatter::createApi(400, 'Failed');
+            }
+            return ApiFormatter::createApi(200, 'Selamat Email kau sudah verfied');
+        } elseif ($veri_member->phone_verified == 0 || $veri_member->email_verified == 1) {
+            return ApiFormatter::createApi(200, 'Mohon verifikasi no telepon terlebih dahulu', $veri_member);
+        } elseif ($veri_member->phone_verified == 1 || $veri_member->email_verified == 0) {
+            return ApiFormatter::createApi(200, 'Mohon verifikasi no email terlebih dahulu', $veri_member);
+        } elseif ($veri_member->phone_verified == 0 || $veri_member->email_verified == 0) {
+            return ApiFormatter::createApi(200, 'Mohon verifikasi no email & no telepon terlebih dahulu', $veri_member);
         } else {
             return ApiFormatter::createApi(400, 'Failed');
         }
