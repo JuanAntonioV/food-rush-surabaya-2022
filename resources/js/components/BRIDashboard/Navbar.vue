@@ -45,10 +45,9 @@ export default {
 
             await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
-                .then((res) => {
+                .then(() => {
                     localStorage.removeItem("token");
                     this.$router.push({ name: "BRILogin" });
-                    console.log(res.data);
                 });
         },
     },

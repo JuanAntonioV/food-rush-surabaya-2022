@@ -8,13 +8,15 @@ import VueAxios from "vue-axios";
 import router from "./router";
 import store from "./store";
 import JwPagination from "jw-vue-pagination";
+import Vuex from "vuex";
 
+Vue.config.productionTip = false;
 Vue.component("pagination", JwPagination);
 
-Vue.use(VueAxios, axios);
+Vue.use(VueAxios, axios, Vuex);
 
 const app = new Vue({
     el: "#app",
     router,
-    store: store,
+    store,
 });

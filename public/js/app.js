@@ -2067,10 +2067,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   methods: {
-    directBRI: function directBRI() {
-      this.$router.push({
-        name: "BRILogin"
-      });
+    handlerClick: function handlerClick() {
+      alert("You have voted");
     }
   }
 });
@@ -2327,14 +2325,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   headers: {
                     Authorization: token
                   }
-                }).then(function (res) {
+                }).then(function () {
                   localStorage.removeItem("token");
 
                   _this.$router.push({
                     name: "BRILogin"
                   });
-
-                  console.log(res.data);
                 });
 
               case 3:
@@ -2565,7 +2561,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
-    handleSubmit: function handleSubmit() {
+    handlerLogin: function handlerLogin() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
@@ -2581,14 +2577,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     _this.$router.push({
                       name: "Dashboard"
                     });
+                  } else {
+                    _this.form.username = "";
+                    _this.form.password = "";
+
+                    _this.$refs.username.focus();
+
+                    _this.errors = [res.data.message];
                   }
-                })["catch"](function (err) {
+                })["catch"](function () {
                   _this.form.username = "";
                   _this.form.password = "";
 
                   _this.$refs.username.focus();
-
-                  _this.errors = [err.response.data.message];
                 });
 
               case 2:
@@ -2622,14 +2623,27 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "containers"
-  }, [_c("h1", [_vm._v("FOOD RUST SURABAYA 2022")]), _vm._v(" "), _c("button", {
+  }, [_c("table", {
+    staticClass: "table table-striped table-bordered w-[50vh]"
+  }, [_vm._m(0), _vm._v(" "), _c("tbody", [_c("tr", [_c("td", [_vm._v("#1239")]), _vm._v(" "), _c("td", [_vm._v("Tim Kacau")]), _vm._v(" "), _c("td", [_c("button", {
+    staticClass: "btn bg-slate-700 text-white",
     on: {
-      click: _vm.directBRI
+      click: _vm.handlerClick
     }
-  }, [_vm._v("Login As BRI Admin")])]);
+  }, [_vm._v("\n                        Vote\n                    ")])])]), _vm._v(" "), _c("tr", [_c("td", [_vm._v("#1319")]), _vm._v(" "), _c("td", [_vm._v("Tim Hancur")]), _vm._v(" "), _c("td", [_c("button", {
+    staticClass: "btn bg-slate-700 text-white",
+    on: {
+      click: _vm.handlerClick
+    }
+  }, [_vm._v("\n                        Vote\n                    ")])])])])])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID Tim")]), _vm._v(" "), _c("th", [_vm._v("Nama Tim")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
+}];
 render._withStripped = true;
 
 
@@ -2683,7 +2697,7 @@ var render = function render() {
   }, [_c("pagination", {
     staticClass: "pagination",
     attrs: {
-      pageSize: 12,
+      pageSize: 10,
       items: _vm.users
     },
     on: {
@@ -2956,7 +2970,7 @@ var render = function render() {
   }, [_c("pagination", {
     staticClass: "pagination",
     attrs: {
-      pageSize: 12,
+      pageSize: 10,
       items: _vm.users
     },
     on: {
@@ -3311,7 +3325,7 @@ var render = function render() {
     on: {
       submit: function submit($event) {
         $event.preventDefault();
-        return _vm.handleSubmit.apply(null, arguments);
+        return _vm.handlerLogin.apply(null, arguments);
       }
     }
   }, [_c("div", {
@@ -3404,6 +3418,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 /* harmony import */ var jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jw-vue-pagination */ "./node_modules/jw-vue-pagination/lib/JwPagination.js");
 /* harmony import */ var jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
@@ -3413,8 +3428,10 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 
 
+
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].config.productionTip = false;
 vue__WEBPACK_IMPORTED_MODULE_5__["default"].component("pagination", (jw_vue_pagination__WEBPACK_IMPORTED_MODULE_4___default()));
-vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_1__["default"], (axios__WEBPACK_IMPORTED_MODULE_0___default()));
+vue__WEBPACK_IMPORTED_MODULE_5__["default"].use(vue_axios__WEBPACK_IMPORTED_MODULE_1__["default"], (axios__WEBPACK_IMPORTED_MODULE_0___default()), vuex__WEBPACK_IMPORTED_MODULE_6__["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_5__["default"]({
   el: "#app",
   router: _router__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -3557,23 +3574,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _modules_user__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/user */ "./resources/js/store/modules/user.js");
+/* harmony import */ var _modules_userBRI__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/userBRI */ "./resources/js/store/modules/userBRI.js");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
-  state: {
-    users: _modules_user__WEBPACK_IMPORTED_MODULE_2__["default"]
+  modules: {
+    userBRI: _modules_userBRI__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 }));
 
 /***/ }),
 
-/***/ "./resources/js/store/modules/user.js":
-/*!********************************************!*\
-  !*** ./resources/js/store/modules/user.js ***!
-  \********************************************/
+/***/ "./resources/js/store/modules/userBRI.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/userBRI.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3581,78 +3598,74 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 var state = {
-  user: [{
-    id: 1,
-    nama: "John Doe",
-    noRekening: "123456789",
-    tanggalRegistrasi: "01-07-2022",
-    openVote: true
-  }, {
-    id: 2,
-    nama: "Juan Antonio",
-    noRekening: "987654321",
-    tanggalRegistrasi: "04-07-2022",
-    openVote: true
-  }, {
-    id: 3,
-    nama: "Samsudin Jaya",
-    noRekening: "128392837",
-    tanggalRegistrasi: "10-07-2022",
-    openVote: true
-  }, {
-    id: 4,
-    nama: "Reynaldo",
-    noRekening: "039271538",
-    tanggalRegistrasi: "28-06-2022",
-    openVote: true
-  }, {
-    id: 5,
-    nama: "Hendri Pahlawan",
-    noRekening: "2836194920",
-    tanggalRegistrasi: "30-06-2022",
-    openVote: true
-  }, {
-    id: 6,
-    nama: "Jeslyn Sari",
-    noRekening: "1233419920",
-    tanggalRegistrasi: "21-07-2022",
-    openVote: true
-  }, {
-    id: 7,
-    nama: "Devi Lestari",
-    noRekening: "2391194920",
-    tanggalRegistrasi: "12-07-2022",
-    openVote: true
-  }, {
-    id: 8,
-    nama: "Denis Ardi",
-    noRekening: "128372629",
-    tanggalRegistrasi: "11-07-2022",
-    openVote: true
-  }, {
-    id: 9,
-    nama: "Rizki Santoso",
-    noRekening: "2937162938",
-    tanggalRegistrasi: "30-06-2022",
-    openVote: true
-  }, {
-    id: 10,
-    nama: "Liliyana",
-    noRekening: "283917282",
-    tanggalRegistrasi: "23-07-2022",
-    openVote: true
-  }, {
-    id: 11,
-    nama: "Jessica",
-    noRekening: "1293719202",
-    tanggalRegistrasi: "24-07-2022",
-    openVote: true
-  }]
+  errors: []
 };
-var getters = {};
-var actions = {};
-var mutations = {};
+var getters = {
+  setErrors: function setErrors(state) {
+    return state.errors;
+  }
+};
+var mutations = {
+  setErrors: function setErrors(state, _setErrors) {
+    state.errors = _setErrors;
+  }
+};
+var actions = {
+  // create the actions for the post data
+  postUserBRI: function postUserBRI(_ref, userBRI) {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var commit;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit;
+              _context.prev = 1;
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_0__.axios.post("/api/login", userBRI).then(function (res) {
+                if (res.data.token) {
+                  localStorage.setItem("token", res.data.token);
+
+                  _this.$route.push({
+                    name: "Dashboard"
+                  });
+                }
+              })["catch"](function (err) {
+                commit("setErrors", err.message);
+              });
+
+            case 4:
+              _context.next = 9;
+              break;
+
+            case 6:
+              _context.prev = 6;
+              _context.t0 = _context["catch"](1);
+              commit("setErrors", _context.t0.message);
+
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 6]]);
+    }))();
+  }
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   namespaced: true,
   state: state,
@@ -3690,7 +3703,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-332fccf4] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 90vh;\n}\n.containers h1[data-v-332fccf4] {\n  font-family: \"Poppins\", sans-serif;\n  font-size: 26pt;\n  font-weight: 700;\n  text-align: center;\n}\n.containers button[data-v-332fccf4] {\n  font-family: \"Poppins\", sans-serif;\n  background-color: #00bcd4;\n  color: white;\n  border: none;\n  border-radius: 30px;\n  padding: 16px 50px;\n  margin: 10px 0;\n  transition: 0.3s ease;\n  box-shadow: 0 10px 30px -2px rgba(0, 0, 0, 0.3);\n}\n.containers button[data-v-332fccf4]:focus {\n  outline: none;\n}\n.containers button[data-v-332fccf4]:hover {\n  box-shadow: none;\n  background-color: #009eb3;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-332fccf4] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  height: 90vh;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3714,7 +3727,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-33c48c64] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-33c48c64] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-33c48c64] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-33c48c64] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-33c48c64] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-33c48c64] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-33c48c64] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-33c48c64] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-33c48c64]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-33c48c64]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-33c48c64] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-33c48c64] {\n  border: none;\n}\n.containers .tabs[data-v-33c48c64] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-33c48c64] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-33c48c64] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-33c48c64] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-33c48c64] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-33c48c64] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-33c48c64] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-33c48c64] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-33c48c64] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-33c48c64] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-33c48c64] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-33c48c64]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-33c48c64]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-33c48c64] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-33c48c64]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-33c48c64] {\n  border: none;\n}\n.containers .tabs[data-v-33c48c64] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-33c48c64] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3810,7 +3823,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-76e05a37] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-76e05a37] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-76e05a37] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-76e05a37] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-76e05a37] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-76e05a37] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-76e05a37] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-76e05a37] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-76e05a37]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-76e05a37]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-76e05a37] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-76e05a37] {\n  border: none;\n}\n.containers .tabs[data-v-76e05a37] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-76e05a37] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-76e05a37] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-76e05a37] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-76e05a37] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-76e05a37] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-76e05a37] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-76e05a37] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-76e05a37] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-76e05a37] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-76e05a37] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-76e05a37]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-76e05a37]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-76e05a37] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-76e05a37]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-76e05a37] {\n  border: none;\n}\n.containers .tabs[data-v-76e05a37] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-76e05a37] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3882,7 +3895,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-41215450] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-41215450] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-41215450] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table tbody[data-v-41215450] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-41215450] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-41215450] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-41215450] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-41215450] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-41215450]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-41215450]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-41215450] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-41215450]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-41215450] {\n  border: none;\n}\n.containers .tabs[data-v-41215450] {\n  position: fixed;\n  bottom: 3em;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 30px;\n}\n.containers .tabs .pagination[data-v-41215450] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".containers[data-v-41215450] {\n  font-family: \"Poppins\", sans-serif;\n  margin-top: 2.3rem;\n}\n.containers h1[data-v-41215450] {\n  font-size: 16pt;\n  font-weight: 600;\n}\n.containers table[data-v-41215450] {\n  background: white;\n  width: 100%;\n  border-radius: 2rem;\n  padding: 1.8rem;\n  text-align: center;\n  transition: all 0.3s ease;\n}\n.containers table thead tr th[data-v-41215450] {\n  padding-bottom: 1rem;\n}\n.containers table tbody[data-v-41215450] {\n  height: 2.8rem;\n  color: #677483;\n}\n.containers table tbody .approved[data-v-41215450] {\n  color: #41f1b6;\n}\n.containers table tbody .warning[data-v-41215450] {\n  color: #ffbb55;\n}\n.containers table tbody .declined[data-v-41215450] {\n  color: #ff7782;\n}\n.containers table tbody tr td[data-v-41215450] {\n  border-bottom: 1px solid rgba(132, 139, 200, 0.18);\n  padding: 0.8rem 0;\n}\n.containers table tbody tr td[data-v-41215450]:first-child {\n  text-transform: capitalize;\n}\n.containers table tbody tr td[data-v-41215450]:nth-child(4) {\n  font-weight: 600;\n}\n.containers table tbody tr td button[data-v-41215450] {\n  color: white;\n  padding: 8px 30px;\n  transition: all 0.3s ease;\n  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.3);\n  border-radius: 4px;\n}\n.containers table tbody tr td button[data-v-41215450]:hover {\n  box-shadow: none;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1) {\n  background-color: #02ca34;\n  margin-right: 20px;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(1):hover {\n  background-color: #00bb2f;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2) {\n  background-color: #d40000;\n}\n.containers table tbody tr td button[data-v-41215450]:nth-child(2):hover {\n  background-color: #b10000;\n}\n.containers table tbody tr:last-child td[data-v-41215450] {\n  border: none;\n}\n.containers .tabs[data-v-41215450] {\n  position: relative;\n  left: 1rem;\n  bottom: 0;\n  padding-bottom: 2.5rem;\n  font-size: 12pt;\n  font-weight: 500;\n  letter-spacing: 0.35px;\n  margin-top: 40px;\n}\n.containers .tabs .pagination[data-v-41215450] {\n  justify-content: center;\n  flex-wrap: wrap;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

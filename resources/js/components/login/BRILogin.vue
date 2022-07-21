@@ -3,7 +3,7 @@
         <div class="login_container">
             <h1>Login</h1>
 
-            <form @submit.prevent="handleSubmit">
+            <form @submit.prevent="handlerLogin">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input
@@ -46,20 +46,24 @@ export default {
         };
     },
     methods: {
-        async handleSubmit() {
+        async handlerLogin() {
             await axios
                 .post("/api/login", this.form)
                 .then((res) => {
                     if (res.data.token) {
                         localStorage.setItem("token", res.data.token);
                         this.$router.push({ name: "Dashboard" });
+                    } else {
+                        this.form.username = "";
+                        this.form.password = "";
+                        this.$refs.username.focus();
+                        this.errors = [res.data.message];
                     }
                 })
-                .catch((err) => {
+                .catch(() => {
                     this.form.username = "";
                     this.form.password = "";
                     this.$refs.username.focus();
-                    this.errors = [err.response.data.message];
                 });
         },
     },

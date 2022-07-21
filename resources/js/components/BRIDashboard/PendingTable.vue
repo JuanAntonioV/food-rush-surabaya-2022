@@ -192,6 +192,14 @@ export default {
         text-align: center;
         transition: all 0.3s ease;
 
+        thead {
+            tr {
+                th {
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+
         tbody {
             height: 2.8rem;
             color: #677483;
@@ -261,12 +269,14 @@ export default {
     }
 
     .tabs {
-        position: fixed;
-        bottom: 3em;
+        position: relative;
+        left: 1rem;
+        bottom: 0;
+        padding-bottom: 2.5rem;
         font-size: 12pt;
         font-weight: 500;
         letter-spacing: 0.35px;
-        margin-top: 30px;
+        margin-top: 40px;
 
         .pagination {
             justify-content: center;
