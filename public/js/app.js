@@ -2647,7 +2647,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.put("/api/member/" + 1, {
+                return axios.put("/api/member/" + 3, {
                   vote_id: id
                 }).then(function (res) {
                   if (res.data.code == 200) {
@@ -3577,7 +3577,7 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("tbody", _vm._l(_vm.teams, function (team) {
     return _c("tr", {
       key: team.id
-    }, [_c("td", [_vm._v("#" + _vm._s(team.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(team.participants))]), _vm._v(" "), _c("td", [_c("button", {
+    }, [_c("td", [_vm._v("#" + _vm._s(team.id))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(team.participants))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(team.vote_number))]), _vm._v(" "), _c("td", [_c("button", {
       staticClass: "btn bg-slate-700 text-white",
       on: {
         click: function click($event) {
@@ -3607,7 +3607,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID Tim")]), _vm._v(" "), _c("th", [_vm._v("Nama Tim")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ID Tim")]), _vm._v(" "), _c("th", [_vm._v("Nama Tim")]), _vm._v(" "), _c("th", [_vm._v("Jumlah Vote")]), _vm._v(" "), _c("th", [_vm._v("Actions")])])]);
 }];
 render._withStripped = true;
 
