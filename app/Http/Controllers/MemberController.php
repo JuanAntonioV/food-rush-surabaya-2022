@@ -104,10 +104,9 @@ class MemberController extends Controller
 
         /** Mengecek apakah sudah verified email dan telepon */
         if ($veri_member->phone_verified == 1 && $veri_member->email_verified == 1) {
-
             /** Mengecek apakah voting access sudah dipakai */
             if ($voting_access->voting_access == 1) {
-                return ApiFormatter::createApi(200, 'Kamu sudah vote tidak bisa ngevote lagi!!');
+                return ApiFormatter::createApi(200, 'Kamu sudah vote tidak bisa ngevote lagi!!', $veri_member);
             } elseif ($voting_access->voting_access == 0) {
                 /** Mengupdate voting access menjadi 1 */
                 $member->update([
@@ -123,16 +122,15 @@ class MemberController extends Controller
                 /**Menambah vote number sesuai pilihan tersebut */
                 VoteMember::where('id', '=', $request->vote_id)->increment('vote_number', 1);
 
-                return ApiFormatter::createApi(200, 'Terima kasih sudah mengvote!!', $veri_member);
+                return ApiFormatter::createApi(200, 'Terima kasih sudah ngevote!!', $veri_member);
             } else {
                 return ApiFormatter::createApi(400, 'Failed');
             }
-            return ApiFormatter::createApi(200, 'Selamat Email kau sudah verfied');
-        } elseif ($veri_member->phone_verified == 0 || $veri_member->email_verified == 1) {
+        } elseif ($veri_member->phone_verified == 0 && $veri_member->email_verified == 1) {
             return ApiFormatter::createApi(200, 'Mohon verifikasi no telepon terlebih dahulu', $veri_member);
-        } elseif ($veri_member->phone_verified == 1 || $veri_member->email_verified == 0) {
+        } elseif ($veri_member->phone_verified == 1 && $veri_member->email_verified == 0) {
             return ApiFormatter::createApi(200, 'Mohon verifikasi no email terlebih dahulu', $veri_member);
-        } elseif ($veri_member->phone_verified == 0 || $veri_member->email_verified == 0) {
+        } elseif ($veri_member->phone_verified == 0 && $veri_member->email_verified == 0) {
             return ApiFormatter::createApi(200, 'Mohon verifikasi no email & no telepon terlebih dahulu', $veri_member);
         } else {
             return ApiFormatter::createApi(400, 'Failed');
