@@ -97,20 +97,7 @@ class VoteMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /** Mencari data dashboard BRI ID */
-        $votemember = VoteMember::findOrFail($id);
-
-
-        VoteMember::where('id', '=', $id)->increment('vote_number', 1);
-
-        $data = VoteMember::where('id', '=', $id)->get();
-        /* Return hasil API */
-
-        if ($data) {
-            return ApiFormatter::createApi(200, 'Vote Number Bertambah', $data);
-        } else {
-            return ApiFormatter::createApi(400, 'Gagal Masuk Vote Number');
-        }
+        //
     }
 
     /**
