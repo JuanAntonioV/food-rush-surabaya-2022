@@ -93,24 +93,31 @@ class MemberController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /** Mencari member id */
         $member = Member::findOrFail($id);
 
-        
-        $voting_access = Member::where('id', $id)->select('voting_access')->get();
-        // return $voting_access;
-        if($voting_access = '1')
-        {
-            return ApiFormatter::createApi(200, 'Member sudah di vote');
-        }elseif($voting_access = '0')
-        {
-            // $member->update([
-            //     'voting_access'    =>  1,
-            // ]);
-            // $this->create_log();
-            return ApiFormatter::createApi(200, 'Log telah ditambahkan');
-        }
-        else
-        {
+        /** Mengambil column voting access */
+        $voting_access = Member::where('id', $id)->select('voting_access')->first();
+
+        if ($voting_access->voting_access == 1) {
+            return ApiFormatter::createApi(200, 'Kamu sudah vote tidak bisa ngevote lagi!!');
+        } elseif ($voting_access->voting_access == 0) {
+            /** Mengupdate voting access menjadi 1 */
+            $member->update([
+                'voting_access'    =>  1,
+            ]);
+
+            /** Menambah data log vote jika sudah mengvote */
+            $logvotemember = LogVoteMember::create([
+                'food_rush_vote_id' =>  $request->vote_id,
+                'voters_member_id'  =>  $id,
+                'created_at'    => Carbon::now()
+            ]);
+            /**Menambah vote number sesuai pilihan tersebut */
+            VoteMember::where('id', '=', $request->vote_id)->increment('vote_number', 1);
+
+            return ApiFormatter::createApi(200, 'Terima kasih sudah mengvote!!');
+        } else {
             return ApiFormatter::createApi(400, 'Failed');
         }
     }
