@@ -75,7 +75,7 @@ export default {
         },
         async handlerClick(id) {
             await axios
-                .put("/api/member/" + 1, {
+                .put("/api/member/" + 23, {
                     vote_id: id,
                 })
                 .then((res) => {

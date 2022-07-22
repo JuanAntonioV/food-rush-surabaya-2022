@@ -2647,7 +2647,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios.put("/api/member/" + 1, {
+                return axios.put("/api/member/" + 23, {
                   vote_id: id
                 }).then(function (res) {
                   if (res.data.code == 200) {

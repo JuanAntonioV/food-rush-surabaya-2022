@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDashboardBRISTable extends Migration
+class CreateFoodRushGame extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateDashboardBRISTable extends Migration
      */
     public function up()
     {
-        Schema::create('dashboard_b_r_i_s', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('no_akun');
-            $table->string('nama_akun');
-            $table->enum('status', ['1', '2', '3'])->default('2');
+        Schema::create('food_rush_game', function (Blueprint $table) {
+            $table->id('member_id');
+            $table->integer('high_score');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateDashboardBRISTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dashboard_b_r_i_s');
+        Schema::dropIfExists('food_rush_game');
     }
 }

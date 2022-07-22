@@ -9,11 +9,15 @@ class DashboardBRI extends Model
 {
     use HasFactory;
 
-    protected $table = 'dashboard_b_r_i_s';
+    protected $table = 'food_rush_member';
+
+    protected $primaryKey = 'member_id';
+
 
     protected $fillable = [
-        'no_akun',
-        'nama_akun',
+        'account_name',
+        'account_number',
         'status',
     ];
+    protected $guarded = [];
 }

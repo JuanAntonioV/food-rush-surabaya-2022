@@ -58,16 +58,14 @@ class DashboardBRIController extends Controller
 
         /** Mendaftar no akun rekening & nama rekening di BRI */
         $dashboardbri = DashboardBRI::create([
-            'no_akun'   =>  $request->no_akun,
-            'nama_akun' =>  $request->nama_akun
+            'member_id' =>  $request->member_id,
+            'account_name' =>  $request->nama_akun,
+            'account_number'   =>  $request->no_akun
         ]);
 
-        /* Return hasil API */
 
-        $data = DashboardBRI::where('id', '=', $dashboardbri->id)->get();
-
-        if ($data) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Success');
+        if ($dashboardbri) {
+            return ApiDashboardBRIFormatter::createApi(200, 'Selamat data kamu sudah tercatat! mohon menunggu');
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
@@ -113,10 +111,10 @@ class DashboardBRIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $member_id)
     {
         /** Mencari data dashboard BRI ID */
-        $dashboardbri = DashboardBRI::findOrFail($id);
+        $dashboardbri = DashboardBRI::findOrFail($member_id);
 
         /** Melakukan Validate */
         $request->validate(
@@ -157,9 +155,9 @@ class DashboardBRIController extends Controller
         //
     }
 
-    public function sendMail()
-    {
-        Mail::to('fake@email.com')->send(new StatusDashboardBRI());
-        return view('welcome');
-    }
+    // public function sendMail()
+    // {
+    //     Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+    //     return view('welcome');
+    // }
 }
