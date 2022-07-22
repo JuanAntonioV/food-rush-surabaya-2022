@@ -5,6 +5,7 @@
                 <tr>
                     <th>ID Tim</th>
                     <th>Nama Tim</th>
+                    <th>Jumlah Vote</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -12,6 +13,7 @@
                 <tr v-for="team in teams" :key="team.id">
                     <td>#{{ team.id }}</td>
                     <td>{{ team.participants }}</td>
+                    <td>{{ team.vote_number }}</td>
                     <td>
                         <button
                             @click="handlerClick(team.id)"
@@ -75,7 +77,11 @@ export default {
         },
         async handlerClick(id) {
             await axios
+<<<<<<< HEAD
                 .put("/api/member/" + 23, {
+=======
+                .put("/api/member/" + 3, {
+>>>>>>> 34d249a214e0f1b0fdd82308f46c8f4d7e3ef6c5
                     vote_id: id,
                 })
                 .then((res) => {
