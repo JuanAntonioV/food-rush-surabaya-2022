@@ -14,10 +14,6 @@ class DashboardBRI extends Model
     protected $primaryKey = 'member_id';
 
 
-    protected $fillable = [
-        'account_name',
-        'account_number',
-        'status',
-    ];
+
     protected $guarded = [];
 }
