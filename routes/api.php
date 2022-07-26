@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginBRIController;
 use App\Http\Controllers\LogVoteMemberController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MemberFoodRushController;
+use App\Http\Controllers\ScoreMemberFoodRushController;
 use App\Http\Controllers\VoteMemberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::post('login', [LoginBRIController::class, 'login'])->name('login');
 
+Route::post('member/login', [MemberFoodRushController::class, 'login']);
+
 Route::post('food-rush-register', [MemberFoodRushController::class, 'addMember']);
 
 // Table DB Member (GET, PUT)
@@ -39,3 +42,7 @@ Route::resource('member', MemberController::class);
 
 // Table DB Vote (POST, PUT)
 Route::resource('vote', VoteMemberController::class);
+
+Route::post('game', [ScoreMemberFoodRushController::class, 'addLogGame']);
+
+Route::post('new_game', [ScoreMemberFoodRushController::class, 'NewGame']);
