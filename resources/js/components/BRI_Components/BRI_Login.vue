@@ -36,6 +36,7 @@
 
 <script>
 export default {
+    name: "BRI_Login",
     data() {
         return {
             form: {
@@ -51,8 +52,8 @@ export default {
                 .post("/api/login", this.form)
                 .then((res) => {
                     if (res.data.token) {
-                        localStorage.setItem("token", res.data.token);
-                        this.$router.push({ name: "Dashboard" });
+                        localStorage.setItem("token-bri", res.data.token);
+                        this.$router.push({ name: "BRI_Dashboard" });
                     } else {
                         this.form.username = "";
                         this.form.password = "";

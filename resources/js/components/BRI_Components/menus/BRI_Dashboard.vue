@@ -107,11 +107,11 @@
 </template>
 
 <script>
-import Loading from "../Handler/Loading.vue";
-import NoData from "../Handler/NoData.vue";
+import Loading from "../../Handler/Loading.vue";
+import NoData from "../../Handler/NoData.vue";
 
 export default {
-    name: "Dashboard",
+    name: "BRI_Dashboard",
     data() {
         return {
             users: [],

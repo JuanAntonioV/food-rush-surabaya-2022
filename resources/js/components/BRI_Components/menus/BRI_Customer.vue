@@ -3,7 +3,7 @@
         <h1>Customer</h1>
         <div class="category">
             <router-link
-                :to="{ name: 'Pending', params: { category: 'Pending' } }"
+                :to="{ name: 'Pending', params: { category: 'pending' } }"
                 exact
                 active-class="active"
                 class="subMenu"
@@ -11,7 +11,7 @@
                 <h3>Pending</h3>
             </router-link>
             <router-link
-                :to="{ name: 'Approved', params: { category: 'Approved' } }"
+                :to="{ name: 'Approved', params: { category: 'approved' } }"
                 exact
                 active-class="active"
                 class="subMenu"
@@ -19,7 +19,7 @@
                 <h3>Approved</h3>
             </router-link>
             <router-link
-                :to="{ name: 'Declined', params: { category: 'Declined' } }"
+                :to="{ name: 'Declined', params: { category: 'declined' } }"
                 exact
                 active-class="active"
                 class="subMenu"
@@ -33,7 +33,7 @@
 
 <script>
 export default {
-    name: "Customer",
+    name: "BRI_Customer",
 };
 </script>
 

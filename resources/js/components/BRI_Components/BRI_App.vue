@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import NavbarBRIDashboard from "./Navbar.vue";
+import NavbarBRIDashboard from "./partials/BRI_Navbar.vue";
 
 export default {
     components: {

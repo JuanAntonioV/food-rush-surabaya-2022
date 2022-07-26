@@ -53,11 +53,11 @@
 </template>
 
 <script>
-import Loading from "../Handler/Loading.vue";
-import NoData from "../Handler/NoData.vue";
+import Loading from "../../Handler/Loading.vue";
+import NoData from "../../Handler/NoData.vue";
 
 export default {
-    name: "PendingTable",
+    name: "BRI_PendingTable",
     data() {
         return {
             users: [],

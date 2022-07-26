@@ -1,7 +1,10 @@
 <template>
     <aside>
         <div class="header">
-            <router-link :to="{ name: 'Dashboard' }" class="logo">
+            <router-link
+                :to="{ name: 'Dashboard', params: { menus: 'Dashboard' } }"
+                class="logo"
+            >
                 <h1>BRI Dashboard</h1>
             </router-link>
             <button class="close">
@@ -11,16 +14,19 @@
 
         <div class="menus">
             <router-link
-                :to="{ name: 'Dashboard' }"
+                :to="{ name: 'Dashboard', params: { menus: 'dashboard' } }"
                 exact
-                active-class="active"
+                exact-active-class="active"
                 class="menu"
             >
                 <span class="material-icons-round"> space_dashboard </span>
                 <h3>Dashboard</h3>
             </router-link>
             <router-link
-                :to="{ name: 'Pending', params: { category: 'Pending' } }"
+                :to="{
+                    name: 'Pending',
+                    params: { category: 'pending' },
+                }"
                 exact
                 active-class="active"
                 class="menu"
@@ -41,7 +47,7 @@ export default {
     name: "NavbarBRIDashboard",
     methods: {
         async logout() {
-            let token = "Bearer " + localStorage.getItem("token");
+            let token = "Bearer " + localStorage.getItem("token-bri");
 
             await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
