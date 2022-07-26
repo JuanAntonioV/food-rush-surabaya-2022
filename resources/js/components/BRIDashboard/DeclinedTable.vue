@@ -10,10 +10,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in pageItems" :key="user.id">
-                    <td data-label="Nama Lengkap">{{ user.nama_akun }}</td>
+                <tr v-for="user in pageItems" :key="user.member_id">
+                    <td data-label="Nama Lengkap">{{ user.account_name }}</td>
                     <td data-label="Nomor Rekening">
-                        {{ user.no_akun }}
+                        {{ user.account_number }}
                     </td>
                     <td data-label="Tanggal Registrasi">
                         {{
