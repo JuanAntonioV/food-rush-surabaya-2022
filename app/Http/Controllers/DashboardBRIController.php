@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GameScore;
 use App\Models\DashboardBRI;
 use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
@@ -51,24 +52,7 @@ class DashboardBRIController extends Controller
     public function store(Request $request)
     {
 
-        /** Melakukan validasi */
-        if (!$request->no_akun || !$request->nama_akun) {
-            return ApiUserBRIFormatter::createApi(400, 'Nomor Akun dan Nama Akun tidak boleh kosong!');
-        }
-
-        /** Mendaftar no akun rekening & nama rekening di BRI */
-        $dashboardbri = DashboardBRI::create([
-            'member_id' =>  $request->member_id,
-            'account_name' =>  $request->nama_akun,
-            'account_number'   =>  $request->no_akun
-        ]);
-
-
-        if ($dashboardbri) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Selamat data kamu sudah tercatat! mohon menunggu');
-        } else {
-            return ApiDashboardBRIFormatter::createApi(400, 'Failed');
-        }
+        //
     }
 
     /**
@@ -77,17 +61,17 @@ class DashboardBRIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($member_id)
     {
 
         /** Menampilkan data sesuai id */
 
-        $data = DashboardBRI::where('id', '=', $id)->get();
+        $data = DashboardBRI::where('member_id', '=', $member_id)->get();
 
         /* Return hasil API */
 
         if ($data) {
-            return ApiDashboardBRIFormatter::createApi(200, 'Success');
+            return ApiFormatter::createApi(200, 'Success', $data);
         } else {
             return ApiDashboardBRIFormatter::createApi(400, 'Failed');
         }
@@ -135,6 +119,11 @@ class DashboardBRIController extends Controller
 
         if ($request->status == "1") {
             // Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+
+            GameScore::create([
+                'member_id' => $member_id,
+                'high_score' => 0
+            ]);
             return ApiDashboardBRIFormatter::createApi(200, 'Status change to Approve');
         } elseif ($request->status  == "3") {
             // Mail::to('fake@email.com')->send(new StatusDashboardBRI());

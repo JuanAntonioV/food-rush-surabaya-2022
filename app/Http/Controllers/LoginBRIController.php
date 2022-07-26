@@ -98,7 +98,7 @@ class LoginBRIController extends Controller
             return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
         }
         /** Mengecek username dan password sesuai, jika sesuai membuat token baru &s menampilkan api message tersebut */
-        if (Auth::attempt($request->only('username', 'password'))) {
+        if (Auth::guard('web')->attempt($request->only('username', 'password'))) {
             $user = Auth::user();
             $token = $user->createToken('token-name')->plainTextToken;
             return ApiUserBRIFormatter::createApi(200, 'Success', $token);
