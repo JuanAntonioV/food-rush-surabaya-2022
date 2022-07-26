@@ -44,8 +44,8 @@
 </template>
 
 <script>
-import DialogBox from "./Handler/DialogBox/DialogBox.vue";
-import DialogBoxVerified from "./Handler/DialogBox/DialogBoxVerified.vue";
+import DialogBox from "../../Handler/DialogBox/DialogBox.vue";
+import DialogBoxVerified from "../../Handler/DialogBox/DialogBoxVerified.vue";
 
 export default {
     name: "TableTeam",

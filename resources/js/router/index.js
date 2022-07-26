@@ -2,8 +2,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
-import App from "../components/App.vue";
-
 // BRI - COMPONENTS
 import BRI_App from "../components/BRI_Components/BRI_App.vue";
 import BRI_Login from "../components/BRI_Components/BRI_Login.vue";
@@ -14,50 +12,67 @@ import BRI_PendingTable from "../components/BRI_Components/partials/BRI_PendingT
 import BRI_DeclinedTable from "../components/BRI_Components/partials/BRI_DeclinedTable.vue";
 
 // USER - COMPONENTS
+import App from "../components/App.vue";
+import User_Login from "../components/User_Components/User_Login.vue";
+import User_Dashboard from "../components/User_Components/menus/User_Dashboard.vue";
 
 const routes = [
+    // USER - ROUTER
     {
         path: "/",
-        name: "App",
+        name: "Home",
         component: App,
+        children: [
+            {
+                path: "/login",
+                name: "User_Login",
+                component: User_Login,
+                meta: { requiresGuestUser: true },
+            },
+        ],
     },
+    {
+        path: "/dashboard",
+        name: "User_Dashboard",
+        component: User_Dashboard,
+        meta: { requiresAuthUser: true },
+    },
+    // BRI - ROUTER
     {
         path: "/brilogin",
         name: "BRI_Login",
         component: BRI_Login,
-        meta: { requiresGuest: true },
+        meta: { requiresGuestBRI: true },
     },
     {
         path: "/bri",
         name: "BRI_App",
         component: BRI_App,
-        meta: {
-            requiresAuth: true,
-        },
+        meta: { requiresAuthBRI: true },
         children: [
             {
                 path: ":menus",
-                name: "Dashboard",
+                name: "BRI_Dashboard",
                 component: BRI_Dashboard,
             },
             {
                 path: ":menus",
-                name: "Customer",
+                name: "BRI_Customer",
                 component: BRI_Customer,
                 children: [
                     {
                         path: ":category",
-                        name: "Pending",
+                        name: "BRI_Pending",
                         component: BRI_PendingTable,
                     },
                     {
                         path: ":category",
-                        name: "Approved",
+                        name: "BRI_Approved",
                         component: BRI_ApprovedTable,
                     },
                     {
                         path: ":category",
-                        name: "Declined",
+                        name: "BRI_Declined",
                         component: BRI_DeclinedTable,
                     },
                 ],
@@ -71,13 +86,20 @@ const router = new VueRouter({
     routes: routes,
 });
 
-function inLogin() {
+function inLoginBRI() {
     return localStorage.getItem("token-bri");
 }
 
+function inLoginUser() {
+    return true;
+    // return localStorage.getItem("token-user");
+}
+
+// AUTHENTICATION MIDDLEWARE
 router.beforeEach((to, from, next) => {
-    if (to.matched.some((record) => record.meta.requiresAuth)) {
-        if (!inLogin()) {
+    // BRI - AUTHENTICATION
+    if (to.matched.some((record) => record.meta.requiresAuthBRI)) {
+        if (!inLoginBRI()) {
             next({
                 path: "/brilogin",
                 query: { redirect: to.fullPath },
@@ -85,10 +107,33 @@ router.beforeEach((to, from, next) => {
         } else {
             next();
         }
-    } else if (to.matched.some((record) => record.meta.requiresGuest)) {
-        if (inLogin()) {
+    } else if (to.matched.some((record) => record.meta.requiresGuestBRI)) {
+        if (inLoginBRI()) {
             next({
                 path: "/bri/dashboard",
+                query: { redirect: to.fullPath },
+            });
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+
+    // USER - AUTHENTICATION
+    if (to.matched.some((record) => record.meta.requiresAuthUser)) {
+        if (!inLoginUser()) {
+            next({
+                path: "/login",
+                query: { redirect: to.fullPath },
+            });
+        } else {
+            next();
+        }
+    } else if (to.matched.some((record) => record.meta.requiresGuestUser)) {
+        if (inLoginUser()) {
+            next({
+                path: "/dashboard",
                 query: { redirect: to.fullPath },
             });
         } else {

@@ -1,32 +1,18 @@
 <template>
-    <div class="containers">
-        <TableTeam />
+    <div>
+        <UserNavbar />
+        <router-view />
     </div>
 </template>
 
 <script>
-import TableTeam from "./TableTeam.vue";
+import TableTeam from "./User_Components/partials/TableTeam.vue";
+import UserNavbar from "./User_Components/partials/User_Navbar.vue";
 
 export default {
     components: {
         TableTeam,
-    },
-    methods: {
-        handlerClick() {
-            alert("You have voted");
-        },
+        UserNavbar,
     },
 };
 </script>
-
-<style lang="scss" scoped>
-.containers {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-
-    height: 90vh;
-}
-</style>

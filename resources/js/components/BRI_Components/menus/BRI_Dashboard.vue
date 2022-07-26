@@ -98,7 +98,10 @@
 
             <router-link
                 v-if="this.usersLastUpdated.length !== 0 && !loading"
-                :to="{ name: 'Pending', params: { category: 'Pending' } }"
+                :to="{
+                    name: 'BRI_Pending',
+                    params: { category: 'pending' },
+                }"
             >
                 Show All
             </router-link>

@@ -2,7 +2,7 @@
     <aside>
         <div class="header">
             <router-link
-                :to="{ name: 'Dashboard', params: { menus: 'Dashboard' } }"
+                :to="{ name: 'BRI_Dashboard', params: { menus: 'Dashboard' } }"
                 class="logo"
             >
                 <h1>BRI Dashboard</h1>
@@ -14,7 +14,7 @@
 
         <div class="menus">
             <router-link
-                :to="{ name: 'Dashboard', params: { menus: 'dashboard' } }"
+                :to="{ name: 'BRI_Dashboard', params: { menus: 'dashboard' } }"
                 exact
                 exact-active-class="active"
                 class="menu"
@@ -24,7 +24,7 @@
             </router-link>
             <router-link
                 :to="{
-                    name: 'Pending',
+                    name: 'BRI_Pending',
                     params: { category: 'pending' },
                 }"
                 exact
@@ -52,8 +52,8 @@ export default {
             await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
                 .then(() => {
-                    localStorage.removeItem("token");
-                    this.$router.push({ name: "BRILogin" });
+                    localStorage.removeItem("token-bri");
+                    this.$router.push({ name: "BRI_Login" });
                 });
         },
     },

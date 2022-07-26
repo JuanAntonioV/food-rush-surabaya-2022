@@ -57,7 +57,7 @@ import Loading from "../../Handler/Loading.vue";
 import NoData from "../../Handler/NoData.vue";
 
 export default {
-    name: "BRI_PendingTable",
+    name: "BRI_ApprovedTable",
     data() {
         return {
             users: [],

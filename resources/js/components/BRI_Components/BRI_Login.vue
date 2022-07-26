@@ -53,7 +53,10 @@ export default {
                 .then((res) => {
                     if (res.data.token) {
                         localStorage.setItem("token-bri", res.data.token);
-                        this.$router.push({ name: "BRI_Dashboard" });
+                        this.$router.push({
+                            name: "BRI_Dashboard",
+                            params: { menus: "dashboard" },
+                        });
                     } else {
                         this.form.username = "";
                         this.form.password = "";
