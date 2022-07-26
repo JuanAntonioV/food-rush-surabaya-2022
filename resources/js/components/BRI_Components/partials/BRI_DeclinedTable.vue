@@ -10,10 +10,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in pageItems" :key="user.id">
-                    <td data-label="Nama Lengkap">{{ user.nama_akun }}</td>
+                <tr v-for="user in pageItems" :key="user.member_id">
+                    <td data-label="Nama Lengkap">{{ user.account_name }}</td>
                     <td data-label="Nomor Rekening">
-                        {{ user.no_akun }}
+                        {{ user.account_number }}
                     </td>
                     <td data-label="Tanggal Registrasi">
                         {{
@@ -53,11 +53,11 @@
 </template>
 
 <script>
-import Loading from "../Handler/Loading.vue";
-import NoData from "../Handler/NoData.vue";
+import Loading from "../../Handler/Loading.vue";
+import NoData from "../../Handler/NoData.vue";
 
 export default {
-    name: "PendingTable",
+    name: "BRI_PendingTable",
     data() {
         return {
             users: [],
@@ -71,7 +71,7 @@ export default {
             .get("/api/dashboardBRIs")
             .then((res) => {
                 this.users = res.data.data.filter(
-                    (user) => user.status === "1"
+                    (user) => user.status === "3"
                 );
                 this.loading = false;
             })

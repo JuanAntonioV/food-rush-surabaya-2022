@@ -2,35 +2,18 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
-const App = Vue.component("App", require("../components/App.vue").default);
-const BRILogin = Vue.component(
-    "App",
-    require("../components/login/BRILogin.vue").default
-);
-const BRIDashboard = Vue.component(
-    "BRIDashboard",
-    require("../components/BRIDashboard/BRIDashboard.vue").default
-);
-const Dashboard = Vue.component(
-    "Dashboard",
-    require("../components/BRIDashboard/Dashboard.vue").default
-);
-const Customer = Vue.component(
-    "Customer",
-    require("../components/BRIDashboard/Customer.vue").default
-);
-const ApprovedTable = Vue.component(
-    "ApprovedTable",
-    require("../components/BRIDashboard/ApprovedTable.vue").default
-);
-const PendingTable = Vue.component(
-    "PendingTable",
-    require("../components/BRIDashboard/PendingTable.vue").default
-);
-const DeclinedTable = Vue.component(
-    "DeclinedTable",
-    require("../components/BRIDashboard/DeclinedTable.vue").default
-);
+import App from "../components/App.vue";
+
+// BRI - COMPONENTS
+import BRI_App from "../components/BRI_Components/BRI_App.vue";
+import BRI_Login from "../components/BRI_Components/BRI_Login.vue";
+import BRI_Dashboard from "../components/BRI_Components/menus/BRI_Dashboard.vue";
+import BRI_Customer from "../components/BRI_Components/menus/BRI_Customer.vue";
+import BRI_ApprovedTable from "../components/BRI_Components/partials/BRI_ApprovedTable.vue";
+import BRI_PendingTable from "../components/BRI_Components/partials/BRI_PendingTable.vue";
+import BRI_DeclinedTable from "../components/BRI_Components/partials/BRI_DeclinedTable.vue";
+
+// USER - COMPONENTS
 
 const routes = [
     {
@@ -40,42 +23,42 @@ const routes = [
     },
     {
         path: "/brilogin",
-        name: "BRILogin",
-        component: BRILogin,
+        name: "BRI_Login",
+        component: BRI_Login,
         meta: { requiresGuest: true },
     },
     {
-        path: "/bridashboard",
-        name: "BRIDashboard",
-        component: BRIDashboard,
+        path: "/bri",
+        name: "BRI_App",
+        component: BRI_App,
         meta: {
             requiresAuth: true,
         },
         children: [
             {
-                path: "/Dashboard",
+                path: ":menus",
                 name: "Dashboard",
-                component: Dashboard,
+                component: BRI_Dashboard,
             },
             {
-                path: "/Customer",
+                path: ":menus",
                 name: "Customer",
-                component: Customer,
+                component: BRI_Customer,
                 children: [
                     {
                         path: ":category",
                         name: "Pending",
-                        component: PendingTable,
+                        component: BRI_PendingTable,
                     },
                     {
                         path: ":category",
                         name: "Approved",
-                        component: ApprovedTable,
+                        component: BRI_ApprovedTable,
                     },
                     {
                         path: ":category",
                         name: "Declined",
-                        component: DeclinedTable,
+                        component: BRI_DeclinedTable,
                     },
                 ],
             },
@@ -89,7 +72,7 @@ const router = new VueRouter({
 });
 
 function inLogin() {
-    return localStorage.getItem("token");
+    return localStorage.getItem("token-bri");
 }
 
 router.beforeEach((to, from, next) => {
@@ -105,7 +88,7 @@ router.beforeEach((to, from, next) => {
     } else if (to.matched.some((record) => record.meta.requiresGuest)) {
         if (inLogin()) {
             next({
-                path: "/Dashboard",
+                path: "/bri/dashboard",
                 query: { redirect: to.fullPath },
             });
         } else {

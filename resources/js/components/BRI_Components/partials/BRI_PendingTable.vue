@@ -7,13 +7,14 @@
                     <th>Nomor Rekening</th>
                     <th>Tanggal Registrasi</th>
                     <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="user in pageItems" :key="user.id">
-                    <td data-label="Nama Lengkap">{{ user.nama_akun }}</td>
+                <tr v-for="user in pageItems" :key="user.member_id">
+                    <td data-label="Nama Lengkap">{{ user.account_name }}</td>
                     <td data-label="Nomor Rekening">
-                        {{ user.no_akun }}
+                        {{ user.account_number }}
                     </td>
                     <td data-label="Tanggal Registrasi">
                         {{
@@ -34,12 +35,50 @@
                         {{ user.status === "2" ? "Pending" : "" }}
                         {{ user.status === "3" ? "Declined" : "" }}
                     </td>
+                    <td data-label="Actions">
+                        <button
+                            class="btn"
+                            @click.prevent="
+                                (showDialogTerima = true),
+                                    (userID = user.member_id)
+                            "
+                        >
+                            Terima
+                        </button>
+                        <button
+                            class="btn"
+                            @click.prevent="
+                                (showDialogTolak = true),
+                                    (userID = user.member_id)
+                            "
+                        >
+                            Tolak
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
 
         <Loading v-if="loading" />
         <NoData v-if="this.users.length == 0 && !loading" />
+
+        <DialogBox
+            :show="showDialogTerima"
+            :cancel="cancel"
+            :userID="userID"
+            :confirm="terimaUser"
+            title="Konfirmasi Perubahan Status"
+            description="Anda yakin ingin menerima user ini?"
+        />
+
+        <DialogBox
+            :show="showDialogTolak"
+            :cancel="cancel"
+            :userID="userID"
+            :confirm="tolakUser"
+            title="Konfirmasi Perubahan Status"
+            description="Anda yakin ingin menolak user ini?"
+        />
 
         <div class="tabs">
             <pagination
@@ -53,40 +92,85 @@
 </template>
 
 <script>
-import Loading from "../Handler/Loading.vue";
-import NoData from "../Handler/NoData.vue";
+import DialogBox from "../DialogBox.vue";
+import Loading from "../../Handler/Loading.vue";
+import NoData from "../../Handler/NoData.vue";
 
 export default {
-    name: "PendingTable",
+    name: "BRI_PendingTable",
     data() {
         return {
             users: [],
             pageItems: [],
+            userID: null,
+            showDialogTerima: false,
+            showDialogTolak: false,
             loading: false,
         };
     },
     mounted() {
-        this.loading = true;
-        axios
-            .get("/api/dashboardBRIs")
-            .then((res) => {
-                this.users = res.data.data.filter(
-                    (user) => user.status === "3"
-                );
-                this.loading = false;
-            })
-            .catch((err) => {
-                this.loading = false;
-                console.log(err);
-            });
+        this.fetch();
     },
     components: {
+        DialogBox,
         Loading,
         NoData,
     },
     methods: {
+        async fetch() {
+            this.loading = true;
+            await axios
+                .get("/api/dashboardBRIs")
+                .then((res) => {
+                    this.users = res.data.data.filter(
+                        (user) => user.status === "2"
+                    );
+                    this.loading = false;
+                })
+                .catch((err) => {
+                    this.loading = false;
+                    console.log(err);
+                });
+        },
         onChangePage(pageItems) {
             this.pageItems = pageItems;
+        },
+        cancel() {
+            console.log("Cancel");
+            this.showDialogTolak = false;
+            this.showDialogTerima = false;
+        },
+        async terimaUser(userID) {
+            this.loading = true;
+            await axios
+                .put("/api/dashboardBRIs/" + userID, {
+                    status: "1",
+                })
+                .then(() => {
+                    this.fetch();
+                    this.loading = false;
+                })
+                .catch((err) => {
+                    this.loading = false;
+                    console.log(err);
+                });
+            this.showDialogTerima = false;
+        },
+        async tolakUser(userID) {
+            this.loading = true;
+            await axios
+                .put("/api/dashboardBRIs/" + userID, {
+                    status: "3",
+                })
+                .then(() => {
+                    this.fetch();
+                    this.loading = false;
+                })
+                .catch((err) => {
+                    this.loading = false;
+                    console.log(err);
+                });
+            this.showDialogTolak = false;
         },
     },
 };
