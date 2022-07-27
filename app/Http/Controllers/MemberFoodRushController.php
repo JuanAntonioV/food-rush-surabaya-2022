@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Helpers\ApiUserBRIFormatter;
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\ApiDashboardBRIFormatter;
-
+use DB;
 class MemberFoodRushController extends Controller
 {
 
@@ -16,21 +16,31 @@ class MemberFoodRushController extends Controller
     {
 
 
-        $data = Member::join('member_detail', 'member_detail.member_id', '=', 'member.id')->get(['member_detail.email', 'member.password', 'member.id']);
+        // $data = Member::join('member_detail', 'member_detail.member_id', '=', 'member.id')->get(['member_detail.email', 'member.password', 'member.id']);
 
         if (!$request->email || !$request->password) {
             return ApiUserBRIFormatter::createApi(400, 'Email atau password tidak boleh kosong');
         }
-        /** Mengecek username dan password sesuai, jika sesuai membuat token baru &s menampilkan api message tersebut */
-        if (Auth::guard('member')->attempt($request->only('email', 'password'))) {
-            $user = Auth::guard('member')->user();
-            $token = $user->createToken('member_token', ['member'])->plainTextToken;
-
-
-
-            return ApiUserBRIFormatter::createApi(200, 'Success', $token);
-        } else {
-            return ApiUserBRIFormatter::createApi(400, 'Username atau Password salah');
+        $member = Member::join('member_detail', 'member_detail.member_id', '=', 'member.id')
+                ->where('member_detail.email', $request->email)
+                ->where('member.password', md5($request->password))
+                ->select('member.id as id')
+                ->first();
+        if($member){
+            $token = md5($member->id.date('Y-m-d H:i:s'));
+            DB::table("member_token")->insert(
+                [
+                    "member_id" => $member->id,
+                    "token" => $token,
+                    "gadget" => 0,
+                    "browser" => "",
+                    "created_at" => date('Y-m-d H:i:s'),
+                    "updated_at" => date('Y-m-d H:i:s')
+                ]
+                );
+            return ApiUserBRIFormatter::createApi(200, 'Logging in...', $token);
+        }else{
+            return response()->json(["code" => 401, "message" => "Username/Password salah"]);
         }
     }
 
