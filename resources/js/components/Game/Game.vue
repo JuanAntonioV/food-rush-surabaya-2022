@@ -1,5 +1,5 @@
 <template>
-    <div class="containers">
+    <div class="containers_game">
         <div class="heading">
             <div class="scores-container">
                 <div class="score-container text-dark">0</div>
@@ -66,14 +66,7 @@ import "./js/application.js";
 
 export default {
     name: "Game",
-    data() {
-        return {
-            restart: false,
-        };
-    },
 };
 </script>
 
-<style scoped>
-@import url("./style/main.css");
-</style>
+<style src="./style/main.css"></style>

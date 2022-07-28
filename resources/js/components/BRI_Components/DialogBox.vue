@@ -54,6 +54,10 @@ export default {
         max-width: 100%;
         width: 24rem;
 
+        hr {
+            margin: 0.5rem 0;
+        }
+
         .dialog__content {
             padding-left: 0.75rem;
             padding-right: 0.75rem;

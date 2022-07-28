@@ -90,6 +90,19 @@ GameManager.prototype.actuate = function () {
 
     // Clear the state when the game is over (game over only, not win)
     if (this.over) {
+        axios
+            .post("/api/game", {
+                member_id: 8,
+                score: this.score,
+            })
+            .then((res) => {
+                var high_score = res.data.data.high_score;
+                console.log(high_score);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
         this.storageManager.clearGameState();
         // console.log(this.score);
     } else {

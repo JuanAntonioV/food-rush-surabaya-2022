@@ -1,22 +1,13 @@
 @import url(fonts/clear-sans.css);
-html,
-body {
-    margin: 0;
-    padding: 0;
-    background: #faf8ef;
-    color: #776e65;
-    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 18px;
-}
-
-body {
-    margin: 80px 0;
-}
 
 .heading:after {
     content: "";
     display: block;
     clear: both;
+}
+
+.heading {
+    margin-top: 20px;
 }
 
 @-webkit-keyframes move-up {
@@ -134,9 +125,17 @@ hr {
     margin-bottom: 30px;
 }
 
-.containers {
-    width: 500px;
+.containers_game {
+    width: 100%;
     margin: 0 auto;
+    background: #faf8ef;
+    color: #776e65;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @-webkit-keyframes fade-in {
@@ -626,6 +625,9 @@ hr {
     -moz-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
 }
+.above-game {
+    width: 500px;
+}
 
 .above-game:after {
     content: "";
@@ -635,6 +637,7 @@ hr {
 
 .restart-button {
     display: inline-block;
+    width: 100%;
     background: #8f7a66;
     border-radius: 3px;
     padding: 0 20px;
@@ -648,23 +651,20 @@ hr {
 }
 
 .game-explanation {
-    margin-top: 50px;
+    width: 500px;
+    margin: 50px 0;
 }
 
 @media screen and (max-width: 520px) {
-    html,
-    body {
-        font-size: 15px;
-    }
-
     body {
         margin: 20px 0;
         padding: 0 20px;
     }
 
-    .containers {
+    .containers_game {
         width: 350px;
         margin: 0 auto;
+        font-size: 15px;
     }
 
     .score-container,

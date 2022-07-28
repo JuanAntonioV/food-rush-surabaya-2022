@@ -28,7 +28,7 @@ class ScoreMemberFoodRushController extends Controller
             ]);
             return response()->json($member, 200);
         } else {
-            return ApiFormatter::createApi('Failed', 400);
+            return response()->json('Failed', 400);
         }
     }
 }
