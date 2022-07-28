@@ -12,9 +12,7 @@
 export default {
     methods: {
         playGame() {
-            this.$router.push({
-                name: "Game",
-            });
+            location.href = "/game";
         },
     },
 };
