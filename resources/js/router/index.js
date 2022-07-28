@@ -16,6 +16,9 @@ import App from "../components/App.vue";
 import User_Login from "../components/User_Components/User_Login.vue";
 import User_Dashboard from "../components/User_Components/menus/User_Dashboard.vue";
 
+// GAME - COMPONENTS
+import Game from "../components/Game/Game.vue";
+
 const routes = [
     // USER - ROUTER
     {
@@ -35,6 +38,12 @@ const routes = [
         path: "/dashboard",
         name: "User_Dashboard",
         component: User_Dashboard,
+        meta: { requiresAuthUser: true },
+    },
+    {
+        path: "/game",
+        name: "Game",
+        component: Game,
         meta: { requiresAuthUser: true },
     },
     // BRI - ROUTER

@@ -1,11 +1,23 @@
 <template>
     <div class="containers">
         <h1>USER DASHBOARD PAGE</h1>
+        <button :v-if="[(this.$router.params = 'game')]" @click="playGame">
+            PLAY NOW
+        </button>
+        <router-view />
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        playGame() {
+            this.$router.push({
+                name: "Game",
+            });
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

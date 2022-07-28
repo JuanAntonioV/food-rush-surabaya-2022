@@ -2578,6 +2578,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _js_bind_polyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/bind_polyfill.js */ "./resources/js/components/Game/js/bind_polyfill.js");
+/* harmony import */ var _js_bind_polyfill_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_js_bind_polyfill_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _js_classlist_polyfill_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/classlist_polyfill.js */ "./resources/js/components/Game/js/classlist_polyfill.js");
+/* harmony import */ var _js_classlist_polyfill_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_classlist_polyfill_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _js_animframe_polyfill_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/animframe_polyfill.js */ "./resources/js/components/Game/js/animframe_polyfill.js");
+/* harmony import */ var _js_animframe_polyfill_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_animframe_polyfill_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _js_application_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/application.js */ "./resources/js/components/Game/js/application.js");
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "Game",
+  data: function data() {
+    return {
+      restart: false
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=script&lang=js& ***!
@@ -2674,7 +2707,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  methods: {
+    playGame: function playGame() {
+      this.$router.push({
+        name: "Game"
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2823,7 +2864,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("UserNavbar"), _vm._v(" "), _c("router-view")], 1);
+  return _c("div", [_c("router-view")], 1);
 };
 
 var staticRenderFns = [];
@@ -3528,6 +3569,108 @@ render._withStripped = true;
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function render() {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _vm._m(0);
+};
+
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "containers"
+  }, [_c("div", {
+    staticClass: "heading"
+  }, [_c("div", {
+    staticClass: "scores-container"
+  }, [_c("div", {
+    staticClass: "score-container text-dark"
+  }, [_vm._v("0")]), _vm._v(" "), _c("div", {
+    staticClass: "best-container text-dark"
+  }, [_vm._v("0")])])]), _vm._v(" "), _c("div", {
+    staticClass: "game-container"
+  }, [_c("div", {
+    staticClass: "game-message"
+  }, [_c("p"), _vm._v(" "), _c("div", {
+    staticClass: "lower"
+  }, [_c("a", {
+    staticClass: "keep-playing-button"
+  }, [_vm._v("Keep going")]), _vm._v(" "), _c("a", {
+    staticClass: "retry-button"
+  }, [_vm._v("Try again")])])]), _vm._v(" "), _c("div", {
+    staticClass: "grid-container"
+  }, [_c("div", {
+    staticClass: "grid-row"
+  }, [_c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "grid-row"
+  }, [_c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "grid-row"
+  }, [_c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "grid-row"
+  }, [_c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  }), _vm._v(" "), _c("div", {
+    staticClass: "grid-cell"
+  })])]), _vm._v(" "), _c("div", {
+    staticClass: "tile-container"
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "above-game"
+  }, [_c("a", {
+    staticClass: "restart-button text-white"
+  }, [_vm._v("New Game")])]), _vm._v(" "), _c("p", {
+    staticClass: "game-explanation"
+  }, [_c("strong", {
+    staticClass: "important"
+  }, [_vm._v("How to play:")]), _vm._v(" Use your\n        "), _c("strong", [_vm._v("arrow keys")]), _vm._v(" to move the tiles. When two tiles with\n        the same number touch, they "), _c("strong", [_vm._v("merge into one!")])])]);
+}];
+render._withStripped = true;
+
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=template&id=06645517&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=template&id=06645517&scoped=true& ***!
@@ -3756,17 +3899,19 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
-};
-
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("div", {
     staticClass: "containers"
-  }, [_c("h1", [_vm._v("USER DASHBOARD PAGE")])]);
-}];
+  }, [_c("h1", [_vm._v("USER DASHBOARD PAGE")]), _vm._v(" "), _c("button", {
+    attrs: {
+      "v-if": [this.$router.params = "game"]
+    },
+    on: {
+      click: _vm.playGame
+    }
+  }, [_vm._v("\n        PLAY NOW\n    ")]), _vm._v(" "), _c("router-view")], 1);
+};
+
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -3902,6 +4047,1019 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/js/components/Game/js/animframe_polyfill.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Game/js/animframe_polyfill.js ***!
+  \***************************************************************/
+/***/ (() => {
+
+(function () {
+  var lastTime = 0;
+  var vendors = ['webkit', 'moz'];
+
+  for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+  }
+
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function (callback) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+      var id = window.setTimeout(function () {
+        callback(currTime + timeToCall);
+      }, timeToCall);
+      lastTime = currTime + timeToCall;
+      return id;
+    };
+  }
+
+  if (!window.cancelAnimationFrame) {
+    window.cancelAnimationFrame = function (id) {
+      clearTimeout(id);
+    };
+  }
+})();
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/application.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Game/js/application.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _game_manager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./game_manager */ "./resources/js/components/Game/js/game_manager.js");
+/* harmony import */ var _keyboard_input_manager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./keyboard_input_manager */ "./resources/js/components/Game/js/keyboard_input_manager.js");
+/* harmony import */ var _html_actuator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./html_actuator */ "./resources/js/components/Game/js/html_actuator.js");
+/* harmony import */ var _local_storage_manager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./local_storage_manager */ "./resources/js/components/Game/js/local_storage_manager.js");
+
+
+
+ // Wait till the browser is ready to render the game (avoids glitches)
+
+window.requestAnimationFrame(function () {
+  new _game_manager__WEBPACK_IMPORTED_MODULE_0__["default"](4, _keyboard_input_manager__WEBPACK_IMPORTED_MODULE_1__["default"], _html_actuator__WEBPACK_IMPORTED_MODULE_2__["default"], _local_storage_manager__WEBPACK_IMPORTED_MODULE_3__["default"]);
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/bind_polyfill.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Game/js/bind_polyfill.js ***!
+  \**********************************************************/
+/***/ (() => {
+
+Function.prototype.bind = Function.prototype.bind || function (target) {
+  var self = this;
+  return function (args) {
+    if (!(args instanceof Array)) {
+      args = [args];
+    }
+
+    self.apply(target, args);
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/classlist_polyfill.js":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/Game/js/classlist_polyfill.js ***!
+  \***************************************************************/
+/***/ (() => {
+
+(function () {
+  if (typeof window.Element === "undefined" || "classList" in document.documentElement) {
+    return;
+  }
+
+  var prototype = Array.prototype,
+      push = prototype.push,
+      splice = prototype.splice,
+      join = prototype.join;
+
+  function DOMTokenList(el) {
+    this.el = el; // The className needs to be trimmed and split on whitespace
+    // to retrieve a list of classes.
+
+    var classes = el.className.replace(/^\s+|\s+$/g, '').split(/\s+/);
+
+    for (var i = 0; i < classes.length; i++) {
+      push.call(this, classes[i]);
+    }
+  }
+
+  DOMTokenList.prototype = {
+    add: function add(token) {
+      if (this.contains(token)) return;
+      push.call(this, token);
+      this.el.className = this.toString();
+    },
+    contains: function contains(token) {
+      return this.el.className.indexOf(token) != -1;
+    },
+    item: function item(index) {
+      return this[index] || null;
+    },
+    remove: function remove(token) {
+      if (!this.contains(token)) return;
+
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] == token) break;
+      }
+
+      splice.call(this, i, 1);
+      this.el.className = this.toString();
+    },
+    toString: function toString() {
+      return join.call(this, ' ');
+    },
+    toggle: function toggle(token) {
+      if (!this.contains(token)) {
+        this.add(token);
+      } else {
+        this.remove(token);
+      }
+
+      return this.contains(token);
+    }
+  };
+  window.DOMTokenList = DOMTokenList;
+
+  function defineElementGetter(obj, prop, getter) {
+    if (Object.defineProperty) {
+      Object.defineProperty(obj, prop, {
+        get: getter
+      });
+    } else {
+      obj.__defineGetter__(prop, getter);
+    }
+  }
+
+  defineElementGetter(HTMLElement.prototype, 'classList', function () {
+    return new DOMTokenList(this);
+  });
+})();
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/game_manager.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Game/js/game_manager.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ GameManager)
+/* harmony export */ });
+/* harmony import */ var _grid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./grid */ "./resources/js/components/Game/js/grid.js");
+/* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tile */ "./resources/js/components/Game/js/tile.js");
+
+
+function GameManager(size, InputManager, Actuator, StorageManager) {
+  this.size = size; // Size of the grid
+
+  this.inputManager = new InputManager();
+  this.storageManager = new StorageManager();
+  this.actuator = new Actuator();
+  this.startTiles = 2;
+  this.inputManager.on("move", this.move.bind(this));
+  this.inputManager.on("restart", this.restart.bind(this));
+  this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
+  this.setup();
+} // Restart the game
+
+GameManager.prototype.restart = function () {
+  this.storageManager.clearGameState();
+  this.actuator.continueGame(); // Clear the game won/lost message
+
+  this.setup();
+}; // Keep playing after winning (allows going over 2048)
+
+
+GameManager.prototype.keepPlaying = function () {
+  this.keepPlaying = true;
+  this.actuator.continueGame(); // Clear the game won/lost message
+}; // Return true if the game is lost, or has won and the user hasn't kept playing
+
+
+GameManager.prototype.isGameTerminated = function () {
+  return this.over || this.won && !this.keepPlaying;
+}; // Set up the game
+
+
+GameManager.prototype.setup = function () {
+  var previousState = this.storageManager.getGameState(); // Reload the game from a previous game if present
+
+  if (previousState) {
+    this.grid = new _grid__WEBPACK_IMPORTED_MODULE_0__["default"](previousState.grid.size, previousState.grid.cells); // Reload grid
+
+    this.score = previousState.score;
+    this.over = previousState.over;
+    this.won = previousState.won;
+    this.keepPlaying = previousState.keepPlaying;
+  } else {
+    this.grid = new _grid__WEBPACK_IMPORTED_MODULE_0__["default"](this.size);
+    this.score = 0;
+    this.over = false;
+    this.won = false;
+    this.keepPlaying = false; // Add the initial tiles
+
+    this.addStartTiles();
+  } // Update the actuator
+
+
+  this.actuate();
+}; // Set up the initial tiles to start the game with
+
+
+GameManager.prototype.addStartTiles = function () {
+  for (var i = 0; i < this.startTiles; i++) {
+    this.addRandomTile();
+  }
+}; // Adds a tile in a random position
+
+
+GameManager.prototype.addRandomTile = function () {
+  if (this.grid.cellsAvailable()) {
+    var value = Math.random() < 0.9 ? 2 : 4;
+    var tile = new _tile__WEBPACK_IMPORTED_MODULE_1__["default"](this.grid.randomAvailableCell(), value);
+    this.grid.insertTile(tile);
+  }
+}; // Sends the updated grid to the actuator
+
+
+GameManager.prototype.actuate = function () {
+  if (this.storageManager.getBestScore() < this.score) {
+    this.storageManager.setBestScore(this.score);
+  } // Clear the state when the game is over (game over only, not win)
+
+
+  if (this.over) {
+    this.storageManager.clearGameState();
+  } else {
+    this.storageManager.setGameState(this.serialize());
+  }
+
+  this.actuator.actuate(this.grid, {
+    score: this.score,
+    over: this.over,
+    won: this.won,
+    bestScore: this.storageManager.getBestScore(),
+    terminated: this.isGameTerminated()
+  });
+}; // Represent the current game as an object
+
+
+GameManager.prototype.serialize = function () {
+  return {
+    grid: this.grid.serialize(),
+    score: this.score,
+    over: this.over,
+    won: this.won,
+    keepPlaying: this.keepPlaying
+  };
+}; // Save all tile positions and remove merger info
+
+
+GameManager.prototype.prepareTiles = function () {
+  this.grid.eachCell(function (x, y, tile) {
+    if (tile) {
+      tile.mergedFrom = null;
+      tile.savePosition();
+    }
+  });
+}; // Move a tile and its representation
+
+
+GameManager.prototype.moveTile = function (tile, cell) {
+  this.grid.cells[tile.x][tile.y] = null;
+  this.grid.cells[cell.x][cell.y] = tile;
+  tile.updatePosition(cell);
+}; // Move tiles on the grid in the specified direction
+
+
+GameManager.prototype.move = function (direction) {
+  // 0: up, 1: right, 2: down, 3: left
+  var self = this;
+  if (this.isGameTerminated()) return; // Don't do anything if the game's over
+
+  var cell, tile;
+  var vector = this.getVector(direction);
+  var traversals = this.buildTraversals(vector);
+  var moved = false; // Save the current tile positions and remove merger information
+
+  this.prepareTiles(); // Traverse the grid in the right direction and move tiles
+
+  traversals.x.forEach(function (x) {
+    traversals.y.forEach(function (y) {
+      cell = {
+        x: x,
+        y: y
+      };
+      tile = self.grid.cellContent(cell);
+
+      if (tile) {
+        var positions = self.findFarthestPosition(cell, vector);
+        var next = self.grid.cellContent(positions.next); // Only one merger per row traversal?
+
+        if (next && next.value === tile.value && !next.mergedFrom) {
+          var merged = new _tile__WEBPACK_IMPORTED_MODULE_1__["default"](positions.next, tile.value * 2);
+          merged.mergedFrom = [tile, next];
+          self.grid.insertTile(merged);
+          self.grid.removeTile(tile); // Converge the two tiles' positions
+
+          tile.updatePosition(positions.next); // Update the score
+
+          self.score += merged.value; // The mighty 2048 tile
+
+          if (merged.value === 2048) self.won = true;
+        } else {
+          self.moveTile(tile, positions.farthest);
+        }
+
+        if (!self.positionsEqual(cell, tile)) {
+          moved = true; // The tile moved from its original cell!
+        }
+      }
+    });
+  });
+
+  if (moved) {
+    this.addRandomTile();
+
+    if (!this.movesAvailable()) {
+      this.over = true; // Game over!
+    }
+
+    this.actuate();
+  }
+}; // Get the vector representing the chosen direction
+
+
+GameManager.prototype.getVector = function (direction) {
+  // Vectors representing tile movement
+  var map = {
+    0: {
+      x: 0,
+      y: -1
+    },
+    // Up
+    1: {
+      x: 1,
+      y: 0
+    },
+    // Right
+    2: {
+      x: 0,
+      y: 1
+    },
+    // Down
+    3: {
+      x: -1,
+      y: 0
+    } // Left
+
+  };
+  return map[direction];
+}; // Build a list of positions to traverse in the right order
+
+
+GameManager.prototype.buildTraversals = function (vector) {
+  var traversals = {
+    x: [],
+    y: []
+  };
+
+  for (var pos = 0; pos < this.size; pos++) {
+    traversals.x.push(pos);
+    traversals.y.push(pos);
+  } // Always traverse from the farthest cell in the chosen direction
+
+
+  if (vector.x === 1) traversals.x = traversals.x.reverse();
+  if (vector.y === 1) traversals.y = traversals.y.reverse();
+  return traversals;
+};
+
+GameManager.prototype.findFarthestPosition = function (cell, vector) {
+  var previous; // Progress towards the vector direction until an obstacle is found
+
+  do {
+    previous = cell;
+    cell = {
+      x: previous.x + vector.x,
+      y: previous.y + vector.y
+    };
+  } while (this.grid.withinBounds(cell) && this.grid.cellAvailable(cell));
+
+  return {
+    farthest: previous,
+    next: cell // Used to check if a merge is required
+
+  };
+};
+
+GameManager.prototype.movesAvailable = function () {
+  return this.grid.cellsAvailable() || this.tileMatchesAvailable();
+}; // Check for available matches between tiles (more expensive check)
+
+
+GameManager.prototype.tileMatchesAvailable = function () {
+  var self = this;
+  var tile;
+
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      tile = this.grid.cellContent({
+        x: x,
+        y: y
+      });
+
+      if (tile) {
+        for (var direction = 0; direction < 4; direction++) {
+          var vector = self.getVector(direction);
+          var cell = {
+            x: x + vector.x,
+            y: y + vector.y
+          };
+          var other = self.grid.cellContent(cell);
+
+          if (other && other.value === tile.value) {
+            return true; // These two tiles can be merged
+          }
+        }
+      }
+    }
+  }
+
+  return false;
+};
+
+GameManager.prototype.positionsEqual = function (first, second) {
+  return first.x === second.x && first.y === second.y;
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/grid.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Game/js/grid.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Grid)
+/* harmony export */ });
+/* harmony import */ var _tile__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tile */ "./resources/js/components/Game/js/tile.js");
+
+function Grid(size, previousState) {
+  this.size = size;
+  this.cells = previousState ? this.fromState(previousState) : this.empty();
+} // Build a grid of the specified size
+
+Grid.prototype.empty = function () {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(null);
+    }
+  }
+
+  return cells;
+};
+
+Grid.prototype.fromState = function (state) {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      var tile = state[x][y];
+      row.push(tile ? new _tile__WEBPACK_IMPORTED_MODULE_0__["default"](tile.position, tile.value) : null);
+    }
+  }
+
+  return cells;
+}; // Find the first available random position
+
+
+Grid.prototype.randomAvailableCell = function () {
+  var cells = this.availableCells();
+
+  if (cells.length) {
+    return cells[Math.floor(Math.random() * cells.length)];
+  }
+};
+
+Grid.prototype.availableCells = function () {
+  var cells = [];
+  this.eachCell(function (x, y, tile) {
+    if (!tile) {
+      cells.push({
+        x: x,
+        y: y
+      });
+    }
+  });
+  return cells;
+}; // Call callback for every cell
+
+
+Grid.prototype.eachCell = function (callback) {
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      callback(x, y, this.cells[x][y]);
+    }
+  }
+}; // Check if there are any cells available
+
+
+Grid.prototype.cellsAvailable = function () {
+  return !!this.availableCells().length;
+}; // Check if the specified cell is taken
+
+
+Grid.prototype.cellAvailable = function (cell) {
+  return !this.cellOccupied(cell);
+};
+
+Grid.prototype.cellOccupied = function (cell) {
+  return !!this.cellContent(cell);
+};
+
+Grid.prototype.cellContent = function (cell) {
+  if (this.withinBounds(cell)) {
+    return this.cells[cell.x][cell.y];
+  } else {
+    return null;
+  }
+}; // Inserts a tile at its position
+
+
+Grid.prototype.insertTile = function (tile) {
+  this.cells[tile.x][tile.y] = tile;
+};
+
+Grid.prototype.removeTile = function (tile) {
+  this.cells[tile.x][tile.y] = null;
+};
+
+Grid.prototype.withinBounds = function (position) {
+  return position.x >= 0 && position.x < this.size && position.y >= 0 && position.y < this.size;
+};
+
+Grid.prototype.serialize = function () {
+  var cellState = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cellState[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
+    }
+  }
+
+  return {
+    size: this.size,
+    cells: cellState
+  };
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/html_actuator.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Game/js/html_actuator.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ HTMLActuator)
+/* harmony export */ });
+function HTMLActuator() {
+  this.tileContainer = document.querySelector(".tile-container");
+  this.scoreContainer = document.querySelector(".score-container");
+  this.bestContainer = document.querySelector(".best-container");
+  this.messageContainer = document.querySelector(".game-message");
+  this.score = 0;
+}
+
+HTMLActuator.prototype.actuate = function (grid, metadata) {
+  var self = this;
+  window.requestAnimationFrame(function () {
+    self.clearContainer(self.tileContainer);
+    grid.cells.forEach(function (column) {
+      column.forEach(function (cell) {
+        if (cell) {
+          self.addTile(cell);
+        }
+      });
+    });
+    self.updateScore(metadata.score);
+    self.updateBestScore(metadata.bestScore);
+
+    if (metadata.terminated) {
+      if (metadata.over) {
+        self.message(false); // You lose
+      } else if (metadata.won) {
+        self.message(true); // You win!
+      }
+    }
+  });
+}; // Continues the game (both restart and keep playing)
+
+
+HTMLActuator.prototype.continueGame = function () {
+  this.clearMessage();
+};
+
+HTMLActuator.prototype.clearContainer = function (container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+};
+
+HTMLActuator.prototype.addTile = function (tile) {
+  var self = this;
+  var wrapper = document.createElement("div");
+  var inner = document.createElement("div");
+  var position = tile.previousPosition || {
+    x: tile.x,
+    y: tile.y
+  };
+  var positionClass = this.positionClass(position); // We can't use classlist because it somehow glitches when replacing classes
+
+  var classes = ["tile", "tile-" + tile.value, positionClass];
+  if (tile.value > 2048) classes.push("tile-super");
+  this.applyClasses(wrapper, classes);
+  inner.classList.add("tile-inner");
+  inner.textContent = tile.value;
+
+  if (tile.previousPosition) {
+    // Make sure that the tile gets rendered in the previous position first
+    window.requestAnimationFrame(function () {
+      classes[2] = self.positionClass({
+        x: tile.x,
+        y: tile.y
+      });
+      self.applyClasses(wrapper, classes); // Update the position
+    });
+  } else if (tile.mergedFrom) {
+    classes.push("tile-merged");
+    this.applyClasses(wrapper, classes); // Render the tiles that merged
+
+    tile.mergedFrom.forEach(function (merged) {
+      self.addTile(merged);
+    });
+  } else {
+    classes.push("tile-new");
+    this.applyClasses(wrapper, classes);
+  } // Add the inner part of the tile to the wrapper
+
+
+  wrapper.appendChild(inner); // Put the tile on the board
+
+  this.tileContainer.appendChild(wrapper);
+};
+
+HTMLActuator.prototype.applyClasses = function (element, classes) {
+  element.setAttribute("class", classes.join(" "));
+};
+
+HTMLActuator.prototype.normalizePosition = function (position) {
+  return {
+    x: position.x + 1,
+    y: position.y + 1
+  };
+};
+
+HTMLActuator.prototype.positionClass = function (position) {
+  position = this.normalizePosition(position);
+  return "tile-position-" + position.x + "-" + position.y;
+};
+
+HTMLActuator.prototype.updateScore = function (score) {
+  this.clearContainer(this.scoreContainer);
+  var difference = score - this.score;
+  this.score = score;
+  this.scoreContainer.textContent = this.score;
+
+  if (difference > 0) {
+    var addition = document.createElement("div");
+    addition.classList.add("score-addition");
+    addition.textContent = "+" + difference;
+    this.scoreContainer.appendChild(addition);
+  }
+};
+
+HTMLActuator.prototype.updateBestScore = function (bestScore) {
+  this.bestContainer.textContent = bestScore;
+};
+
+HTMLActuator.prototype.message = function (won) {
+  var type = won ? "game-won" : "game-over";
+  var message = won ? "You win!" : "Game over!";
+  this.messageContainer.classList.add(type);
+  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+};
+
+HTMLActuator.prototype.clearMessage = function () {
+  // IE only takes one value to remove at a time.
+  this.messageContainer.classList.remove("game-won");
+  this.messageContainer.classList.remove("game-over");
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/keyboard_input_manager.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Game/js/keyboard_input_manager.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ KeyboardInputManager)
+/* harmony export */ });
+function KeyboardInputManager() {
+  this.events = {};
+
+  if (window.navigator.msPointerEnabled) {
+    //Internet Explorer 10 style
+    this.eventTouchstart = "MSPointerDown";
+    this.eventTouchmove = "MSPointerMove";
+    this.eventTouchend = "MSPointerUp";
+  } else {
+    this.eventTouchstart = "touchstart";
+    this.eventTouchmove = "touchmove";
+    this.eventTouchend = "touchend";
+  }
+
+  this.listen();
+}
+
+KeyboardInputManager.prototype.on = function (event, callback) {
+  if (!this.events[event]) {
+    this.events[event] = [];
+  }
+
+  this.events[event].push(callback);
+};
+
+KeyboardInputManager.prototype.emit = function (event, data) {
+  var callbacks = this.events[event];
+
+  if (callbacks) {
+    callbacks.forEach(function (callback) {
+      callback(data);
+    });
+  }
+};
+
+KeyboardInputManager.prototype.listen = function () {
+  var self = this;
+  var map = {
+    38: 0,
+    // Up
+    39: 1,
+    // Right
+    40: 2,
+    // Down
+    37: 3,
+    // Left
+    75: 0,
+    // Vim up
+    76: 1,
+    // Vim right
+    74: 2,
+    // Vim down
+    72: 3,
+    // Vim left
+    87: 0,
+    // W
+    68: 1,
+    // D
+    83: 2,
+    // S
+    65: 3 // A
+
+  }; // Respond to direction keys
+
+  document.addEventListener("keydown", function (event) {
+    var modifiers = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+    var mapped = map[event.which];
+
+    if (!modifiers) {
+      if (mapped !== undefined) {
+        event.preventDefault();
+        self.emit("move", mapped);
+      }
+    } // R key restarts the game
+
+
+    if (!modifiers && event.which === 82) {
+      self.restart.call(self, event);
+    }
+  }); // Respond to button presses
+
+  this.bindButtonPress(".retry-button", this.restart);
+  this.bindButtonPress(".restart-button", this.restart);
+  this.bindButtonPress(".keep-playing-button", this.keepPlaying); // Respond to swipe events
+
+  var touchStartClientX, touchStartClientY;
+  var gameContainer = document.getElementsByClassName("game-container")[0];
+  gameContainer.addEventListener(this.eventTouchstart, function (event) {
+    if (!window.navigator.msPointerEnabled && event.touches.length > 1 || event.targetTouches.length > 1) {
+      return; // Ignore if touching with more than 1 finger
+    }
+
+    if (window.navigator.msPointerEnabled) {
+      touchStartClientX = event.pageX;
+      touchStartClientY = event.pageY;
+    } else {
+      touchStartClientX = event.touches[0].clientX;
+      touchStartClientY = event.touches[0].clientY;
+    }
+
+    event.preventDefault();
+  });
+  gameContainer.addEventListener(this.eventTouchmove, function (event) {
+    event.preventDefault();
+  });
+  gameContainer.addEventListener(this.eventTouchend, function (event) {
+    if (!window.navigator.msPointerEnabled && event.touches.length > 0 || event.targetTouches.length > 0) {
+      return; // Ignore if still touching with one or more fingers
+    }
+
+    var touchEndClientX, touchEndClientY;
+
+    if (window.navigator.msPointerEnabled) {
+      touchEndClientX = event.pageX;
+      touchEndClientY = event.pageY;
+    } else {
+      touchEndClientX = event.changedTouches[0].clientX;
+      touchEndClientY = event.changedTouches[0].clientY;
+    }
+
+    var dx = touchEndClientX - touchStartClientX;
+    var absDx = Math.abs(dx);
+    var dy = touchEndClientY - touchStartClientY;
+    var absDy = Math.abs(dy);
+
+    if (Math.max(absDx, absDy) > 10) {
+      // (right : left) : (down : up)
+      self.emit("move", absDx > absDy ? dx > 0 ? 1 : 3 : dy > 0 ? 2 : 0);
+    }
+  });
+};
+
+KeyboardInputManager.prototype.restart = function (event) {
+  event.preventDefault();
+  this.emit("restart");
+};
+
+KeyboardInputManager.prototype.keepPlaying = function (event) {
+  event.preventDefault();
+  this.emit("keepPlaying");
+};
+
+KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
+  var button = document.querySelector(selector);
+  button.addEventListener("click", fn.bind(this));
+  button.addEventListener(this.eventTouchend, fn.bind(this));
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/local_storage_manager.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Game/js/local_storage_manager.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LocalStorageManager)
+/* harmony export */ });
+window.fakeStorage = {
+  _data: {},
+  setItem: function setItem(id, val) {
+    return this._data[id] = String(val);
+  },
+  getItem: function getItem(id) {
+    return this._data.hasOwnProperty(id) ? this._data[id] : undefined;
+  },
+  removeItem: function removeItem(id) {
+    return delete this._data[id];
+  },
+  clear: function clear() {
+    return this._data = {};
+  }
+};
+function LocalStorageManager() {
+  this.bestScoreKey = "bestScore";
+  this.gameStateKey = "gameState";
+  var supported = this.localStorageSupported();
+  this.storage = supported ? window.localStorage : window.fakeStorage;
+}
+
+LocalStorageManager.prototype.localStorageSupported = function () {
+  var testKey = "test";
+
+  try {
+    var storage = window.localStorage;
+    storage.setItem(testKey, "1");
+    storage.removeItem(testKey);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}; // Best score getters/setters
+
+
+LocalStorageManager.prototype.getBestScore = function () {
+  return this.storage.getItem(this.bestScoreKey) || 0;
+};
+
+LocalStorageManager.prototype.setBestScore = function (score) {
+  this.storage.setItem(this.bestScoreKey, score);
+}; // Game state getters/setters and clearing
+
+
+LocalStorageManager.prototype.getGameState = function () {
+  var stateJSON = this.storage.getItem(this.gameStateKey);
+  return stateJSON ? JSON.parse(stateJSON) : null;
+};
+
+LocalStorageManager.prototype.setGameState = function (gameState) {
+  this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
+};
+
+LocalStorageManager.prototype.clearGameState = function () {
+  this.storage.removeItem(this.gameStateKey);
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/js/tile.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Game/js/tile.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Tile)
+/* harmony export */ });
+function Tile(position, value) {
+  this.x = position.x;
+  this.y = position.y;
+  this.value = value || 2;
+  this.previousPosition = null;
+  this.mergedFrom = null; // Tracks tiles that merged together
+}
+
+Tile.prototype.savePosition = function () {
+  this.previousPosition = {
+    x: this.x,
+    y: this.y
+  };
+};
+
+Tile.prototype.updatePosition = function (position) {
+  this.x = position.x;
+  this.y = position.y;
+};
+
+Tile.prototype.serialize = function () {
+  return {
+    position: {
+      x: this.x,
+      y: this.y
+    },
+    value: this.value
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/router/index.js":
 /*!**************************************!*\
   !*** ./resources/js/router/index.js ***!
@@ -3925,6 +5083,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_App_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/App.vue */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_User_Components_User_Login_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/User_Components/User_Login.vue */ "./resources/js/components/User_Components/User_Login.vue");
 /* harmony import */ var _components_User_Components_menus_User_Dashboard_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/User_Components/menus/User_Dashboard.vue */ "./resources/js/components/User_Components/menus/User_Dashboard.vue");
+/* harmony import */ var _components_Game_Game_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Game/Game.vue */ "./resources/js/components/Game/Game.vue");
 
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // BRI - COMPONENTS
@@ -3938,6 +5097,8 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
  // USER - COMPONENTS
 
 
+
+ // GAME - COMPONENTS
 
 
 var routes = [// USER - ROUTER
@@ -3957,6 +5118,13 @@ var routes = [// USER - ROUTER
   path: "/dashboard",
   name: "User_Dashboard",
   component: _components_User_Components_menus_User_Dashboard_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+  meta: {
+    requiresAuthUser: true
+  }
+}, {
+  path: "/game",
+  name: "Game",
+  component: _components_Game_Game_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
   meta: {
     requiresAuthUser: true
   }
@@ -4079,6 +5247,96 @@ router.beforeEach(function (to, from, next) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.eot":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.eot ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Bold-webfont.eot?9e9caa38ba5cac77998e958e7ba658ac";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.svg":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.svg ***!
+  \*****************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Bold-webfont.svg?d463e8c131d1ac41c3c24fce950fbf26";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.woff":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.woff ***!
+  \******************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Bold-webfont.woff?92762598f32932934f7f28b2a9e1f2b3";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.eot":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.eot ***!
+  \******************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Light-webfont.eot?4d25accc4c2af36a49af984f225eb071";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.svg":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.svg ***!
+  \******************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Light-webfont.svg?02066214d5a2d5a5124889b9763a7060";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.woff":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.woff ***!
+  \*******************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Light-webfont.woff?e7b0c65b019baa69a79bcfd43bb96df6";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.eot":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.eot ***!
+  \********************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Regular-webfont.eot?6abf9fda25a75b88b913ea00b9483676";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.svg":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.svg ***!
+  \********************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Regular-webfont.svg?d0471d3467af599df6fe3a7808647a9d";
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.woff":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.woff ***!
+  \*********************************************************************************/
+/***/ ((module) => {
+
+module.exports = "/fonts/ClearSans-Regular-webfont.woff?72f3056dc3712326ce551419b4a61806";
+
+/***/ }),
+
 /***/ "./node_modules/jw-vue-pagination/lib/JwPagination.js":
 /*!************************************************************!*\
   !*** ./node_modules/jw-vue-pagination/lib/JwPagination.js ***!
@@ -4086,6 +5344,126 @@ router.beforeEach(function (to, from, next) {
 /***/ ((module) => {
 
 module.exports=function(e){var t={};function s(r){if(t[r])return t[r].exports;var a=t[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,s),a.l=!0,a.exports}return s.m=e,s.c=t,s.d=function(e,t,r){s.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},s.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},s.t=function(e,t){if(1&t&&(e=s(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(s.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)s.d(r,a,function(t){return e[t]}.bind(null,a));return r},s.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return s.d(t,"a",t),t},s.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},s.p="",s(s.s=1)}([function(e,t,s){"use strict";e.exports=function(e,t,s,r){void 0===t&&(t=1),void 0===s&&(s=10),void 0===r&&(r=10);var a,n,i=Math.ceil(e/s);if(t<1?t=1:t>i&&(t=i),i<=r)a=1,n=i;else{var l=Math.floor(r/2),o=Math.ceil(r/2)-1;t<=l?(a=1,n=r):t+o>=i?(a=i-r+1,n=i):(a=t-l,n=t+o)}var c=(t-1)*s,u=Math.min(c+s-1,e-1),p=Array.from(Array(n+1-a).keys()).map(function(e){return a+e});return{totalItems:e,currentPage:t,pageSize:s,totalPages:i,startPage:a,endPage:n,startIndex:c,endIndex:u,pages:p}}},function(e,t,s){"use strict";s.r(t);var r=function(){var e=this,t=e.$createElement,s=e._self._c||t;return e.pager.pages&&e.pager.pages.length?s("ul",{staticClass:"pagination",style:e.ulStyles},[s("li",{staticClass:"page-item first",class:{disabled:1===e.pager.currentPage},style:e.liStyles},[s("a",{staticClass:"page-link",style:e.aStyles,on:{click:function(t){return e.setPage(1)}}},[e._v(e._s(e.labels.first))])]),e._v(" "),s("li",{staticClass:"page-item previous",class:{disabled:1===e.pager.currentPage},style:e.liStyles},[s("a",{staticClass:"page-link",style:e.aStyles,on:{click:function(t){return e.setPage(e.pager.currentPage-1)}}},[e._v(e._s(e.labels.previous))])]),e._v(" "),e._l(e.pager.pages,function(t){return s("li",{key:t,staticClass:"page-item page-number",class:{active:e.pager.currentPage===t},style:e.liStyles},[s("a",{staticClass:"page-link",style:e.aStyles,on:{click:function(s){return e.setPage(t)}}},[e._v(e._s(t))])])}),e._v(" "),s("li",{staticClass:"page-item next",class:{disabled:e.pager.currentPage===e.pager.totalPages},style:e.liStyles},[s("a",{staticClass:"page-link",style:e.aStyles,on:{click:function(t){return e.setPage(e.pager.currentPage+1)}}},[e._v(e._s(e.labels.next))])]),e._v(" "),s("li",{staticClass:"page-item last",class:{disabled:e.pager.currentPage===e.pager.totalPages},style:e.liStyles},[s("a",{staticClass:"page-link",style:e.aStyles,on:{click:function(t){return e.setPage(e.pager.totalPages)}}},[e._v(e._s(e.labels.last))])])],2):e._e()};r._withStripped=!0;var a=s(0),n=s.n(a);function i(e,t){var s=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable})),s.push.apply(s,r)}return s}function l(e){for(var t=1;t<arguments.length;t++){var s=null!=arguments[t]?arguments[t]:{};t%2?i(s,!0).forEach(function(t){o(e,t,s[t])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(s)):i(s).forEach(function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(s,t))})}return e}function o(e,t,s){return t in e?Object.defineProperty(e,t,{value:s,enumerable:!0,configurable:!0,writable:!0}):e[t]=s,e}var c={first:"First",last:"Last",previous:"Previous",next:"Next"},u={margin:0,padding:0,display:"inline-block"},p={listStyle:"none",display:"inline",textAlign:"center"},g={cursor:"pointer",padding:"6px 12px",display:"block",float:"left"};var f=function(e,t,s,r,a,n,i,l){var o,c="function"==typeof e?e.options:e;if(t&&(c.render=t,c.staticRenderFns=s,c._compiled=!0),r&&(c.functional=!0),n&&(c._scopeId="data-v-"+n),i?(o=function(e){(e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),a&&a.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(i)},c._ssrRegister=o):a&&(o=l?function(){a.call(this,this.$root.$options.shadowRoot)}:a),o)if(c.functional){c._injectStyles=o;var u=c.render;c.render=function(e,t){return o.call(t),u(e,t)}}else{var p=c.beforeCreate;c.beforeCreate=p?[].concat(p,o):[o]}return{exports:e,options:c}}({props:{items:{type:Array,required:!0},initialPage:{type:Number,default:1},pageSize:{type:Number,default:10},maxPages:{type:Number,default:10},labels:{type:Object,default:function(){return c}},styles:{type:Object},disableDefaultStyles:{type:Boolean,default:!1}},data:function(){return{pager:{},ulStyles:{},liStyles:{},aStyles:{}}},created:function(){if(!this.$listeners.changePage)throw'Missing required event listener: "changePage"';this.disableDefaultStyles||(this.ulStyles=u,this.liStyles=p,this.aStyles=g),this.styles&&(this.ulStyles=l({},this.ulStyles,{},this.styles.ul),this.liStyles=l({},this.liStyles,{},this.styles.li),this.aStyles=l({},this.aStyles,{},this.styles.a)),this.setPage(this.initialPage)},methods:{setPage:function(e){var t=this.items,s=this.pageSize,r=this.maxPages,a=n()(t.length,e,s,r),i=t.slice(a.startIndex,a.endIndex+1);this.pager=a,this.$emit("changePage",i)}},watch:{items:function(){this.setPage(this.initialPage)}}},r,[],!1,null,null,null);f.options.__file="src/JwPagination.vue";t.default=f.exports}]);
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_style_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! -!../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./style/main.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/main.css");
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.i(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_style_main_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/fonts/clear-sans.css":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/fonts/clear-sans.css ***!
+  \*********************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ClearSans_Light_webfont_eot__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ClearSans-Light-webfont.eot */ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.eot");
+/* harmony import */ var _ClearSans_Light_webfont_eot__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Light_webfont_eot__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _ClearSans_Light_webfont_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ClearSans-Light-webfont.svg */ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.svg");
+/* harmony import */ var _ClearSans_Light_webfont_svg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Light_webfont_svg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _ClearSans_Light_webfont_woff__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ClearSans-Light-webfont.woff */ "./resources/js/components/Game/style/fonts/ClearSans-Light-webfont.woff");
+/* harmony import */ var _ClearSans_Light_webfont_woff__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Light_webfont_woff__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _ClearSans_Regular_webfont_eot__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ClearSans-Regular-webfont.eot */ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.eot");
+/* harmony import */ var _ClearSans_Regular_webfont_eot__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Regular_webfont_eot__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _ClearSans_Regular_webfont_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ClearSans-Regular-webfont.svg */ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.svg");
+/* harmony import */ var _ClearSans_Regular_webfont_svg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Regular_webfont_svg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _ClearSans_Regular_webfont_woff__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ClearSans-Regular-webfont.woff */ "./resources/js/components/Game/style/fonts/ClearSans-Regular-webfont.woff");
+/* harmony import */ var _ClearSans_Regular_webfont_woff__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Regular_webfont_woff__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _ClearSans_Bold_webfont_eot__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ClearSans-Bold-webfont.eot */ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.eot");
+/* harmony import */ var _ClearSans_Bold_webfont_eot__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Bold_webfont_eot__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _ClearSans_Bold_webfont_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ClearSans-Bold-webfont.svg */ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.svg");
+/* harmony import */ var _ClearSans_Bold_webfont_svg__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Bold_webfont_svg__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _ClearSans_Bold_webfont_woff__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ClearSans-Bold-webfont.woff */ "./resources/js/components/Game/style/fonts/ClearSans-Bold-webfont.woff");
+/* harmony import */ var _ClearSans_Bold_webfont_woff__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_ClearSans_Bold_webfont_woff__WEBPACK_IMPORTED_MODULE_10__);
+// Imports
+
+
+
+
+
+
+
+
+
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Light_webfont_eot__WEBPACK_IMPORTED_MODULE_2___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Light_webfont_eot__WEBPACK_IMPORTED_MODULE_2___default()), { hash: "?#iefix" });
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Light_webfont_svg__WEBPACK_IMPORTED_MODULE_3___default()), { hash: "#clear_sans_lightregular" });
+var ___CSS_LOADER_URL_REPLACEMENT_3___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Light_webfont_woff__WEBPACK_IMPORTED_MODULE_4___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_4___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Regular_webfont_eot__WEBPACK_IMPORTED_MODULE_5___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_5___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Regular_webfont_eot__WEBPACK_IMPORTED_MODULE_5___default()), { hash: "?#iefix" });
+var ___CSS_LOADER_URL_REPLACEMENT_6___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Regular_webfont_svg__WEBPACK_IMPORTED_MODULE_6___default()), { hash: "#clear_sansregular" });
+var ___CSS_LOADER_URL_REPLACEMENT_7___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Regular_webfont_woff__WEBPACK_IMPORTED_MODULE_7___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_8___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_eot__WEBPACK_IMPORTED_MODULE_8___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_9___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_eot__WEBPACK_IMPORTED_MODULE_8___default()), { hash: "?#iefix" });
+var ___CSS_LOADER_URL_REPLACEMENT_10___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_svg__WEBPACK_IMPORTED_MODULE_9___default()), { hash: "#clear_sansbold" });
+var ___CSS_LOADER_URL_REPLACEMENT_11___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_woff__WEBPACK_IMPORTED_MODULE_10___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"woff\");\n    font-weight: 200;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ") format(\"woff\");\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ") format(\"woff\");\n    font-weight: 700;\n    font-style: normal;\n}\n\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/main.css":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/main.css ***!
+  \*********************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_fonts_clear_sans_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! -!../../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./fonts/clear-sans.css */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./resources/js/components/Game/style/fonts/clear-sans.css");
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+___CSS_LOADER_EXPORT___.i(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_fonts_clear_sans_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "html,\r\nbody {\r\n    margin: 0;\r\n    padding: 0;\r\n    background: #faf8ef;\r\n    color: #776e65;\r\n    font-family: \"Clear Sans\", \"Helvetica Neue\", Arial, sans-serif;\r\n    font-size: 18px;\r\n}\r\n\r\nbody {\r\n    margin: 80px 0;\r\n}\r\n\r\n.heading:after {\r\n    content: \"\";\r\n    display: block;\r\n    clear: both;\r\n}\r\n\r\n@-webkit-keyframes move-up {\r\n    0% {\r\n        top: 25px;\r\n        opacity: 1;\r\n    }\r\n\r\n    100% {\r\n        top: -50px;\r\n        opacity: 0;\r\n    }\r\n}\r\n@-moz-keyframes move-up {\r\n    0% {\r\n        top: 25px;\r\n        opacity: 1;\r\n    }\r\n\r\n    100% {\r\n        top: -50px;\r\n        opacity: 0;\r\n    }\r\n}\r\n@keyframes move-up {\r\n    0% {\r\n        top: 25px;\r\n        opacity: 1;\r\n    }\r\n\r\n    100% {\r\n        top: -50px;\r\n        opacity: 0;\r\n    }\r\n}\r\n.scores-container {\r\n    float: center;\r\n    text-align: center;\r\n}\r\n\r\n.score-container,\r\n.best-container {\r\n    position: relative;\r\n    display: inline-block;\r\n    background: #bbada0;\r\n    padding: 15px 25px;\r\n    font-size: 25px;\r\n    height: 25px;\r\n    line-height: 47px;\r\n    font-weight: bold;\r\n    border-radius: 3px;\r\n    color: white;\r\n    margin-top: 8px;\r\n    text-align: center;\r\n}\r\n.score-container:after,\r\n.best-container:after {\r\n    position: absolute;\r\n    width: 100%;\r\n    top: 10px;\r\n    left: 0;\r\n    text-transform: uppercase;\r\n    font-size: 13px;\r\n    line-height: 13px;\r\n    text-align: center;\r\n    color: #eee4da;\r\n}\r\n.score-container .score-addition,\r\n.best-container .score-addition {\r\n    position: absolute;\r\n    right: 30px;\r\n    color: red;\r\n    font-size: 25px;\r\n    line-height: 25px;\r\n    font-weight: bold;\r\n    color: rgba(119, 110, 101, 0.9);\r\n    z-index: 100;\r\n    -webkit-animation: move-up 600ms ease-in;\r\n    -moz-animation: move-up 600ms ease-in;\r\n    animation: move-up 600ms ease-in;\r\n    -webkit-animation-fill-mode: both;\r\n    -moz-animation-fill-mode: both;\r\n    animation-fill-mode: both;\r\n}\r\n\r\n.score-container:after {\r\n    content: \"Score\";\r\n}\r\n\r\n.best-container:after {\r\n    content: \"Best\";\r\n}\r\n\r\np {\r\n    margin-top: 0;\r\n    margin-bottom: 10px;\r\n    line-height: 1.65;\r\n}\r\n\r\na {\r\n    color: #776e65;\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\nstrong.important {\r\n    text-transform: uppercase;\r\n}\r\n\r\nhr {\r\n    border: none;\r\n    border-bottom: 1px solid #d8d4d0;\r\n    margin-top: 20px;\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.containers {\r\n    width: 500px;\r\n    margin: 0 auto;\r\n}\r\n\r\n@-webkit-keyframes fade-in {\r\n    0% {\r\n        opacity: 0;\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n@-moz-keyframes fade-in {\r\n    0% {\r\n        opacity: 0;\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n@keyframes fade-in {\r\n    0% {\r\n        opacity: 0;\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n.game-container {\r\n    margin-top: 40px;\r\n    position: relative;\r\n    padding: 15px;\r\n    cursor: default;\r\n    -webkit-touch-callout: none;\r\n    -ms-touch-callout: none;\r\n    user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    -ms-touch-action: none;\r\n    touch-action: none;\r\n    background: #bbada0;\r\n    border-radius: 6px;\r\n    width: 500px;\r\n    height: 500px;\r\n    -webkit-box-sizing: border-box;\r\n    -moz-box-sizing: border-box;\r\n    box-sizing: border-box;\r\n}\r\n.game-container .game-message {\r\n    display: none;\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    background: rgba(238, 228, 218, 0.5);\r\n    z-index: 100;\r\n    text-align: center;\r\n    -webkit-animation: fade-in 800ms ease 1200ms;\r\n    -moz-animation: fade-in 800ms ease 1200ms;\r\n    animation: fade-in 800ms ease 1200ms;\r\n    -webkit-animation-fill-mode: both;\r\n    -moz-animation-fill-mode: both;\r\n    animation-fill-mode: both;\r\n}\r\n.game-container .game-message p {\r\n    font-size: 60px;\r\n    font-weight: bold;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    margin-top: 222px;\r\n}\r\n.game-container .game-message .lower {\r\n    display: block;\r\n    margin-top: 59px;\r\n}\r\n.game-container .game-message a {\r\n    display: inline-block;\r\n    background: #8f7a66;\r\n    border-radius: 3px;\r\n    padding: 0 20px;\r\n    text-decoration: none;\r\n    color: #f9f6f2;\r\n    height: 40px;\r\n    line-height: 42px;\r\n    margin-left: 9px;\r\n}\r\n.game-container .game-message a.keep-playing-button {\r\n    display: none;\r\n}\r\n.game-container .game-message.game-won {\r\n    background: rgba(237, 194, 46, 0.5);\r\n    color: #f9f6f2;\r\n}\r\n.game-container .game-message.game-won a.keep-playing-button {\r\n    display: inline-block;\r\n}\r\n.game-container .game-message.game-won,\r\n.game-container .game-message.game-over {\r\n    display: block;\r\n}\r\n\r\n.grid-container {\r\n    position: absolute;\r\n    z-index: 1;\r\n}\r\n\r\n.grid-row {\r\n    margin-bottom: 15px;\r\n}\r\n.grid-row:last-child {\r\n    margin-bottom: 0;\r\n}\r\n.grid-row:after {\r\n    content: \"\";\r\n    display: block;\r\n    clear: both;\r\n}\r\n\r\n.grid-cell {\r\n    width: 106.25px;\r\n    height: 106.25px;\r\n    margin-right: 15px;\r\n    float: left;\r\n    border-radius: 3px;\r\n    background: rgba(238, 228, 218, 0.35);\r\n}\r\n.grid-cell:last-child {\r\n    margin-right: 0;\r\n}\r\n\r\n.tile-container {\r\n    position: absolute;\r\n    z-index: 2;\r\n}\r\n\r\n.tile,\r\n.tile .tile-inner {\r\n    width: 107px;\r\n    height: 107px;\r\n    line-height: 107px;\r\n}\r\n.tile.tile-position-1-1 {\r\n    -webkit-transform: translate(0px, 0px);\r\n    -moz-transform: translate(0px, 0px);\r\n    -ms-transform: translate(0px, 0px);\r\n    transform: translate(0px, 0px);\r\n}\r\n.tile.tile-position-1-2 {\r\n    -webkit-transform: translate(0px, 121px);\r\n    -moz-transform: translate(0px, 121px);\r\n    -ms-transform: translate(0px, 121px);\r\n    transform: translate(0px, 121px);\r\n}\r\n.tile.tile-position-1-3 {\r\n    -webkit-transform: translate(0px, 242px);\r\n    -moz-transform: translate(0px, 242px);\r\n    -ms-transform: translate(0px, 242px);\r\n    transform: translate(0px, 242px);\r\n}\r\n.tile.tile-position-1-4 {\r\n    -webkit-transform: translate(0px, 363px);\r\n    -moz-transform: translate(0px, 363px);\r\n    -ms-transform: translate(0px, 363px);\r\n    transform: translate(0px, 363px);\r\n}\r\n.tile.tile-position-2-1 {\r\n    -webkit-transform: translate(121px, 0px);\r\n    -moz-transform: translate(121px, 0px);\r\n    -ms-transform: translate(121px, 0px);\r\n    transform: translate(121px, 0px);\r\n}\r\n.tile.tile-position-2-2 {\r\n    -webkit-transform: translate(121px, 121px);\r\n    -moz-transform: translate(121px, 121px);\r\n    -ms-transform: translate(121px, 121px);\r\n    transform: translate(121px, 121px);\r\n}\r\n.tile.tile-position-2-3 {\r\n    -webkit-transform: translate(121px, 242px);\r\n    -moz-transform: translate(121px, 242px);\r\n    -ms-transform: translate(121px, 242px);\r\n    transform: translate(121px, 242px);\r\n}\r\n.tile.tile-position-2-4 {\r\n    -webkit-transform: translate(121px, 363px);\r\n    -moz-transform: translate(121px, 363px);\r\n    -ms-transform: translate(121px, 363px);\r\n    transform: translate(121px, 363px);\r\n}\r\n.tile.tile-position-3-1 {\r\n    -webkit-transform: translate(242px, 0px);\r\n    -moz-transform: translate(242px, 0px);\r\n    -ms-transform: translate(242px, 0px);\r\n    transform: translate(242px, 0px);\r\n}\r\n.tile.tile-position-3-2 {\r\n    -webkit-transform: translate(242px, 121px);\r\n    -moz-transform: translate(242px, 121px);\r\n    -ms-transform: translate(242px, 121px);\r\n    transform: translate(242px, 121px);\r\n}\r\n.tile.tile-position-3-3 {\r\n    -webkit-transform: translate(242px, 242px);\r\n    -moz-transform: translate(242px, 242px);\r\n    -ms-transform: translate(242px, 242px);\r\n    transform: translate(242px, 242px);\r\n}\r\n.tile.tile-position-3-4 {\r\n    -webkit-transform: translate(242px, 363px);\r\n    -moz-transform: translate(242px, 363px);\r\n    -ms-transform: translate(242px, 363px);\r\n    transform: translate(242px, 363px);\r\n}\r\n.tile.tile-position-4-1 {\r\n    -webkit-transform: translate(363px, 0px);\r\n    -moz-transform: translate(363px, 0px);\r\n    -ms-transform: translate(363px, 0px);\r\n    transform: translate(363px, 0px);\r\n}\r\n.tile.tile-position-4-2 {\r\n    -webkit-transform: translate(363px, 121px);\r\n    -moz-transform: translate(363px, 121px);\r\n    -ms-transform: translate(363px, 121px);\r\n    transform: translate(363px, 121px);\r\n}\r\n.tile.tile-position-4-3 {\r\n    -webkit-transform: translate(363px, 242px);\r\n    -moz-transform: translate(363px, 242px);\r\n    -ms-transform: translate(363px, 242px);\r\n    transform: translate(363px, 242px);\r\n}\r\n.tile.tile-position-4-4 {\r\n    -webkit-transform: translate(363px, 363px);\r\n    -moz-transform: translate(363px, 363px);\r\n    -ms-transform: translate(363px, 363px);\r\n    transform: translate(363px, 363px);\r\n}\r\n\r\n.tile {\r\n    position: absolute;\r\n    -webkit-transition: 100ms ease-in-out;\r\n    -moz-transition: 100ms ease-in-out;\r\n    transition: 100ms ease-in-out;\r\n    -webkit-transition-property: -webkit-transform;\r\n    -moz-transition-property: -moz-transform;\r\n    transition-property: transform;\r\n}\r\n.tile .tile-inner {\r\n    border-radius: 3px;\r\n    background: #eee4da;\r\n    text-align: center;\r\n    font-weight: bold;\r\n    z-index: 10;\r\n    font-size: 55px;\r\n}\r\n.tile.tile-2 .tile-inner {\r\n    background: #eee4da;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0);\r\n}\r\n.tile.tile-4 .tile-inner {\r\n    background: #ede0c8;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0);\r\n}\r\n.tile.tile-8 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #f2b179;\r\n}\r\n.tile.tile-16 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #f59563;\r\n}\r\n.tile.tile-32 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #f67c5f;\r\n}\r\n.tile.tile-64 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #f65e3b;\r\n}\r\n.tile.tile-128 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #edcf72;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0.14286);\r\n    font-size: 45px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-128 .tile-inner {\r\n        font-size: 25px;\r\n    }\r\n}\r\n.tile.tile-256 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #edcc61;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0.19048);\r\n    font-size: 45px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-256 .tile-inner {\r\n        font-size: 25px;\r\n    }\r\n}\r\n.tile.tile-512 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #edc850;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0.2381);\r\n    font-size: 45px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-512 .tile-inner {\r\n        font-size: 25px;\r\n    }\r\n}\r\n.tile.tile-1024 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #edc53f;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0.28571);\r\n    font-size: 35px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-1024 .tile-inner {\r\n        font-size: 15px;\r\n    }\r\n}\r\n.tile.tile-2048 .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #edc22e;\r\n    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556),\r\n        inset 0 0 0 1px rgba(255, 255, 255, 0.33333);\r\n    font-size: 35px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-2048 .tile-inner {\r\n        font-size: 15px;\r\n    }\r\n}\r\n.tile.tile-super .tile-inner {\r\n    color: #f9f6f2;\r\n    background: #3c3a32;\r\n    font-size: 30px;\r\n}\r\n@media screen and (max-width: 520px) {\r\n    .tile.tile-super .tile-inner {\r\n        font-size: 10px;\r\n    }\r\n}\r\n\r\n@-webkit-keyframes appear {\r\n    0% {\r\n        opacity: 0;\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n@-moz-keyframes appear {\r\n    0% {\r\n        opacity: 0;\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n@keyframes appear {\r\n    0% {\r\n        opacity: 0;\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    100% {\r\n        opacity: 1;\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n.tile-new .tile-inner {\r\n    -webkit-animation: appear 200ms ease 100ms;\r\n    -moz-animation: appear 200ms ease 100ms;\r\n    animation: appear 200ms ease 100ms;\r\n    -webkit-animation-fill-mode: backwards;\r\n    -moz-animation-fill-mode: backwards;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n@-webkit-keyframes pop {\r\n    0% {\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    50% {\r\n        -webkit-transform: scale(1.2);\r\n        -moz-transform: scale(1.2);\r\n        -ms-transform: scale(1.2);\r\n        transform: scale(1.2);\r\n    }\r\n\r\n    100% {\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n@-moz-keyframes pop {\r\n    0% {\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    50% {\r\n        -webkit-transform: scale(1.2);\r\n        -moz-transform: scale(1.2);\r\n        -ms-transform: scale(1.2);\r\n        transform: scale(1.2);\r\n    }\r\n\r\n    100% {\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n@keyframes pop {\r\n    0% {\r\n        -webkit-transform: scale(0);\r\n        -moz-transform: scale(0);\r\n        -ms-transform: scale(0);\r\n        transform: scale(0);\r\n    }\r\n\r\n    50% {\r\n        -webkit-transform: scale(1.2);\r\n        -moz-transform: scale(1.2);\r\n        -ms-transform: scale(1.2);\r\n        transform: scale(1.2);\r\n    }\r\n\r\n    100% {\r\n        -webkit-transform: scale(1);\r\n        -moz-transform: scale(1);\r\n        -ms-transform: scale(1);\r\n        transform: scale(1);\r\n    }\r\n}\r\n.tile-merged .tile-inner {\r\n    z-index: 20;\r\n    -webkit-animation: pop 200ms ease 100ms;\r\n    -moz-animation: pop 200ms ease 100ms;\r\n    animation: pop 200ms ease 100ms;\r\n    -webkit-animation-fill-mode: backwards;\r\n    -moz-animation-fill-mode: backwards;\r\n    animation-fill-mode: backwards;\r\n}\r\n\r\n.above-game:after {\r\n    content: \"\";\r\n    display: block;\r\n    clear: both;\r\n}\r\n\r\n.restart-button {\r\n    display: inline-block;\r\n    background: #8f7a66;\r\n    border-radius: 3px;\r\n    padding: 0 20px;\r\n    text-decoration: none;\r\n    color: #ffffff;\r\n    height: 40px;\r\n    line-height: 42px;\r\n    display: block;\r\n    text-align: center;\r\n    float: center;\r\n    margin-top: 20px;\r\n}\r\n\r\n.game-explanation {\r\n    margin-top: 50px;\r\n}\r\n\r\n@media screen and (max-width: 520px) {\r\n    html,\r\n    body {\r\n        font-size: 15px;\r\n    }\r\n\r\n    body {\r\n        margin: 20px 0;\r\n        padding: 0 20px;\r\n    }\r\n\r\n    .containers {\r\n        width: 350px;\r\n        margin: 0 auto;\r\n    }\r\n\r\n    .score-container,\r\n    .best-container {\r\n        margin-top: 0;\r\n        padding: 15px 10px;\r\n        min-width: 40px;\r\n    }\r\n\r\n    .heading {\r\n        margin-bottom: 10px;\r\n    }\r\n\r\n    .game-intro {\r\n        width: 55%;\r\n        display: block;\r\n        box-sizing: border-box;\r\n        line-height: 1.65;\r\n    }\r\n\r\n    .restart-button {\r\n        width: 100%;\r\n        padding: 0;\r\n        display: block;\r\n        box-sizing: border-box;\r\n        color: #ffffff;\r\n        margin-top: 10px;\r\n    }\r\n\r\n    .game-container {\r\n        margin-top: 17px;\r\n        position: relative;\r\n        padding: 10px;\r\n        cursor: default;\r\n        -webkit-touch-callout: none;\r\n        -ms-touch-callout: none;\r\n        user-select: none;\r\n        -moz-user-select: none;\r\n        -ms-user-select: none;\r\n        -ms-touch-action: none;\r\n        touch-action: none;\r\n        background: #bbada0;\r\n        border-radius: 6px;\r\n        width: 350px;\r\n        height: 350px;\r\n        -webkit-box-sizing: border-box;\r\n        -moz-box-sizing: border-box;\r\n        box-sizing: border-box;\r\n    }\r\n    .game-container .game-message {\r\n        display: none;\r\n        position: absolute;\r\n        top: 0;\r\n        right: 0;\r\n        bottom: 0;\r\n        left: 0;\r\n        background: rgba(238, 228, 218, 0.5);\r\n        z-index: 100;\r\n        text-align: center;\r\n        -webkit-animation: fade-in 800ms ease 1200ms;\r\n        -moz-animation: fade-in 800ms ease 1200ms;\r\n        animation: fade-in 800ms ease 1200ms;\r\n        -webkit-animation-fill-mode: both;\r\n        -moz-animation-fill-mode: both;\r\n        animation-fill-mode: both;\r\n    }\r\n    .game-container .game-message p {\r\n        font-size: 60px;\r\n        font-weight: bold;\r\n        height: 60px;\r\n        line-height: 60px;\r\n        margin-top: 222px;\r\n    }\r\n    .game-container .game-message .lower {\r\n        display: block;\r\n        margin-top: 59px;\r\n    }\r\n    .game-container .game-message a {\r\n        display: inline-block;\r\n        background: #8f7a66;\r\n        border-radius: 3px;\r\n        padding: 0 20px;\r\n        text-decoration: none;\r\n        color: #f9f6f2;\r\n        height: 40px;\r\n        line-height: 42px;\r\n        margin-left: 9px;\r\n    }\r\n    .game-container .game-message a.keep-playing-button {\r\n        display: none;\r\n    }\r\n    .game-container .game-message.game-won {\r\n        background: rgba(237, 194, 46, 0.5);\r\n        color: #f9f6f2;\r\n    }\r\n    .game-container .game-message.game-won a.keep-playing-button {\r\n        display: inline-block;\r\n    }\r\n    .game-container .game-message.game-won,\r\n    .game-container .game-message.game-over {\r\n        display: block;\r\n    }\r\n\r\n    .grid-container {\r\n        position: absolute;\r\n        z-index: 1;\r\n    }\r\n\r\n    .grid-row {\r\n        margin-bottom: 10px;\r\n    }\r\n    .grid-row:last-child {\r\n        margin-bottom: 0;\r\n    }\r\n    .grid-row:after {\r\n        content: \"\";\r\n        display: block;\r\n        clear: both;\r\n    }\r\n\r\n    .grid-cell {\r\n        width: 74.7px;\r\n        height: 74.7px;\r\n        margin-right: 10px;\r\n        float: left;\r\n        border-radius: 3px;\r\n        background: rgba(238, 228, 218, 0.35);\r\n    }\r\n    .grid-cell:last-child {\r\n        margin-right: 0;\r\n    }\r\n\r\n    .tile-container {\r\n        position: absolute;\r\n        z-index: 2;\r\n    }\r\n\r\n    .tile,\r\n    .tile .tile-inner {\r\n        width: 74.7px;\r\n        height: 74.7px;\r\n        line-height: 74.7px;\r\n    }\r\n    .tile.tile-position-1-1 {\r\n        -webkit-transform: translate(0px, 0px);\r\n        -moz-transform: translate(0px, 0px);\r\n        -ms-transform: translate(0px, 0px);\r\n        transform: translate(0px, 0px);\r\n    }\r\n    .tile.tile-position-1-2 {\r\n        -webkit-transform: translate(0px, 85px);\r\n        -moz-transform: translate(0px, 85px);\r\n        -ms-transform: translate(0px, 85px);\r\n        transform: translate(0px, 85px);\r\n    }\r\n    .tile.tile-position-1-3 {\r\n        -webkit-transform: translate(0px, 170px);\r\n        -moz-transform: translate(0px, 170px);\r\n        -ms-transform: translate(0px, 170px);\r\n        transform: translate(0px, 170px);\r\n    }\r\n    .tile.tile-position-1-4 {\r\n        -webkit-transform: translate(0px, 255px);\r\n        -moz-transform: translate(0px, 255px);\r\n        -ms-transform: translate(0px, 255px);\r\n        transform: translate(0px, 255px);\r\n    }\r\n    .tile.tile-position-2-1 {\r\n        -webkit-transform: translate(85px, 0px);\r\n        -moz-transform: translate(85px, 0px);\r\n        -ms-transform: translate(85px, 0px);\r\n        transform: translate(85px, 0px);\r\n    }\r\n    .tile.tile-position-2-2 {\r\n        -webkit-transform: translate(85px, 85px);\r\n        -moz-transform: translate(85px, 85px);\r\n        -ms-transform: translate(85px, 85px);\r\n        transform: translate(85px, 85px);\r\n    }\r\n    .tile.tile-position-2-3 {\r\n        -webkit-transform: translate(85px, 170px);\r\n        -moz-transform: translate(85px, 170px);\r\n        -ms-transform: translate(85px, 170px);\r\n        transform: translate(85px, 170px);\r\n    }\r\n    .tile.tile-position-2-4 {\r\n        -webkit-transform: translate(85px, 255px);\r\n        -moz-transform: translate(85px, 255px);\r\n        -ms-transform: translate(85px, 255px);\r\n        transform: translate(85px, 255px);\r\n    }\r\n    .tile.tile-position-3-1 {\r\n        -webkit-transform: translate(170px, 0px);\r\n        -moz-transform: translate(170px, 0px);\r\n        -ms-transform: translate(170px, 0px);\r\n        transform: translate(170px, 0px);\r\n    }\r\n    .tile.tile-position-3-2 {\r\n        -webkit-transform: translate(170px, 85px);\r\n        -moz-transform: translate(170px, 85px);\r\n        -ms-transform: translate(170px, 85px);\r\n        transform: translate(170px, 85px);\r\n    }\r\n    .tile.tile-position-3-3 {\r\n        -webkit-transform: translate(170px, 170px);\r\n        -moz-transform: translate(170px, 170px);\r\n        -ms-transform: translate(170px, 170px);\r\n        transform: translate(170px, 170px);\r\n    }\r\n    .tile.tile-position-3-4 {\r\n        -webkit-transform: translate(170px, 255px);\r\n        -moz-transform: translate(170px, 255px);\r\n        -ms-transform: translate(170px, 255px);\r\n        transform: translate(170px, 255px);\r\n    }\r\n    .tile.tile-position-4-1 {\r\n        -webkit-transform: translate(255px, 0px);\r\n        -moz-transform: translate(255px, 0px);\r\n        -ms-transform: translate(255px, 0px);\r\n        transform: translate(255px, 0px);\r\n    }\r\n    .tile.tile-position-4-2 {\r\n        -webkit-transform: translate(255px, 85px);\r\n        -moz-transform: translate(255px, 85px);\r\n        -ms-transform: translate(255px, 85px);\r\n        transform: translate(255px, 85px);\r\n    }\r\n    .tile.tile-position-4-3 {\r\n        -webkit-transform: translate(255px, 170px);\r\n        -moz-transform: translate(255px, 170px);\r\n        -ms-transform: translate(255px, 170px);\r\n        transform: translate(255px, 170px);\r\n    }\r\n    .tile.tile-position-4-4 {\r\n        -webkit-transform: translate(255px, 255px);\r\n        -moz-transform: translate(255px, 255px);\r\n        -ms-transform: translate(255px, 255px);\r\n        transform: translate(255px, 255px);\r\n    }\r\n\r\n    .tile .tile-inner {\r\n        font-size: 35px;\r\n    }\r\n\r\n    .game-message p {\r\n        font-size: 30px !important;\r\n        height: 30px !important;\r\n        line-height: 30px !important;\r\n        margin-top: 90px !important;\r\n    }\r\n    .game-message .lower {\r\n        margin-top: 30px !important;\r\n    }\r\n}\r\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
 
 /***/ }),
 
@@ -4497,6 +5875,50 @@ module.exports = function (cssWithMappingToString) {
   };
 
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/getUrl.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/laravel-mix/node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== "string") {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
 };
 
 /***/ }),
@@ -21933,6 +23355,36 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_style_index_0_id_afd91298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& */ "./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_style_index_0_id_afd91298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_style_index_0_id_afd91298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-13.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13.use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BRI_Components/BRI_App.vue?vue&type=style&index=0&id=007e94f3&lang=scss&scoped=true&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-13.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-13.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-13.use[3]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/BRI_Components/BRI_App.vue?vue&type=style&index=0&id=007e94f3&lang=scss&scoped=true& ***!
@@ -23056,6 +24508,47 @@ component.options.__file = "resources/js/components/BRI_Components/partials/BRI_
 
 /***/ }),
 
+/***/ "./resources/js/components/Game/Game.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/Game/Game.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Game.vue?vue&type=template&id=afd91298&scoped=true& */ "./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true&");
+/* harmony import */ var _Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Game.vue?vue&type=script&lang=js& */ "./resources/js/components/Game/Game.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Game_vue_vue_type_style_index_0_id_afd91298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& */ "./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+;
+
+
+/* normalize component */
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  "afd91298",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Game/Game.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/Handler/DialogBox/DialogBox.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/Handler/DialogBox/DialogBox.vue ***!
@@ -23538,6 +25031,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Game/Game.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Game/Game.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Game.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************!*\
   !*** ./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=script&lang=js& ***!
@@ -23836,6 +25345,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true& ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_template_id_afd91298_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Game.vue?vue&type=template&id=afd91298&scoped=true& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=template&id=afd91298&scoped=true&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=template&id=06645517&scoped=true&":
 /*!************************************************************************************************************!*\
   !*** ./resources/js/components/Handler/DialogBox/DialogBox.vue?vue&type=template&id=06645517&scoped=true& ***!
@@ -23968,6 +25494,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_User_Navbar_vue_vue_type_template_id_06d13937_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_lib_loaders_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_lib_index_js_vue_loader_options_User_Navbar_vue_vue_type_template_id_06d13937_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./User_Navbar.vue?vue&type=template&id=06d13937&scoped=true& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/lib/loaders/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/User_Components/partials/User_Navbar.vue?vue&type=template&id=06d13937&scoped=true&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_laravel_mix_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Game_vue_vue_type_style_index_0_id_afd91298_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader/dist/cjs.js!../../../../node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!../../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/laravel-mix/node_modules/css-loader/dist/cjs.js??clonedRuleSet-10.use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10.use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Game/Game.vue?vue&type=style&index=0&id=afd91298&scoped=true&lang=css&");
 
 
 /***/ }),
