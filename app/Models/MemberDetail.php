@@ -13,4 +13,9 @@ class MemberDetail extends Model
     protected $table = 'member_detail';
 
     protected $guarded = [];
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
 }
