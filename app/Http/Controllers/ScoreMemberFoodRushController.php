@@ -28,7 +28,21 @@ class ScoreMemberFoodRushController extends Controller
             ]);
             return response()->json($member, 200);
         } else {
-            return ApiFormatter::createApi('Failed', 400);
+            return response()->json('Failed', 400);
+        }
+    }
+
+    public function highScore($member_id)
+    {
+
+        $data = GameScore::where('member_id', '=', $member_id)->select('high_score')->first();
+
+        /* Return hasil API */
+
+        if ($data) {
+            return ApiFormatter::createApi(200, 'Success', $data);
+        } else {
+            return ApiFormatter::createApi(400, 'Failed');
         }
     }
 }
