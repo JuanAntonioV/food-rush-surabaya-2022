@@ -127,8 +127,9 @@ hr {
 
 .containers_game {
     width: 100%;
+    min-height: 100vh;
+    background-color: #faf8ef;
     margin: 0 auto;
-    background: #faf8ef;
     color: #776e65;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;

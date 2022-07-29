@@ -1,5 +1,5 @@
 // Fonts
-@import url('../assets/fonts/fonts.css');
+@import url("../assets/fonts/fonts.css");
 
 *,
 ::after,
@@ -12,6 +12,10 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+body {
+    background-color: white;
 }
 
 ul,

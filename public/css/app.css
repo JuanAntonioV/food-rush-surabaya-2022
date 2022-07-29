@@ -212,6 +212,10 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  background-color: white;
+}
+
 ul,
 li,
 a {
@@ -766,6 +770,14 @@ video {
 }
 .w-\[50vh\] {
   width: 50vh;
+}
+.w-full {
+  width: 100%;
+}
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .translate-x-\[-55\%\] {
   --tw-translate-x: -55%;
