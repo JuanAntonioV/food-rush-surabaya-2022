@@ -803,6 +803,10 @@ video {
 .text-\[10pt\] {
   font-size: 10pt;
 }
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 .uppercase {
   text-transform: uppercase;
 }

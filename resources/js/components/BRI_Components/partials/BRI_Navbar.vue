@@ -79,6 +79,7 @@ aside {
             font-size: 18pt;
             font-weight: 700;
             text-transform: uppercase;
+            color: black;
 
             text-decoration: none;
         }
@@ -127,6 +128,7 @@ aside {
             margin-left: 2rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            color: #7d8da1;
 
             span {
                 font-size: 1.6rem;

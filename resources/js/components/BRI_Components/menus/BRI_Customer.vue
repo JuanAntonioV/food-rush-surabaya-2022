@@ -63,6 +63,7 @@ main {
 
             h3 {
                 font-size: 11pt;
+                font-weight: 500;
             }
 
             &:nth-child(1) {

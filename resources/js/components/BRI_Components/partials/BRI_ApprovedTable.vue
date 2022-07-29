@@ -114,6 +114,7 @@ export default {
             tr {
                 th {
                     padding-bottom: 1rem;
+                    font-weight: 500;
                 }
             }
         }

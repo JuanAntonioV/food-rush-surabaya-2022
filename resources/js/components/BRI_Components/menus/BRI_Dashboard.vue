@@ -256,10 +256,19 @@ main {
         table {
             background: white;
             width: 100%;
+            margin-top: 1.5rem;
             border-radius: 2rem;
             padding: 1.8rem;
             text-align: center;
             transition: all 0.3s ease;
+
+            thead {
+                tr {
+                    th {
+                        font-weight: 600;
+                    }
+                }
+            }
 
             tbody {
                 height: 2.8rem;
@@ -288,6 +297,12 @@ main {
 
                         &:last-child {
                             font-weight: 600;
+                        }
+                    }
+
+                    &:first-child {
+                        td {
+                            padding-top: 1.2rem;
                         }
                     }
 
