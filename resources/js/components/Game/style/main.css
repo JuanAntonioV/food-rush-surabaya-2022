@@ -98,7 +98,7 @@
 }
 
 .best-container:after {
-    content: "Best";
+    content: "Best Score";
 }
 
 p {
@@ -657,13 +657,9 @@ hr {
 }
 
 @media screen and (max-width: 520px) {
-    body {
-        margin: 20px 0;
-        padding: 0 20px;
-    }
-
     .containers_game {
-        width: 350px;
+        padding: 0;
+        width: 100%;
         margin: 0 auto;
         font-size: 15px;
     }
@@ -687,12 +683,17 @@ hr {
     }
 
     .restart-button {
-        width: 100%;
-        padding: 0;
+        width: 350px;
+        margin: 20px auto;
         display: block;
         box-sizing: border-box;
         color: #ffffff;
-        margin-top: 10px;
+    }
+
+    .game-explanation {
+        width: 350px;
+        margin: 50px 0;
+        text-align: center;
     }
 
     .game-container {

@@ -34,3 +34,13 @@ button {
         outline: none;
     }
 }
+
+.tabs {
+    .pagination {
+        .page-item {
+            a {
+                font-weight: 500;
+            }
+        }
+    }
+}

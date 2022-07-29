@@ -2,8 +2,8 @@
     <div class="containers_game">
         <div class="heading">
             <div class="scores-container">
-                <div class="score-container text-dark">0</div>
-                <div class="best-container text-dark">0</div>
+                <div class="score-container text-dark mt-8">0</div>
+                <div class="best-container text-dark mt-8">0</div>
             </div>
         </div>
 

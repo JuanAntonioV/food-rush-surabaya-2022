@@ -2,7 +2,7 @@
     <aside>
         <div class="header">
             <router-link
-                :to="{ name: 'BRI_Dashboard', params: { menus: 'Dashboard' } }"
+                :to="{ name: 'BRI_Dashboard', params: { menus: 'dashboard' } }"
                 class="logo"
             >
                 <h1>BRI Dashboard</h1>

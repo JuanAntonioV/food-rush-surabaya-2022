@@ -82,7 +82,7 @@
 
         <div class="tabs">
             <pagination
-                class="pagination"
+                class="pagination font-normal"
                 :pageSize="10"
                 :items="users"
                 @changePage="onChangePage"
