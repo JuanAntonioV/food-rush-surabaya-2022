@@ -29,8 +29,6 @@ class ScoreMemberFoodRushController extends Controller
             return response()->json($member, 200);
         } else {
             return response()->json('Failed', 400);
-<<<<<<< HEAD
-=======
         }
     }
 
@@ -45,7 +43,6 @@ class ScoreMemberFoodRushController extends Controller
             return ApiFormatter::createApi(200, 'Success', $data);
         } else {
             return ApiFormatter::createApi(400, 'Failed');
->>>>>>> dash_BRI
         }
     }
 }

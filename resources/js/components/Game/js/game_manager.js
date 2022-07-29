@@ -96,8 +96,8 @@ GameManager.prototype.actuate = function () {
                 score: this.score,
             })
             .then((res) => {
-                var high_score = res.data.data.high_score;
-                console.log(high_score);
+                var high_score = res.data.high_score;
+                this.storageManager.setBestScore(high_score);
             })
             .catch((err) => {
                 console.log(err);

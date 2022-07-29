@@ -45,5 +45,4 @@ Route::resource('vote', VoteMemberController::class);
 
 Route::post('game', [ScoreMemberFoodRushController::class, 'addLogGame']);
 
-
 Route::get('high_score/{member_id}', [ScoreMemberFoodRushController::class, 'highScore']);

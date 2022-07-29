@@ -4288,6 +4288,8 @@ GameManager.prototype.addRandomTile = function () {
 
 
 GameManager.prototype.actuate = function () {
+  var _this = this;
+
   if (this.storageManager.getBestScore() < this.score) {
     this.storageManager.setBestScore(this.score);
   } // Clear the state when the game is over (game over only, not win)
@@ -4298,8 +4300,9 @@ GameManager.prototype.actuate = function () {
       member_id: 8,
       score: this.score
     }).then(function (res) {
-      var high_score = res.data.data.high_score;
-      console.log(high_score);
+      var high_score = res.data.high_score;
+
+      _this.storageManager.setBestScore(high_score);
     })["catch"](function (err) {
       console.log(err);
     });
