@@ -5270,7 +5270,7 @@ module.exports = "/fonts/ClearSans-Bold-webfont.eot?9e9caa38ba5cac77998e958e7ba6
   \*****************************************************************************/
 /***/ ((module) => {
 
-module.exports = "/fonts/ClearSans-Bold-webfont.svg?d463e8c131d1ac41c3c24fce950fbf26";
+module.exports = "/fonts/ClearSans-Bold-webfont.svg?4b5a53cd0ba83f2d809ccf4300edb2ca";
 
 /***/ }),
 
@@ -5300,7 +5300,7 @@ module.exports = "/fonts/ClearSans-Light-webfont.eot?4d25accc4c2af36a49af984f225
   \******************************************************************************/
 /***/ ((module) => {
 
-module.exports = "/fonts/ClearSans-Light-webfont.svg?02066214d5a2d5a5124889b9763a7060";
+module.exports = "/fonts/ClearSans-Light-webfont.svg?66afa675ff9bdcaf8d4da36b030edc1c";
 
 /***/ }),
 
@@ -5330,7 +5330,7 @@ module.exports = "/fonts/ClearSans-Regular-webfont.eot?6abf9fda25a75b88b913ea00b
   \********************************************************************************/
 /***/ ((module) => {
 
-module.exports = "/fonts/ClearSans-Regular-webfont.svg?d0471d3467af599df6fe3a7808647a9d";
+module.exports = "/fonts/ClearSans-Regular-webfont.svg?9a3e028f3d7aea4f1f9361dc425457a6";
 
 /***/ }),
 
@@ -5440,7 +5440,7 @@ var ___CSS_LOADER_URL_REPLACEMENT_9___ = _node_modules_laravel_mix_node_modules_
 var ___CSS_LOADER_URL_REPLACEMENT_10___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_svg__WEBPACK_IMPORTED_MODULE_9___default()), { hash: "#clear_sansbold" });
 var ___CSS_LOADER_URL_REPLACEMENT_11___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()((_ClearSans_Bold_webfont_woff__WEBPACK_IMPORTED_MODULE_10___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"woff\");\n    font-weight: 200;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ") format(\"woff\");\n    font-weight: normal;\n    font-style: normal;\n}\n\n@font-face {\n    font-family: \"Clear Sans\";\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ") format(\"embedded-opentype\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ") format(\"svg\"),\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ") format(\"woff\");\n    font-weight: 700;\n    font-style: normal;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@font-face {\r\n    font-family: \"Clear Sans\";\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ") format(\"embedded-opentype\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ") format(\"svg\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_3___ + ") format(\"woff\");\r\n    font-weight: 200;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Clear Sans\";\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_4___ + ");\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_5___ + ") format(\"embedded-opentype\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_6___ + ") format(\"svg\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_7___ + ") format(\"woff\");\r\n    font-weight: normal;\r\n    font-style: normal;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Clear Sans\";\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_8___ + ");\r\n    src: url(" + ___CSS_LOADER_URL_REPLACEMENT_9___ + ") format(\"embedded-opentype\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_10___ + ") format(\"svg\"),\r\n         url(" + ___CSS_LOADER_URL_REPLACEMENT_11___ + ") format(\"woff\");\r\n    font-weight: 700;\r\n    font-style: normal;\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

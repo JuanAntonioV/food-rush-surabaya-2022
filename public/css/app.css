@@ -760,8 +760,8 @@ video {
 .left-\[55\%\] {
   left: 55%;
 }
-.mt-2 {
-  margin-top: 0.5rem;
+.mt-5 {
+  margin-top: 1.25rem;
 }
 .mt-8 {
   margin-top: 2rem;
@@ -780,14 +780,6 @@ video {
 }
 .w-\[50vh\] {
   width: 50vh;
-}
-.w-full {
-  width: 100%;
-}
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
 }
 .translate-x-\[-55\%\] {
   --tw-translate-x: -55%;
@@ -812,10 +804,6 @@ video {
 }
 .text-\[10pt\] {
   font-size: 10pt;
-}
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 .font-normal {
   font-weight: 400;
