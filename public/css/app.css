@@ -762,9 +762,12 @@ video {
 }
 .mt-5 {
   margin-top: 1.25rem;
+<<<<<<< HEAD
 }
 .mt-8 {
   margin-top: 2rem;
+=======
+>>>>>>> floppy-bird
 }
 .block {
   display: block;
