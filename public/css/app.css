@@ -760,15 +760,6 @@ video {
 .left-\[55\%\] {
   left: 55%;
 }
-.mt-5 {
-  margin-top: 1.25rem;
-<<<<<<< HEAD
-}
-.mt-8 {
-  margin-top: 2rem;
-=======
->>>>>>> floppy-bird
-}
 .block {
   display: block;
 }
@@ -794,6 +785,9 @@ video {
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.resize {
+  resize: both;
 }
 .flex-wrap {
   flex-wrap: wrap;

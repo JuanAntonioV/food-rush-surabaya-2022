@@ -3,7 +3,7 @@
         <div class="row">
             <div
                 id="Game"
-                class="col-sm-12 d-flex justify-content-center mt-5"
+                class="col-sm-12 d-flex justify-content-center"
             ></div>
         </div>
     </div>
@@ -91,6 +91,7 @@ export default {
 
             p5.draw = () => {
                 p5.image(background, 0, 0);
+                background.resize(CANVAS_WIDTH, CANVAS_HEIGHT);
 
                 if (gameStart && gameOver === false) {
                     pipe.move();
@@ -156,7 +157,10 @@ export default {
     font: 100% Helvetica, sans-serif;
     background-color: #272b30;
     min-height: 100vh;
-    padding-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .p5Canvas {

@@ -2677,6 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 
       p5.draw = function () {
         p5.image(background, 0, 0);
+        background.resize(_js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH, _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_HEIGHT);
 
         if (gameStart && gameOver === false) {
           pipe.move();
@@ -3719,7 +3720,7 @@ var staticRenderFns = [function () {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-sm-12 d-flex justify-content-center mt-5",
+    staticClass: "col-sm-12 d-flex justify-content-center",
     attrs: {
       id: "Game"
     }
@@ -4245,8 +4246,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "PIPE_WIDTH": () => (/* binding */ PIPE_WIDTH),
 /* harmony export */   "PipeSpeed": () => (/* binding */ PipeSpeed)
 /* harmony export */ });
-var CANVAS_WIDTH = 500;
-var CANVAS_HEIGHT = 650;
+var CANVAS_WIDTH = 1200;
+var CANVAS_HEIGHT = 850;
 var MIN_PIPE_GAP = 170;
 var MAX_PIPE_GAP = 200;
 var MIN_PIPE_HEIGHT = 100;
@@ -4293,15 +4294,15 @@ var Floor = /*#__PURE__*/function () {
   _createClass(Floor, [{
     key: "draw",
     value: function draw() {
-      for (var i = 0; i <= 20; i++) {
-        this.p5.image(this.image, this.startX + i * 30, 580, 30, 150, 200, 60, 30, 150);
+      for (var i = 0; i <= 43; i++) {
+        this.p5.image(this.image, this.startX + i * 30, 750, 30, 150, 200, 60, 30, 150);
       }
     }
   }, {
     key: "update",
     value: function update() {
-      for (var i = 0; i <= 20; i++) {
-        this.p5.image(this.image, this.startX + i * 30, 580, 30, 150, 200, 60, 30, 150);
+      for (var i = 0; i <= 43; i++) {
+        this.p5.image(this.image, this.startX + i * 30, 750, 30, 150, 200, 60, 30, 150);
       }
 
       this.startX -= 2;
@@ -5092,7 +5093,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container-game[data-v-afd91298] {\n  font: 100% Helvetica, sans-serif;\n  background-color: #272b30;\n  min-height: 100vh;\n  padding-bottom: 5vh;\n}\n.p5Canvas[data-v-afd91298] {\n  max-width: 100%;\n  width: auto !important;\n  height: 80vh !important;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container-game[data-v-afd91298] {\n  font: 100% Helvetica, sans-serif;\n  background-color: #272b30;\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n.p5Canvas[data-v-afd91298] {\n  max-width: 100%;\n  width: auto !important;\n  height: 80vh !important;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
