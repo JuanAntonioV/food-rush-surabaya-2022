@@ -1,5 +1,5 @@
 export const CANVAS_WIDTH = 1200;
-export const CANVAS_HEIGHT = 850;
+export const CANVAS_HEIGHT = 750;
 export const MIN_PIPE_GAP = 170;
 export const MAX_PIPE_GAP = 200;
 export const MIN_PIPE_HEIGHT = 100;

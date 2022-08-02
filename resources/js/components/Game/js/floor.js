@@ -9,7 +9,7 @@ export default class Floor {
             this.p5.image(
                 this.image,
                 this.startX + i * 30,
-                750,
+                650,
                 30,
                 150,
                 200,
@@ -23,7 +23,7 @@ export default class Floor {
             this.p5.image(
                 this.image,
                 this.startX + i * 30,
-                750,
+                650,
                 30,
                 150,
                 200,
