@@ -40,13 +40,6 @@ export default {
             let storage;
             let bestScore;
 
-            // SOUND
-            // let dieSound;
-            // let hitSound;
-            // let pointSound;
-            // let swooshingSound;
-            // let wingSound;
-
             const resetGame = () => {
                 gameStart = false;
                 gameOver = false;
@@ -71,7 +64,7 @@ export default {
 
             const canvasClick = () => {
                 if (p5.mouseButton === "left") {
-                    if (gameOver === false) bird.jump(), swooshingSound.play();
+                    if (gameOver === false) bird.jump();
                     if (gameStart === false) gameStart = true;
                     if (
                         gameOver &&
@@ -88,20 +81,6 @@ export default {
                 if (gameOver === false) bird.jump();
                 if (gameStart === false) gameStart = true;
             };
-
-            // p5.preload = () => {
-            //     dieSound = p5.loadSound(require("./assets/audio/sfx_die.mp3"));
-            //     hitSound = p5.loadSound(require("./assets/audio/sfx_hit.mp3"));
-            //     pointSound = p5.loadSound(
-            //         require("./assets/audio/sfx_point.mp3")
-            //     );
-            //     swooshingSound = p5.loadSound(
-            //         require("./assets/audio/sfx_swooshing.mp3")
-            //     );
-            //     wingSound = p5.loadSound(
-            //         require("./assets/audio/sfx_wing.mp3")
-            //     );
-            // };
 
             p5.setup = () => {
                 var canvas = p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);

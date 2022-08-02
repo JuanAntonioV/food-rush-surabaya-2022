@@ -2631,13 +2631,7 @@ __webpack_require__.r(__webpack_exports__);
       var gameText;
       var score;
       var storage;
-      var bestScore; // SOUND
-
-      var dieSound;
-      var hitSound;
-      var pointSound;
-      var swooshingSound;
-      var wingSound;
+      var bestScore;
 
       var resetGame = function resetGame() {
         gameStart = false;
@@ -2663,7 +2657,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var canvasClick = function canvasClick() {
         if (p5.mouseButton === "left") {
-          if (gameOver === false) bird.jump(), swooshingSound.play();
+          if (gameOver === false) bird.jump();
           if (gameStart === false) gameStart = true;
           if (gameOver && p5.mouseX > _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH / 2 - 85 && p5.mouseX < _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH / 2 + 75 && p5.mouseY > _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_HEIGHT / 2 + 100 && p5.mouseY < _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_HEIGHT / 2 + 160) resetGame();
         }
@@ -2672,14 +2666,6 @@ __webpack_require__.r(__webpack_exports__);
       var canvasTouch = function canvasTouch() {
         if (gameOver === false) bird.jump();
         if (gameStart === false) gameStart = true;
-      };
-
-      p5.preload = function () {
-        dieSound = p5.loadSound(__webpack_require__(/*! ./assets/audio/sfx_die.mp3 */ "./resources/js/components/Game/assets/audio/sfx_die.mp3"));
-        hitSound = p5.loadSound(__webpack_require__(/*! ./assets/audio/sfx_hit.mp3 */ "./resources/js/components/Game/assets/audio/sfx_hit.mp3"));
-        pointSound = p5.loadSound(__webpack_require__(/*! ./assets/audio/sfx_point.mp3 */ "./resources/js/components/Game/assets/audio/sfx_point.mp3"));
-        swooshingSound = p5.loadSound(__webpack_require__(/*! ./assets/audio/sfx_swooshing.mp3 */ "./resources/js/components/Game/assets/audio/sfx_swooshing.mp3"));
-        wingSound = p5.loadSound(__webpack_require__(/*! ./assets/audio/sfx_wing.mp3 */ "./resources/js/components/Game/assets/audio/sfx_wing.mp3"));
       };
 
       p5.setup = function () {
@@ -40244,56 +40230,6 @@ Vue.compile = compileToFunctions;
 
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/Game/assets/audio/sfx_die.mp3":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/Game/assets/audio/sfx_die.mp3 ***!
-  \***************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
-
-/***/ }),
-
-/***/ "./resources/js/components/Game/assets/audio/sfx_hit.mp3":
-/*!***************************************************************!*\
-  !*** ./resources/js/components/Game/assets/audio/sfx_hit.mp3 ***!
-  \***************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
-
-/***/ }),
-
-/***/ "./resources/js/components/Game/assets/audio/sfx_point.mp3":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/Game/assets/audio/sfx_point.mp3 ***!
-  \*****************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
-
-/***/ }),
-
-/***/ "./resources/js/components/Game/assets/audio/sfx_swooshing.mp3":
-/*!*********************************************************************!*\
-  !*** ./resources/js/components/Game/assets/audio/sfx_swooshing.mp3 ***!
-  \*********************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
-
-/***/ }),
-
-/***/ "./resources/js/components/Game/assets/audio/sfx_wing.mp3":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/Game/assets/audio/sfx_wing.mp3 ***!
-  \****************************************************************/
-/***/ (() => {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
 
 /***/ }),
 
