@@ -40,6 +40,11 @@ export default {
             let storage;
             let bestScore;
 
+            // SOUND
+            var pointSound = new Audio();
+            var swooshingSound = new Audio();
+            var wingSound = new Audio();
+
             const resetGame = () => {
                 gameStart = false;
                 gameOver = false;
@@ -78,7 +83,7 @@ export default {
             };
 
             const canvasTouch = () => {
-                if (gameOver === false) bird.jump();
+                if (gameOver === false) bird.jump(), wingSound.play();
                 if (gameStart === false) gameStart = true;
             };
 
@@ -87,6 +92,12 @@ export default {
                 canvas.mousePressed(canvasClick);
                 canvas.touchStarted(canvasTouch);
                 oncontextmenu = () => false;
+
+                // SOUND
+                pointSound.src = "audio/sfx_point.wav";
+                swooshingSound.src = "audio/sfx_swooshing.wav";
+                wingSound.src = "audio/sfx_wing.wav";
+
                 resetGame();
             };
 
@@ -106,7 +117,7 @@ export default {
 
                     gameOver = pipe.checkCrash(bird) || bird.isDead();
 
-                    if (pipe.getScore(bird)) score++;
+                    if (pipe.getScore(bird)) score++, pointSound.play();
                 } else {
                     pipe.draw();
                     bird.draw();
@@ -137,7 +148,7 @@ export default {
 
             p5.keyPressed = (e) => {
                 if (e.key === " ") {
-                    if (gameOver === false) bird.jump();
+                    if (gameOver === false) bird.jump(), wingSound.play();
                     if (gameStart === false) gameStart = true;
                 }
                 if (e.key === "r") {

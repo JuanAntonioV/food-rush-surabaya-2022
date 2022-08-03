@@ -2631,7 +2631,11 @@ __webpack_require__.r(__webpack_exports__);
       var gameText;
       var score;
       var storage;
-      var bestScore;
+      var bestScore; // SOUND
+
+      var pointSound = new Audio();
+      var swooshingSound = new Audio();
+      var wingSound = new Audio();
 
       var resetGame = function resetGame() {
         gameStart = false;
@@ -2664,7 +2668,7 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       var canvasTouch = function canvasTouch() {
-        if (gameOver === false) bird.jump();
+        if (gameOver === false) bird.jump(), wingSound.play();
         if (gameStart === false) gameStart = true;
       };
 
@@ -2675,8 +2679,12 @@ __webpack_require__.r(__webpack_exports__);
 
         oncontextmenu = function oncontextmenu() {
           return false;
-        };
+        }; // SOUND
 
+
+        pointSound.src = "audio/sfx_point.wav";
+        swooshingSound.src = "audio/sfx_swooshing.wav";
+        wingSound.src = "audio/sfx_wing.wav";
         resetGame();
       };
 
@@ -2692,7 +2700,7 @@ __webpack_require__.r(__webpack_exports__);
           floor.update();
           floor.draw();
           gameOver = pipe.checkCrash(bird) || bird.isDead();
-          if (pipe.getScore(bird)) score++;
+          if (pipe.getScore(bird)) score++, pointSound.play();
         } else {
           pipe.draw();
           bird.draw();
@@ -2723,7 +2731,7 @@ __webpack_require__.r(__webpack_exports__);
 
       p5.keyPressed = function (e) {
         if (e.key === " ") {
-          if (gameOver === false) bird.jump();
+          if (gameOver === false) bird.jump(), wingSound.play();
           if (gameStart === false) gameStart = true;
         }
 
@@ -4260,7 +4268,7 @@ var MAX_PIPE_HEIGHT = 300;
 var PIPE_WIDTH = 100;
 var MaxPipeOffset = 400;
 var MinPipeOffset = 300;
-var PipeSpeed = 2;
+var PipeSpeed = 3;
 var BIRDSIZE = {
   Width: 70,
   Height: 50
@@ -4556,6 +4564,7 @@ var Pipe = /*#__PURE__*/function () {
       var birdStartY = bird.birdPosition.y;
       var birdEndY = bird.birdPosition.y + _constants__WEBPACK_IMPORTED_MODULE_0__.BIRDSIZE.Height;
       var crash = false;
+      var hitSound = new Audio("audio/sfx_hit.wav");
       this.pipesPosition.forEach(function (pipe) {
         var pipeStartX = _constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH - pipe.offset;
         var pipeEndX = _constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH - pipe.offset + _constants__WEBPACK_IMPORTED_MODULE_0__.PIPE_WIDTH;
@@ -4566,8 +4575,10 @@ var Pipe = /*#__PURE__*/function () {
 
         if ((birdStartX >= pipeStartX && birdStartX < pipeEndX || birdEndX >= pipeStartX && birdEndX < pipeEndX) && (birdStartY >= topPipeStartY && birdStartY < topPipeEndY || birdEndY >= bottomPipeStartY && birdEndY < bottomPipeEndY)) {
           crash = true;
+          hitSound.play();
         } else if ((birdStartX >= pipeStartX && birdStartX < pipeEndX || birdEndX >= pipeStartX && birdEndX < pipeEndX) && birdStartY < 0) {
           crash = true;
+          hitSound.play();
         }
       });
       return crash;
