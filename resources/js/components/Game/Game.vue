@@ -69,7 +69,7 @@ export default {
 
             const canvasClick = () => {
                 if (p5.mouseButton === "left") {
-                    if (gameOver === false) bird.jump();
+                    if (gameOver === false) bird.jump(), wingSound.play();
                     if (gameStart === false) gameStart = true;
                     if (
                         gameOver &&

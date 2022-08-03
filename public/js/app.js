@@ -2661,7 +2661,7 @@ __webpack_require__.r(__webpack_exports__);
 
       var canvasClick = function canvasClick() {
         if (p5.mouseButton === "left") {
-          if (gameOver === false) bird.jump();
+          if (gameOver === false) bird.jump(), wingSound.play();
           if (gameStart === false) gameStart = true;
           if (gameOver && p5.mouseX > _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH / 2 - 85 && p5.mouseX < _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_WIDTH / 2 + 75 && p5.mouseY > _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_HEIGHT / 2 + 100 && p5.mouseY < _js_constants__WEBPACK_IMPORTED_MODULE_0__.CANVAS_HEIGHT / 2 + 160) resetGame();
         }
