@@ -14,7 +14,6 @@ import BRI_DeclinedTable from "../components/BRI_Components/partials/BRI_Decline
 // USER - COMPONENTS
 import App from "../components/App.vue";
 import User_Login from "../components/User_Components/User_Login.vue";
-import User_Dashboard from "../components/User_Components/menus/User_Dashboard.vue";
 
 // GAME - COMPONENTS
 import Game from "../components/Game/Game.vue";
@@ -33,12 +32,6 @@ const routes = [
                 meta: { requiresGuestUser: true },
             },
         ],
-    },
-    {
-        path: "/dashboard",
-        name: "User_Dashboard",
-        component: User_Dashboard,
-        meta: { requiresAuthUser: true },
     },
     {
         path: "/game",
