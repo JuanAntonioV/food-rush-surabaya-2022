@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,17 @@
     <title>Food Rush 2022 | Surabaya</title>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
-      rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="//css/app.css">
     <link rel="stylesheet" href="../css/app.css">
 </head>
+
 <body>
     <div id="app">
-        <router-view/>
+        <router-view />
     </div>
 
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
+
 </html>
