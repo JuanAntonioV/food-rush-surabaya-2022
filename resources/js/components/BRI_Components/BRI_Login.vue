@@ -32,7 +32,7 @@
             </form>
         </div>
         <div class="footer">
-            <p>&copy; Powered by Dealjava</p>
+            <p>&copy; Powered by Dealjavas</p>
         </div>
     </div>
 </template>
