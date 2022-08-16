@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "jsx": "preserve"
+    },
+    "exclude": ["node_modules"]
+}
