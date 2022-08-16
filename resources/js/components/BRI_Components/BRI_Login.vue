@@ -1,7 +1,7 @@
 <template>
     <div class="containers">
         <div class="login_container">
-            <h1>Login</h1>
+            <h1>BRI DASHBOARD</h1>
 
             <form @submit.prevent="handlerLogin">
                 <div class="form-group">
@@ -30,6 +30,9 @@
                 <p v-if="!errors.message">{{ errors[0] }}</p>
                 <button type="submit">Masuk</button>
             </form>
+        </div>
+        <div class="footer">
+            <p>&copy; Powered by Dealjava</p>
         </div>
     </div>
 </template>
@@ -100,9 +103,9 @@ export default {
 
         h1 {
             font-size: 30px;
-            font-weight: 700;
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         form {
@@ -175,6 +178,16 @@ export default {
                 }
             }
         }
+    }
+
+    .footer {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+
+        bottom: 2rem;
     }
 }
 </style>
