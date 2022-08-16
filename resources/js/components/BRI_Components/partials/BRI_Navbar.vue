@@ -16,7 +16,7 @@
             <router-link
                 :to="{ name: 'BRI_Dashboard', params: { menus: 'dashboard' } }"
                 exact
-                exact-active-class="active"
+                active-class="active"
                 class="menu"
             >
                 <span class="material-icons-round"> space_dashboard </span>
@@ -25,7 +25,7 @@
             <router-link
                 :to="{
                     name: 'BRI_Pending',
-                    params: { category: 'pending' },
+                    params: { menus: 'customer', category: 'pending' },
                 }"
                 exact
                 active-class="active"

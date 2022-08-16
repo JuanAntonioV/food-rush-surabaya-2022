@@ -12,36 +12,36 @@ import BRI_PendingTable from "../components/BRI_Components/partials/BRI_PendingT
 import BRI_DeclinedTable from "../components/BRI_Components/partials/BRI_DeclinedTable.vue";
 
 // USER - COMPONENTS
-import App from "../components/App.vue";
-import User_Login from "../components/User_Components/User_Login.vue";
+// import App from "../components/App.vue";
+// import User_Login from "../components/User_Components/User_Login.vue";
 
 // GAME - COMPONENTS
-import Game from "../components/Game/Game.vue";
+// import Game from "../components/Game/Game.vue";
 
 const routes = [
     // USER - ROUTER
-    {
-        path: "/",
-        name: "Home",
-        component: App,
-        children: [
-            {
-                path: "/login",
-                name: "User_Login",
-                component: User_Login,
-                meta: { requiresGuestUser: true },
-            },
-        ],
-    },
-    {
-        path: "/game",
-        name: "Game",
-        component: Game,
-        meta: { requiresAuthUser: true },
-    },
+    // {
+    //     path: "/",
+    //     name: "Home",
+    //     component: App,
+    //     children: [
+    //         {
+    //             path: "/login",
+    //             name: "User_Login",
+    //             component: User_Login,
+    //             meta: { requiresGuestUser: true },
+    //         },
+    //     ],
+    // },
+    // {
+    //     path: "/game",
+    //     name: "Game",
+    //     component: Game,
+    //     meta: { requiresAuthUser: true },
+    // },
     // BRI - ROUTER
     {
-        path: "/brilogin",
+        path: "/",
         name: "BRI_Login",
         component: BRI_Login,
         meta: { requiresGuestBRI: true },
@@ -92,10 +92,10 @@ function inLoginBRI() {
     return localStorage.getItem("token-bri");
 }
 
-function inLoginUser() {
-    return true;
-    // return localStorage.getItem("token-user");
-}
+// function inLoginUser() {
+//     return true;
+//     // return localStorage.getItem("token-user");
+// }
 
 // AUTHENTICATION MIDDLEWARE
 router.beforeEach((to, from, next) => {
@@ -123,27 +123,27 @@ router.beforeEach((to, from, next) => {
     }
 
     // USER - AUTHENTICATION
-    if (to.matched.some((record) => record.meta.requiresAuthUser)) {
-        if (!inLoginUser()) {
-            next({
-                path: "/login",
-                query: { redirect: to.fullPath },
-            });
-        } else {
-            next();
-        }
-    } else if (to.matched.some((record) => record.meta.requiresGuestUser)) {
-        if (inLoginUser()) {
-            next({
-                path: "/dashboard",
-                query: { redirect: to.fullPath },
-            });
-        } else {
-            next();
-        }
-    } else {
-        next();
-    }
+    // if (to.matched.some((record) => record.meta.requiresAuthUser)) {
+    //     if (!inLoginUser()) {
+    //         next({
+    //             path: "/login",
+    //             query: { redirect: to.fullPath },
+    //         });
+    //     } else {
+    //         next();
+    //     }
+    // } else if (to.matched.some((record) => record.meta.requiresGuestUser)) {
+    //     if (inLoginUser()) {
+    //         next({
+    //             path: "/dashboard",
+    //             query: { redirect: to.fullPath },
+    //         });
+    //     } else {
+    //         next();
+    //     }
+    // } else {
+    //     next();
+    // }
 });
 
 export default router;

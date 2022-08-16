@@ -64,9 +64,10 @@ export default {
                         this.errors = [res.data.message];
                     }
                 })
-                .catch(() => {
+                .catch((err) => {
                     this.form.username = "";
                     this.form.password = "";
+                    this.errors = [err.response.data.message];
                     this.$refs.username.focus();
                 });
         },
@@ -152,7 +153,7 @@ export default {
                 text-align: center;
 
                 color: red;
-                font-size: 12px;
+                font-size: 14px;
                 margin: 10px 0 0 0;
             }
 

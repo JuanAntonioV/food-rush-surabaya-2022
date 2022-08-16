@@ -3,7 +3,10 @@
         <h1>Customer</h1>
         <div class="category">
             <router-link
-                :to="{ name: 'BRI_Pending', params: { category: 'pending' } }"
+                :to="{
+                    name: 'BRI_Pending',
+                    params: { category: 'pending' },
+                }"
                 exact
                 active-class="active"
                 class="subMenu"

@@ -120,10 +120,10 @@ class DashboardBRIController extends Controller
         if ($request->status == "1") {
             // Mail::to('fake@email.com')->send(new StatusDashboardBRI());
 
-            GameScore::create([
-                'member_id' => $member_id,
-                'high_score' => 0
-            ]);
+            // GameScore::create([
+            //     'member_id' => $member_id,
+            //     'high_score' => 0
+            // ]);
             return ApiDashboardBRIFormatter::createApi(200, 'Status change to Approve');
         } elseif ($request->status  == "3") {
             // Mail::to('fake@email.com')->send(new StatusDashboardBRI());

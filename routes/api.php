@@ -33,16 +33,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 Route::post('login', [LoginBRIController::class, 'login'])->name('login');
 
-Route::post('member/login', [MemberFoodRushController::class, 'login']);
+// Route::post('member/login', [MemberFoodRushController::class, 'login']);
 
-Route::post('food-rush-register', [MemberFoodRushController::class, 'addMember']);
+// Route::post('food-rush-register', [MemberFoodRushController::class, 'addMember']);
 
 // Table DB Member (GET, PUT)
-Route::resource('member', MemberController::class);
+// Route::resource('member', MemberController::class);
 
 // Table DB Vote (POST, PUT)
-Route::resource('vote', VoteMemberController::class);
+// Route::resource('vote', VoteMemberController::class);
 
-Route::post('game', [ScoreMemberFoodRushController::class, 'addLogGame']);
+// Route::post('game', [ScoreMemberFoodRushController::class, 'addLogGame']);
 
-Route::get('high_score/{member_id}', [ScoreMemberFoodRushController::class, 'highScore']);
+// Route::get('high_score/{member_id}', [ScoreMemberFoodRushController::class, 'highScore']);
