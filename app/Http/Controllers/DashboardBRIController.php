@@ -10,6 +10,7 @@ use App\Mail\StatusDashboardBRI;
 use App\Helpers\ApiUserBRIFormatter;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\ApiDashboardBRIFormatter;
+use DB;
 class DashboardBRIController extends Controller
 {
     /**
