@@ -89,7 +89,7 @@ const router = new VueRouter({
 });
 
 function inLoginBRI() {
-    return localStorage.getItem("token-bri");
+    return sessionStorage.getItem("token-bri");
 }
 
 // function inLoginUser() {

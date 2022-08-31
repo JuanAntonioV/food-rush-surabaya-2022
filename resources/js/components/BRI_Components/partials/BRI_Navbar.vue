@@ -47,12 +47,12 @@ export default {
     name: "NavbarBRIDashboard",
     methods: {
         async logout() {
-            let token = "Bearer " + localStorage.getItem("token-bri");
+            let token = "Bearer " + sessionStorage.getItem("token-bri");
 
             await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
                 .then(() => {
-                    localStorage.removeItem("token-bri");
+                    sessionStorage.removeItem("token-bri");
                     this.$router.push({ name: "BRI_Login" });
                 });
         },

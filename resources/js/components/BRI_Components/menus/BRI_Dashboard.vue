@@ -153,8 +153,8 @@ export default {
     },
     methods: {
         checkIsUserLogin() {
-            if (localStorage.getItem("token-bri") == null) {
-                localStorage.removeItem("token-bri");
+            if (sessionStorage.getItem("token-bri") == null) {
+                sessionStorage.removeItem("token-bri");
                 this.$router.push({ name: "BRI_Login" });
             }
         },

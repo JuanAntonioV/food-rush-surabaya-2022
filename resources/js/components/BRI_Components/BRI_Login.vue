@@ -55,7 +55,7 @@ export default {
                 .post("/api/login", this.form)
                 .then((res) => {
                     if (res.data.token) {
-                        localStorage.setItem("token-bri", res.data.token);
+                        sessionStorage.setItem("token-bri", res.data.token);
                         this.$router.push({
                             name: "BRI_Dashboard",
                             params: { menus: "dashboard" },
