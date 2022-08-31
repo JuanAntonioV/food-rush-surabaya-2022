@@ -103,7 +103,7 @@ router.beforeEach((to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuthBRI)) {
         if (!inLoginBRI()) {
             next({
-                path: "/brilogin",
+                path: "/",
                 query: { redirect: to.fullPath },
             });
         } else {
