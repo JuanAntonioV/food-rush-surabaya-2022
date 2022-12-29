@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\UserBRI;
+use Illuminate\Http\Request;
 use App\Helpers\ApiFormatter;
+use App\Helpers\ApiUserBRIFormatter;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use GrahamCampbell\ResultType\Success;
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
-
+use DB;
 
 class LoginBRIController extends Controller
 {
@@ -20,15 +21,7 @@ class LoginBRIController extends Controller
      */
     public function index()
     {
-        $data = UserBRI::all();
-
-        /* Return hasil API */
-
-        if ($data) {
-            return ApiFormatter::createApi(200, 'Success', $data);
-        } else {
-            return ApiFormatter::createApi(400, 'Failed');
-        }
+        //
     }
 
     /**
@@ -99,18 +92,30 @@ class LoginBRIController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'username'  =>  'required',
-            'password'  =>  'required'
-        ]);
+        /** Mengecek username dan password tidak boleh kosong */
 
-        $userbri = UserBRI::where('username', $request->username)->firstOrFail();
-
-        /* Return hasil API dan mengecek apakah password sesuai atau tidak */
-        if (Hash::check($request->password, $userbri->password)) {
-            return ApiFormatter::createApi(200, 'Success', $userbri);
+        if (!$request->username || !$request->password) {
+            return ApiUserBRIFormatter::createApi(400, 'Username atau password tidak boleh kosong');
+        }
+        /** Mengecek username dan password sesuai, jika sesuai membuat token baru &s menampilkan api message tersebut */
+        if (Auth::guard('web')->attempt($request->only('username', 'password'))) {
+            $user = Auth::user();
+            $token = $user->createToken('token-name')->plainTextToken;
+            return ApiUserBRIFormatter::createApi(200, 'Success', $token);
         } else {
-            return ApiFormatter::createApi(400, 'Username atau Password salah');
+            return ApiUserBRIFormatter::createApi(400, 'Username atau Password salah');
+        }
+    }
+
+    public function logout(Request $request)
+    {
+        /** Menglogout username & mendelete token yang sedang diakses */
+        try {
+            $userID = explode('|', $request->bearerToken())[0];
+            UserBRI::DeleteToken($userID);
+            return response()->json('Succesful Logout', 200);
+        } catch (err) {
+            return response()->json(err, 400);
         }
     }
 }

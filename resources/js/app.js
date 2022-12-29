@@ -2,20 +2,18 @@ require("./bootstrap");
 
 window.Vue = require("vue").default;
 
-import VueRouter from "vue-router";
-import routes from "./routes";
+import Vue from "vue";
 import axios from "axios";
-import store from "./store";
+import VueAxios from "vue-axios";
+import router from "./router";
+import JwPagination from "jw-vue-pagination";
 
-Vue.use(VueRouter, axios);
+Vue.config.productionTip = false;
+Vue.component("pagination", JwPagination);
 
-const router = new VueRouter({
-    mode: "history",
-    routes: routes,
-});
+Vue.use(VueAxios, axios);
 
 const app = new Vue({
     el: "#app",
     router,
-    store: store,
 });

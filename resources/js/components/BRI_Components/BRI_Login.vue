@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
+    <div class="containers">
         <div class="login_container">
             <h1>Login</h1>
 
-            <form @submit.prevent="handleSubmit">
+            <form @submit.prevent="handlerLogin">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input
@@ -12,7 +12,7 @@
                         ref="username"
                         name="username"
                         placeholder="Your Username"
-                        v-model="username"
+                        v-model="form.username"
                         required
                     />
                 </div>
@@ -23,12 +23,11 @@
                         class="form-control"
                         name="password"
                         placeholder="Password"
-                        v-model="password"
+                        v-model="form.password"
                         required
                     />
                 </div>
-                <!-- <p v-if="errors.name">{{ errors[0] }}</p> -->
-                <p v-if="msg">{{ msg }}</p>
+                <p v-if="!errors.message">{{ errors[0] }}</p>
                 <button type="submit">Masuk</button>
             </form>
         </div>
@@ -37,32 +36,38 @@
 
 <script>
 export default {
+    name: "BRI_Login",
     data() {
         return {
-            username: "",
-            password: "",
-            msg: "",
+            form: {
+                username: "",
+                password: "",
+            },
+            errors: [],
         };
-        // errors: [];
     },
     methods: {
-        async handleSubmit() {
+        async handlerLogin() {
             await axios
-                .post("/api/login", {
-                    username: this.username,
-                    password: this.password,
-                })
+                .post("/api/login", this.form)
                 .then((res) => {
-                    if (res.data.code === 200) {
-                        this.$router.push({ name: "BRIDashboard" });
+                    if (res.data.token) {
+                        localStorage.setItem("token-bri", res.data.token);
+                        this.$router.push({
+                            name: "BRI_Dashboard",
+                            params: { menus: "dashboard" },
+                        });
+                    } else {
+                        this.form.username = "";
+                        this.form.password = "";
+                        this.$refs.username.focus();
+                        this.errors = [res.data.message];
                     }
                 })
                 .catch(() => {
-                    // this.msg = "Username atau password kamu salah !!!";
-                    this.username = "";
-                    this.password = "";
+                    this.form.username = "";
+                    this.form.password = "";
                     this.$refs.username.focus();
-                    this.msg = "Username atau password kamu salah !!!";
                 });
         },
     },
@@ -70,7 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.containers {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +98,7 @@ export default {
         border-radius: 30px;
 
         h1 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 700;
             text-align: center;
             margin-bottom: 10px;
@@ -126,7 +131,7 @@ export default {
                     width: 100%;
                     border-radius: 10px;
                     border: 1px solid rgb(172, 172, 172);
-                    padding: 14px 20px;
+                    padding: 24px 20px;
 
                     margin-top: 10px;
 
@@ -161,6 +166,8 @@ export default {
                 margin: 20px 0 10px 0;
 
                 width: 100%;
+
+                transition: all 0.2s ease-out;
 
                 &:hover {
                     background-color: #60a500;

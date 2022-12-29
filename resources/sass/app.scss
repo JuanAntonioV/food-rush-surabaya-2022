@@ -1,5 +1,5 @@
 // Fonts
-@import url('../assets/fonts/fonts.css');
+@import url("../assets/fonts/fonts.css");
 
 *,
 ::after,
@@ -14,6 +14,10 @@ body {
     overflow-x: hidden;
 }
 
+body {
+    background-color: white;
+}
+
 ul,
 li,
 a {
@@ -25,4 +29,18 @@ button {
     border: none;
     outline: none;
     cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.tabs {
+    .pagination {
+        .page-item {
+            a {
+                font-weight: 500;
+            }
+        }
+    }
 }
