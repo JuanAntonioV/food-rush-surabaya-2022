@@ -10,7 +10,7 @@ use App\Mail\StatusDashboardBRI;
 use App\Helpers\ApiUserBRIFormatter;
 use Illuminate\Support\Facades\Mail;
 use App\Helpers\ApiDashboardBRIFormatter;
-
+use DB;
 class DashboardBRIController extends Controller
 {
     /**
@@ -116,14 +116,24 @@ class DashboardBRIController extends Controller
         ]);
 
         /* Return hasil API */
-
+        $member = DB::table('member_detail')->where('member_id', $member_id)->first();
+        $email = $member->email;
         if ($request->status == "1") {
-            // Mail::to('fake@email.com')->send(new StatusDashboardBRI());
+            try{
+					Mail::send('emails.foodrush',['user' => $member_id],function($message) use($member_id, $email){
+								$message->from('foodrush@dealjava.com',env('MAIL_NAME', null));
+								$message->to($email)->subject('Selamat Anda lolos ke stage 3');
 
-            GameScore::create([
-                'member_id' => $member_id,
-                'high_score' => 0
-            ]);
+					});
+				}
+				catch(Exception $e) {
+					Log::error($e->getMessage());
+                    return response()->json('email failed to send!', 500);
+				}
+            // GameScore::create([
+            //     'member_id' => $member_id,
+            //     'high_score' => 0
+            // ]);
             return ApiDashboardBRIFormatter::createApi(200, 'Status change to Approve');
         } elseif ($request->status  == "3") {
             // Mail::to('fake@email.com')->send(new StatusDashboardBRI());

@@ -126,6 +126,7 @@ export default {
     },
     mounted() {
         this.loading = true;
+        this.checkIsUserLogin();
         axios
             .get("/api/dashboardBRIs")
             .then((res) => {
@@ -149,6 +150,14 @@ export default {
     components: {
         Loading,
         NoData,
+    },
+    methods: {
+        checkIsUserLogin() {
+            if (sessionStorage.getItem("token-bri") == null) {
+                sessionStorage.removeItem("token-bri");
+                this.$router.push({ name: "BRI_Login" });
+            }
+        },
     },
 };
 </script>

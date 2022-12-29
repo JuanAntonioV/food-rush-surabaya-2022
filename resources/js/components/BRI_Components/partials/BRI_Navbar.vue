@@ -16,7 +16,7 @@
             <router-link
                 :to="{ name: 'BRI_Dashboard', params: { menus: 'dashboard' } }"
                 exact
-                exact-active-class="active"
+                active-class="active"
                 class="menu"
             >
                 <span class="material-icons-round"> space_dashboard </span>
@@ -25,7 +25,7 @@
             <router-link
                 :to="{
                     name: 'BRI_Pending',
-                    params: { category: 'pending' },
+                    params: { menus: 'customer', category: 'pending' },
                 }"
                 exact
                 active-class="active"
@@ -47,12 +47,12 @@ export default {
     name: "NavbarBRIDashboard",
     methods: {
         async logout() {
-            let token = "Bearer " + localStorage.getItem("token-bri");
+            let token = "Bearer " + sessionStorage.getItem("token-bri");
 
             await axios
                 .post("/api/logout", {}, { headers: { Authorization: token } })
                 .then(() => {
-                    localStorage.removeItem("token-bri");
+                    sessionStorage.removeItem("token-bri");
                     this.$router.push({ name: "BRI_Login" });
                 });
         },

@@ -1,7 +1,7 @@
 <template>
     <div class="containers">
         <div class="login_container">
-            <h1>Login</h1>
+            <h1>BRI DASHBOARD</h1>
 
             <form @submit.prevent="handlerLogin">
                 <div class="form-group">
@@ -31,6 +31,9 @@
                 <button type="submit">Masuk</button>
             </form>
         </div>
+        <div class="footer">
+            <p>&copy; Powered by Dealjava</p>
+        </div>
     </div>
 </template>
 
@@ -52,7 +55,7 @@ export default {
                 .post("/api/login", this.form)
                 .then((res) => {
                     if (res.data.token) {
-                        localStorage.setItem("token-bri", res.data.token);
+                        sessionStorage.setItem("token-bri", res.data.token);
                         this.$router.push({
                             name: "BRI_Dashboard",
                             params: { menus: "dashboard" },
@@ -64,9 +67,10 @@ export default {
                         this.errors = [res.data.message];
                     }
                 })
-                .catch(() => {
+                .catch((err) => {
                     this.form.username = "";
                     this.form.password = "";
+                    this.errors = [err.response.data.message];
                     this.$refs.username.focus();
                 });
         },
@@ -99,9 +103,9 @@ export default {
 
         h1 {
             font-size: 30px;
-            font-weight: 700;
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         form {
@@ -152,7 +156,7 @@ export default {
                 text-align: center;
 
                 color: red;
-                font-size: 12px;
+                font-size: 14px;
                 margin: 10px 0 0 0;
             }
 
@@ -174,6 +178,16 @@ export default {
                 }
             }
         }
+    }
+
+    .footer {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+
+        color: white;
+
+        bottom: 2rem;
     }
 }
 </style>

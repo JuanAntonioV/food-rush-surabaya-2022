@@ -1,14 +1,21 @@
-import { BIRDSIZE, CANVAS_HEIGHT, CANVAS_WIDTH, BIRDANIMATIONFRAME, FLOOROFFSET } from './constants';
-
+import {
+    BIRDSIZE,
+    CANVAS_HEIGHT,
+    CANVAS_WIDTH,
+    BIRDANIMATIONFRAME,
+    FLOOROFFSET,
+} from "./constants";
 
 export default class Bird {
-
     constructor(p5, spriteImage) {
         this.p5 = p5;
         this.gravity = 0.5;
         this.velocity = 0;
         this.lift = -8;
-        this.birdPosition = { y: (CANVAS_HEIGHT / 2) - (BIRDSIZE.Width / 2), x: (CANVAS_WIDTH / 2) - (BIRDSIZE.Height / 2) };
+        this.birdPosition = {
+            y: CANVAS_HEIGHT / 2 - BIRDSIZE.Width / 2,
+            x: CANVAS_WIDTH / 2 - BIRDSIZE.Height / 2,
+        };
         this.image = spriteImage;
         this.frame = 0;
         this.dead = false;
@@ -16,15 +23,27 @@ export default class Bird {
     }
 
     draw() {
-        if (this.dead === false)
-            this.frame++;
-        let animationFrame = (Math.floor(this.frame / 8)) % 4;
+        if (this.dead === false) this.frame++;
+        let animationFrame = Math.floor(this.frame / 8) % 4;
 
         this.p5.push();
 
-        this.p5.translate(this.birdPosition.x + this.birdRotate.xOffset, this.birdPosition.y + this.birdRotate.yOffset);
-        this.p5.rotate(Math.PI / 180 * this.birdRotate.angle);
-        this.p5.image(this.image, 0, 0, BIRDSIZE.Width, BIRDSIZE.Height, BIRDANIMATIONFRAME[animationFrame], 0, BIRDSIZE.Width, BIRDSIZE.Height);
+        this.p5.translate(
+            this.birdPosition.x + this.birdRotate.xOffset,
+            this.birdPosition.y + this.birdRotate.yOffset
+        );
+        this.p5.rotate((Math.PI / 180) * this.birdRotate.angle);
+        this.p5.image(
+            this.image,
+            0,
+            0,
+            BIRDSIZE.Width,
+            BIRDSIZE.Height,
+            BIRDANIMATIONFRAME[animationFrame],
+            0,
+            BIRDSIZE.Width,
+            BIRDSIZE.Height
+        );
 
         this.p5.pop();
     }
@@ -35,7 +54,10 @@ export default class Bird {
     }
 
     isDead() {
-        return this.birdPosition.y >= CANVAS_HEIGHT - BIRDSIZE.Height - FLOOROFFSET ? true : false;
+        return this.birdPosition.y >=
+            CANVAS_HEIGHT - BIRDSIZE.Height - FLOOROFFSET
+            ? true
+            : false;
     }
 
     update() {
@@ -62,7 +84,6 @@ export default class Bird {
             this.dead = true;
         }
 
-        if (this.velocity > 15)
-            this.velocity = 15;
+        if (this.velocity > 15) this.velocity = 15;
     }
 }

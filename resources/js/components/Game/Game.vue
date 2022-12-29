@@ -3,7 +3,7 @@
         <div class="row">
             <div
                 id="Game"
-                class="col-sm-12 d-flex justify-content-center mt-5"
+                class="col-sm-12 d-flex justify-content-center"
             ></div>
         </div>
     </div>
@@ -40,6 +40,11 @@ export default {
             let storage;
             let bestScore;
 
+            // SOUND
+            var pointSound = new Audio();
+            var swooshingSound = new Audio();
+            var wingSound = new Audio();
+
             const resetGame = () => {
                 gameStart = false;
                 gameOver = false;
@@ -64,7 +69,7 @@ export default {
 
             const canvasClick = () => {
                 if (p5.mouseButton === "left") {
-                    if (gameOver === false) bird.jump();
+                    if (gameOver === false) bird.jump(), wingSound.play();
                     if (gameStart === false) gameStart = true;
                     if (
                         gameOver &&
@@ -78,7 +83,7 @@ export default {
             };
 
             const canvasTouch = () => {
-                if (gameOver === false) bird.jump();
+                if (gameOver === false) bird.jump(), wingSound.play();
                 if (gameStart === false) gameStart = true;
             };
 
@@ -86,11 +91,19 @@ export default {
                 var canvas = p5.createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
                 canvas.mousePressed(canvasClick);
                 canvas.touchStarted(canvasTouch);
+                oncontextmenu = () => false;
+
+                // SOUND
+                pointSound.src = "audio/sfx_point.wav";
+                swooshingSound.src = "audio/sfx_swooshing.wav";
+                wingSound.src = "audio/sfx_wing.wav";
+
                 resetGame();
             };
 
             p5.draw = () => {
                 p5.image(background, 0, 0);
+                background.resize(CANVAS_WIDTH, CANVAS_HEIGHT);
 
                 if (gameStart && gameOver === false) {
                     pipe.move();
@@ -104,7 +117,7 @@ export default {
 
                     gameOver = pipe.checkCrash(bird) || bird.isDead();
 
-                    if (pipe.getScore(bird)) score++;
+                    if (pipe.getScore(bird)) score++, pointSound.play();
                 } else {
                     pipe.draw();
                     bird.draw();
@@ -135,7 +148,7 @@ export default {
 
             p5.keyPressed = (e) => {
                 if (e.key === " ") {
-                    if (gameOver === false) bird.jump();
+                    if (gameOver === false) bird.jump(), wingSound.play();
                     if (gameStart === false) gameStart = true;
                 }
                 if (e.key === "r") {
@@ -156,7 +169,10 @@ export default {
     font: 100% Helvetica, sans-serif;
     background-color: #272b30;
     min-height: 100vh;
-    padding-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .p5Canvas {

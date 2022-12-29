@@ -1,18 +1,15 @@
 <template>
-    <div>
-        <!-- <UserNavbar /> -->
-        <router-view />
+    <div class="flex justify-content-center align-items-center vh-100">
+        <h1>FOOD RUSH INTRO PAGE</h1>
     </div>
 </template>
-
 <script>
-import TableTeam from "./User_Components/partials/TableTeam.vue";
-import UserNavbar from "./User_Components/partials/User_Navbar.vue";
-
-export default {
-    components: {
-        TableTeam,
-        UserNavbar,
-    },
-};
+export default {};
 </script>
+<style lang="scss" scoped>
+div {
+    h1 {
+        font-family: "Poppins", sans-serif;
+    }
+}
+</style>

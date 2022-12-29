@@ -136,7 +136,6 @@ export default {
             this.pageItems = pageItems;
         },
         cancel() {
-            console.log("Cancel");
             this.showDialogTolak = false;
             this.showDialogTerima = false;
         },
@@ -147,13 +146,13 @@ export default {
                     status: "1",
                 })
                 .then(() => {
-                    this.fetch();
                     this.loading = false;
                 })
                 .catch((err) => {
                     this.loading = false;
                     console.log(err);
                 });
+            this.fetch();
             this.showDialogTerima = false;
         },
         async tolakUser(userID) {
@@ -163,13 +162,13 @@ export default {
                     status: "3",
                 })
                 .then(() => {
-                    this.fetch();
                     this.loading = false;
                 })
                 .catch((err) => {
                     this.loading = false;
                     console.log(err);
                 });
+            this.fetch();
             this.showDialogTolak = false;
         },
     },
